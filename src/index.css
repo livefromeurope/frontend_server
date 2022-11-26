@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: Nasalization;
+}
+
+
+
+@font-face {
+  font-family: "Nasalization";
+  src: local("Nasalization"),
+  url("./fonts/Nasalization.ttf") format("truetype");
+  }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
