@@ -26,36 +26,53 @@ export default function Nav(){
 
     return(
         <div>
-            <nav class="navbar navbar-expand-sm ">
+            <nav class="navbar navbar-inverse ">
                 
                 <div id='nav_img'>
 
-                    <a class="navbar-brand" data-toggle="collapse" data-target="#navbarNav" href="#" >
+                    <a class="navbar-brand" data-target="#navbarNav" href="#" >
                         <Link to='/' className="nav-item nav-link"> <img src="/lfe.png" height="30" alt=""></img></Link>
                     </a>
                 </div>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class = "navbar-toggler-icon"></span>
-                </button>
+                
 
-                <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar navbar-inverse " id="navbarNav">
 
-                    <div class="navbar-nav ml-auto">
-                    <ul class="navbar-nav" data-toggle="collapse" data-target="#navbarNav">
-                        <a><Link to='/' className="nav-item nav-link active">Home</Link></a>
-                        <a><Link to='/about' className="nav-item nav-link">About</Link></a>
+
+
+                        
+
                         {!auth.username &&
-                            <a><Link to='/login' className="nav-item nav-link">Login</Link></a>
+                        <a><Link to='/login'>
+                        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <img width="30px" src="/home.png"></img>
+                        </button>
+                        </Link></a>
+                        }
+
+
+
+                        {!auth.username &&
+                        <a><Link to={profileurl} >
+                        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <img src={auth.image}></img>
+                        </button>
+                        </Link></a>
+                        }
+
+                        {auth.username && 
+                            <a><Link to={profileurl} className="nav-item nav-link">
+                                <img width="30px" src={auth.image}></img>
+                                </Link></a>
                         }
                         {auth.username && 
-                            <a><Link to={profileurl} className="nav-item nav-link">@{auth.username}</Link></a>
+                            <a><Link to='/' onClick={()=>setAuth({})} className="nav-item nav-link">
+                                <img width="30px"src="/logout.png"></img>
+                            
+                            </Link></a>
                         }
-                        {auth.username && 
-                            <a><Link to='/' onClick={()=>setAuth({})} className="nav-item nav-link">Logout</Link></a>
-                        }
-                    </ul>
-                    </div>
+                    
 
                 </div>
             </nav>
