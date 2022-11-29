@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: Nasalization;
+  font-family: MicroFLF;
 }
 
 
 
 @font-face {
-  font-family: "Nasalization";
-  src: local("Nasalization"),
-  url("./fonts/Nasalization.ttf") format("truetype");
+  font-family: "MicroFLF";
+  src: local("MicroFLF"),
+  url("./fonts/MicroFLF.ttf") format("truetype");
   }
 
 code {

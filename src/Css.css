@@ -2,7 +2,7 @@
 
 
 .AppBody{
-  background-color: black;
+  background-color:  #1e1e22 ;
   padding:5px;
   width:100%;
   overflow-x:hidden;
@@ -16,7 +16,7 @@
 
 /* background */
 .container {
-  background-color: black;
+  background-color:  #1e1e22 ;
   max-width: 450px;
   padding-top:10px;
   margin-left:2px;
@@ -84,7 +84,7 @@
 .jumbotron{
   min-width: 100px;
   color: grey;
-  background-color: black;
+  background-color:  #1e1e22 ;
   border-radius: 10px;
   margin-bottom: 0px;
   padding: 0px;
@@ -113,9 +113,9 @@ img[src=""] {
   margin-bottom: 5px;
   color: white;
   border: solid;
-  border-top-color: black;
-  border-left-color: black;
-  border-right-color: black;
+  border-top-color:  #1e1e22;
+  border-left-color:  #1e1e22 ;
+  border-right-color: #1e1e22 ;
   border-width: 1px; border-bottom-color: rgb(41, 41, 42);
   position: relative;
 }
@@ -124,7 +124,7 @@ img[src=""] {
 .main-content{
   margin-top: 2px;
   margin-bottom: 2px;
-  font-size: 12px;
+  font-size: 14px;
   max-width: 700px;
   overflow-wrap: break-word;
 }
@@ -147,7 +147,7 @@ img[src=""] {
 /* singlepost category */
 .postcategory{
   color: grey;
-  font-size: 10px;
+  font-size: 12px;
   position: relative;
   text-align: left;
   min-width: 70px;
@@ -165,7 +165,7 @@ padding: 1px;
 
 .post-action{
   
-  font-size:10px;
+  font-size:1px;
   text-align:right;
   
   -webkit-appearance: none !important;
@@ -178,14 +178,14 @@ padding: 1px;
 
 /* button */
   .btn{
-    background-color: black;
+    background-color:  #1e1e22 ;
     border-color:white;
     border-width: 1px;
     border-radius: 10px;
     color:white;
     margin: 3px;
     padding: 5px;
-    font-size: 14px;
+    font-size: 12px;
   }
 
 
@@ -195,7 +195,7 @@ padding: 1px;
 
   .btn:hover{
     background-color: #004494;
-    border-color:black;
+    border-color:#1e1e22;
     border-radius: 10px;
     color: white;
   }

@@ -35,9 +35,9 @@ function About(){
         </p>
         <p>
         5.<strong> livefromeurope:</strong> is open source: https://github.com/livefromeurope.
-        <p>
+        <p >
         <a href="https://github.com/livefromeurope">
-            <img width="200px" src='https://miro.medium.com/max/1400/0*c43pw7UiQgpfjDCl.jpg' />
+            <img width="200px"  src='https://miro.medium.com/max/1400/0*c43pw7UiQgpfjDCl.jpg' />
         </a>
         </p>
         </p>

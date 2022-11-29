@@ -32,7 +32,6 @@ async function Make_Comment(comment,post_id,user,post_reference_id,setCommentUpd
                 setCommentUpdate(commetnupdate);
 
 
-
         }else{
             console.log("PFLICHTFELD")
         };

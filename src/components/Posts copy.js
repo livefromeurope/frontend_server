@@ -180,10 +180,11 @@ export default function Posts(props){
     
     let selectedValues=[]
     if(props.userid.ip){
+
         console.log(props.userid.country_name.toLowerCase())
         let country = props.userid.country_name.toLowerCase()
         selectedValues=[{country}]
-    }else{
+
     }
 
 
