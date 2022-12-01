@@ -25,7 +25,8 @@ export default function Nav(){
     */
 
     return(
-        <div>
+        <div class='nav_bar_container'>
+        <div class='nav_bar'>
             <nav class="navbar navbar-inverse ">
                 
                 <div id='nav_img'>
@@ -68,7 +69,7 @@ export default function Nav(){
                         }
                         {auth.username && 
                             <a><Link to='/' onClick={()=>setAuth({})} className="nav-item nav-link">
-                                <img width="30px"src="/logout.png"></img>
+                                <img width="30px" src="/logout.png"></img>
                             
                             </Link></a>
                         }
@@ -76,6 +77,7 @@ export default function Nav(){
 
                 </div>
             </nav>
+        </div>
         </div>
     );
 

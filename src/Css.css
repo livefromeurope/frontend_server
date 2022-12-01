@@ -30,6 +30,17 @@
 }
 
 
+.nav_bar_container{
+  position: relative;
+}
+
+
+.nav_bar{
+  max-width: 450px;
+width:50%;
+margin: 0 auto;
+}
+
 
 #center-content{
   padding-right:0px;
