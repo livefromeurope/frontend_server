@@ -54,10 +54,17 @@ export default function Nav(){
                     {!auth.username &&
                         <a><Link to='/login'>
                         <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <img width="30px" src="/home.png"></img>
+                            <img width="20px" src="/home.png"></img>
                         </button>
                         </Link></a>
-                        }
+                    }
+                    {!auth.username &&
+                        <a><Link to='/about'>
+                        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <img width="20px" src="/gear.png"></img>
+                        </button>
+                        </Link></a>
+                    }
                 </div>
             </nav>
     );
