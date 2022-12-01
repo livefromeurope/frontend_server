@@ -30,17 +30,14 @@
 }
 
 
-.nav_bar_container{
-  position: relative;
-}
-
-
-.nav_bar{
+.navbar{
   max-width: 450px;
-width:50%;
-margin: 0 auto;
+  margin: 0 auto;
 }
 
+#navbarNav{
+  margin:0px;
+}
 
 #center-content{
   padding-right:0px;

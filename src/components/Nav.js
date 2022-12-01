@@ -25,35 +25,13 @@ export default function Nav(){
     */
 
     return(
-        <div class='nav_bar_container'>
-        <div class='nav_bar'>
-            <nav class="navbar navbar-inverse ">
-                
-                <div id='nav_img'>
-
-                    <a class="navbar-brand" data-target="#navbarNav" href="#" >
-                        <Link to='/' className="nav-item nav-link"> <img src="/lfe.png" height="30" alt=""></img></Link>
-                    </a>
-                </div>
-
-                
-
-                <div class="navbar navbar-inverse " id="navbarNav">
-
-
-
-                        
-
-                        {!auth.username &&
-                        <a><Link to='/login'>
-                        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <img width="30px" src="/home.png"></img>
-                        </button>
-                        </Link></a>
-                        }
-
-
-
+            <nav class="navbar ">
+                    <div id='nav_img'>
+                        <a class="navbar-brand" data-target="#navbarNav" href="#" >
+                            <Link to='/' className="nav-item nav-link"> <img src="/lfe.png" height="30" alt=""></img></Link>
+                        </a>
+                    </div>
+                    <div class="navbar navbar-inverse " id="navbarNav">
                         {!auth.username &&
                         <a><Link to={profileurl} >
                         <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +39,6 @@ export default function Nav(){
                         </button>
                         </Link></a>
                         }
-
                         {auth.username && 
                             <a><Link to={profileurl} className="nav-item nav-link">
                                 <img width="30px" src={auth.image}></img>
@@ -73,12 +50,16 @@ export default function Nav(){
                             
                             </Link></a>
                         }
-                    
 
+                    {!auth.username &&
+                        <a><Link to='/login'>
+                        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <img width="30px" src="/home.png"></img>
+                        </button>
+                        </Link></a>
+                        }
                 </div>
             </nav>
-        </div>
-        </div>
     );
 
 }
