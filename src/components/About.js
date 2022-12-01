@@ -2,18 +2,65 @@ import React, {useState} from 'react';
 
 function About(){
 
-    const [show, setShow] = React.useState(false);
-    
+    const [show_policy, setShowPolicy] = React.useState(false);
+    const [show_about, setShowAbout] = React.useState(false);
+    const [show_contact, setShowContact] = React.useState(false);
 
     return(
+
+        
+
+
         <section>
+
+
+
             <div class= "container">
+            <p>
             <div >
                         <img width="200px" src="/lfe.png"></img>
                     </div>
+                    </p>
+        <p>
+        {!show_contact && !show_policy &&
+            <button type='button' onClick=
+                                {
+                                    ()=>{
+                                        if(show_about){setShowAbout(false)}else{setShowAbout(true)}
+                                    }
+                                }
+            class="btn btn-md btn-outline btn-primary">About
+            </button>
+        }
+        </p>
+        <p>
+        {!show_about && !show_contact &&
+            <button type='button' onClick=
+                                {
+                                    ()=>{
+                                        if(show_policy){setShowPolicy(false)}else{setShowPolicy(true)}
+                                    }
+                                }
+            class="btn btn-md btn-outline btn-primary">Policies / Data Protection
+            </button>
+        }
+        </p>
+        <p>
+        {!show_about && !show_policy &&
+            <button type='button' onClick=
+                                {
+                                    ()=>{
+                                        if(show_contact){setShowContact(false)}else{setShowContact(true)}
+                                    }
+                                }
+            class="btn btn-md btn-outline btn-primary">Contact
+            </button>
+        }
+        </p>
                 
         <div class= "about">
             <p></p>
+        {show_about&& <div>
         <h1>About</h1>
         <p>
         1. <strong>livefromeurope:</strong> is a place for young and critical minds who want europe to evolve in a bright and social future. 
@@ -47,15 +94,9 @@ function About(){
         <p>
         livefromeurope is currently implementing the activitypub protocol to be part of a decentralized network of social media platforms.
         </p>
-        <button type='button' onClick=
-                            {
-                                ()=>{
-                                    if(show){setShow(false)}else{setShow(true)}
-                                }
-                            }
-        class="btn btn-md btn-outline btn-primary">Show Policies / Data Protection
-        </button>
-        {show && <div>
+        </div>
+        }
+        {show_policy && <div>
             <p>
             <h1>Policies</h1>
             </p>
@@ -129,6 +170,8 @@ function About(){
         </div>
         }
 
+        {show_contact&&<div>
+
                         <h1>Contact</h1>
                         <p>
                         You can reach us using the following contact details:
@@ -137,9 +180,11 @@ function About(){
                         <a href="mailto:livefromeurope@outlook.com">livefromeurope@outlook.com</a>
                         </p>
                         
-            </div>
+            </div>}
         
             </div>
+            </div>
+
 
         
         </section>
