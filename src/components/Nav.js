@@ -40,13 +40,15 @@ export default function Nav(){
                         </Link></a>
                         }
                         {auth.username && 
-                            <a><Link to={profileurl} className="nav-item nav-link">
-                                <img width="30px" src={auth.image}></img>
+                            
+                            <a ><Link to={profileurl} className="nav-item nav-link">
+                                <img width="30px" className="profile_img" src={auth.image}></img> 
                                 </Link></a>
+                           
                         }
                         {auth.username && 
                             <a><Link to='/' onClick={()=>setAuth({})} className="nav-item nav-link">
-                                <img width="30px" src="/logout.png"></img>
+                                <img width="25px" src="/logout.png"></img>
                             
                             </Link></a>
                         }

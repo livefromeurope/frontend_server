@@ -18,6 +18,7 @@ function Login(){
     const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
+    const [image, setImage] = useState('');
     const [repwd, ResetPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [signup, setSignUp] = useState(true);
@@ -102,7 +103,7 @@ function Login(){
                     'user': user,
                     'email': email,
                     'password': pwd,
-                    'image': '',
+                    'image': image,
                     'created_date':created_date,
                 }
                 await fetch(registerurl, 
@@ -122,13 +123,13 @@ function Login(){
                     setPwd(''); 
                     ResetPwd('');
                     setUser('');
+                    setImage('');
                     alert('You are now registered at LiveFromEurope')
                     setSignUp(true);
                 }else{
                     console.log('no success')
-                    setEmail('');
                     setPwd('');
-                    setUser('');
+                    
                     ResetPwd('');
                 }
                     });
@@ -225,6 +226,17 @@ function Login(){
                             autoComplete="off"
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
+                            required
+                            />
+                    <label class='lables' htmlFor="image">Enter Image URL:</label>
+                    <input
+                            class="form-control"
+                            type="text"
+                            id="url"
+                            ref={userRef}
+                            autoComplete="off"
+                            onChange={(e) => setImage(e.target.value)}
+                            value={image}
                             required
                             />
                     <label class='lables' htmlFor="password">Enter Password:</label>

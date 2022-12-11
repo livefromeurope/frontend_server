@@ -406,6 +406,10 @@ a:hover {
 
 }
 
+.profile_img{
+  border-radius: 50%;
+}
+
 .comment-body{
   background-color: white;
   border-bottom: #FFF;

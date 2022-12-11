@@ -23,7 +23,7 @@ export default function Profile(){
                     <form class="form" id="profile_form" onSubmit={()=>{}}>
                         <div>Profile: @{auth.username}</div>
                         <label class='lables' htmlFor="image">Your Image:</label>
-                        <img src={auth.image}></img>
+                        <div class='profile_img'><img width="250px" class='profile_img'src={auth.image}></img></div>
                         <label class='lables' htmlFor="username">Your Username:</label>
                         <input
                             class="form-control"
@@ -42,6 +42,15 @@ export default function Profile(){
                             id="email"
                             //onChange={(e) => setPwd(e.target.value)}
                             value={auth.email}
+                            required
+                            />
+                        <label class='lables' htmlFor="image">Your Image URL:</label>
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="image"
+                            //onChange={(e) => setPwd(e.target.value)}
+                            value={auth.image}
                             required
                             />
                         
