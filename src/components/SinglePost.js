@@ -24,7 +24,6 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
     
 
 
-    //TESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSST
     function get_emoticon(hash,country){
         //console.log(hash)
         //console.log(hash[country][0].emoticon)

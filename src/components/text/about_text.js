@@ -28,7 +28,7 @@ function About_Text() {
             4.<strong> livefromeurope:</strong> is hosted in europe. livefromeurope doesn`t collect any data, it is merely here to inform and entertain.
             </p>
             <p>
-            5.<strong> livefromeurope:</strong> is build with the MERN stack as well as a Python backend crawler:
+            5.<strong> livefromeurope:</strong> is a REACT APP build with the MERN stack as well as a Python Backend crawler.
             </p>
               <a >
                   <img width="200px"  src='https://miro.medium.com/max/678/1*l2tlJsFNg2tH6QizegKkqA.png' />

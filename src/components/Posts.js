@@ -2,10 +2,11 @@ import React, {useState, useEffect } from 'react';
 import Multiselect from 'multiselect-react-dropdown';
 import useInfiniteScroll from "./useInfiniteScroll";
 import SinglePost from "./SinglePost";
+import SinglePost_Horizontal from './SinglePost_Horizontal';
 import Get_Posts from './Get_Posts';
-import europe_countries from './europe_countries.json'
-import Urlify from './Urlify';
-
+import europe_countries from './europe_countries.json';
+import { useHorizontalScroll} from './functions/useHorizontalScroll';
+import urlify from './functions/urlify';
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -25,10 +26,17 @@ export default function Posts(props){
     const [PostInfo,setPostInfo] = useState([]);
     const [PostLikes,setPostLikes] = useState([]);
     let [fetch_url,setFetchUrl] = useState('');
+    
+    
+    const merch = [
+    {"merch_url":"./merch/DSC00881.JPG"},
+    {"merch_url":"./merch/DSC00877.JPG"},
+    {"merch_url":"./merch/DSC00883.JPG"},
+    {"merch_url":"./merch/DSC00889.JPG"}];
     //let [selectedValues,setSelectedValues] = useState([])
 
     //const [saved_MongoPostID,set_saved_MongoPostID] = useState('');
-
+    const scrollRef = useHorizontalScroll();
 
     let limit = 15
     let now_date = new Date().toISOString()
@@ -45,7 +53,7 @@ export default function Posts(props){
         show_spotlight = false
     }
 
-
+    
     function set_fetch_url(){
         let window_url = window.location.href;
         if(!window_url.includes('www') && !window_url.includes('localhost')){
@@ -171,7 +179,6 @@ export default function Posts(props){
 
 
 
-
     //if filter removes item
     function onRemove(selectedList, removedItem){
         let pass = ''
@@ -241,13 +248,14 @@ export default function Posts(props){
                     }
             </div>
             {show_spotlight  && <div className='Spotlight'>
-            spotlight post: ukraine war
+            spotlight
                 <div>
-                    <iframe  width="100%" height="400" src="https://deepstatemap.live/en#7/47.953/36.041" >
-                    </iframe>    
+                    test
                 </div>
             </div>
             }
+            
+            
             {
                 data && data.length>0 && data.map((item)=>
                     (
@@ -258,7 +266,7 @@ export default function Posts(props){
                         post_info={PostInfo}
                         set_post_info={setPostInfo}
                         post_author={item.author}
-                        post_content={Urlify(item.content)}
+                        post_content={urlify(item.content)}
                         post_image={item.image}
                         post_created_date={item.created_date}
                         post_category={item.category}

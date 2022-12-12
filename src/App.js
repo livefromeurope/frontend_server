@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
-import Merch from './components/Merch';
+import Merch from './components/pages/Merch';
 import Post from './components/Post';
 import Odata from './components/Odata';
 import Category from './components/Category';

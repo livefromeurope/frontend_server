@@ -4,7 +4,7 @@ import { useState, useEffect,setShowMessage  } from 'react';
 import Comment_Section from './Comment_Section';
 import Get_Posts from './Get_Posts';
 import SinglePost from './SinglePost';
-import Urlify from './Urlify';
+import urlify from './functions/urlify';
 
 
 
@@ -51,7 +51,7 @@ function Post(){
                         post_info={PostInfo}
                         set_post_info={setPostInfo}
                         post_author={post.author}
-                        post_content={Urlify(post.content)}
+                        post_content={urlify(post.content)}
                         post_image={post.image}
                         post_created_date={post.created_date}
                         post_category={post.category}

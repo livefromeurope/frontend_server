@@ -452,3 +452,12 @@ a:hover {
   margin: 5px;
   border-radius: 10px;
 }
+
+.merch_pics{
+  min-width: 100%;
+  height: 100%;
+}
+
+.merch_form{
+  min-width: 200px;
+}
