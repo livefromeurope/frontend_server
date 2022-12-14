@@ -159,7 +159,7 @@ function Login(){
 
             <section >
                 <div>
-                        <img width="200px" src="/lfe.png"></img>
+                        <img width="200px" src="./icons/lfe.png"></img>
                     </div>
                 <div class="jumbotron">
                     

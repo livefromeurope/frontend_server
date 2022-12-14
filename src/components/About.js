@@ -20,10 +20,9 @@ function About(){
             <div class= "container">
             <p>
             <div >
-                        <img width="200px" src="/lfe.png"></img>
+                        <img width="200px" src="./icons/lfe.png"></img>
                     </div>
                     
-                   
                     </p>
         <p>
         {!show_contact && !show_policy &&

@@ -28,7 +28,7 @@ export default function Nav(){
             <nav class="navbar ">
                     <div id='nav_img'>
                         <a class="navbar-brand" data-target="#navbarNav" href="#" >
-                            <Link to='/' className="nav-item nav-link"> <img src="/lfe.png" height="30" alt=""></img></Link>
+                            <Link to='/' className="nav-item nav-link"> <img src="../icons/lfe.png" height="30" alt=""></img></Link>
                         </a>
                     </div>
                     <div class="navbar navbar-inverse " id="navbarNav">
@@ -44,11 +44,10 @@ export default function Nav(){
                             <a ><Link to={profileurl} className="nav-item nav-link">
                                 <img width="30px" className="profile_img" src={auth.image}></img> 
                                 </Link></a>
-                           
                         }
                         {auth.username && 
                             <a><Link to='/' onClick={()=>setAuth({})} className="nav-item nav-link">
-                                <img width="25px" src="/logout.png"></img>
+                                <img width="25px" src="../icons/logout.png"></img>
                             
                             </Link></a>
                         }
@@ -56,14 +55,22 @@ export default function Nav(){
                     {!auth.username &&
                         <a><Link to='/login'>
                         <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <img width="20px" src="/home.png"></img>
+                            <img width="20px" src="../icons/home.png"></img>
                         </button>
                         </Link></a>
                     }
                     {!auth.username &&
                         <a><Link to='/about'>
                         <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <img width="20px" src="/gear.png"></img>
+                            <img width="20px" src="../icons/gear.png"></img>
+                        </button>
+                        </Link></a>
+                    }
+
+                    {!auth.username &&
+                        <a><Link to='/merch'>
+                        <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <img width="25px" src="../icons/shirt.png"></img>
                         </button>
                         </Link></a>
                     }
