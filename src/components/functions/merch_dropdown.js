@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 const MerchDropdown = (props) => {
   const options = [
@@ -6,8 +6,15 @@ const MerchDropdown = (props) => {
     {value: 'green_deal', text: 'Green Deal', url:'../merch/green_deal_shirt.jpg'},
     {value: 'fight_rights', text: 'Fight for your Rights', url:'../merch/fight_for_your_rights_shirt.jpg'},
   ];
+  
 
   const [selected, setSelected] = useState(options[0]);
+
+  
+  useEffect(()=>{
+    setSelected('../icons/lfe.png');
+},[])
+
 
   
   const handleChange = event => {
