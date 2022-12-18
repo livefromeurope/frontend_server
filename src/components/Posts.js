@@ -28,11 +28,7 @@ export default function Posts(props){
     let [fetch_url,setFetchUrl] = useState('');
     
     
-    const merch = [
-    {"merch_url":"./merch/DSC00881.JPG"},
-    {"merch_url":"./merch/DSC00877.JPG"},
-    {"merch_url":"./merch/DSC00883.JPG"},
-    {"merch_url":"./merch/DSC00889.JPG"}];
+
     //let [selectedValues,setSelectedValues] = useState([])
 
     //const [saved_MongoPostID,set_saved_MongoPostID] = useState('');

@@ -55,6 +55,7 @@ export default function Profile(){
                             />
                         
                         
+                        
                     </form>
                     <div>@{auth.username} posts:</div>
                 </div>

@@ -11,7 +11,7 @@ function Footer(){
                             <div class= "col">
                                 <div className='col_footer'>
                                     <a href="www.livefromeurope.com">
-                                        <img src="https://www.livefromeurope.eu/lfe.png" alt=""></img>
+                                        <img src="../icons/lfe.png" alt=""></img>
                                     </a>
                                 </div>
                             </div>

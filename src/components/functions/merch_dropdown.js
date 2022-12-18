@@ -9,6 +9,7 @@ const MerchDropdown = (props) => {
 
   const [selected, setSelected] = useState(options[0]);
 
+  
   const handleChange = event => {
     console.log(event.target.value);
     setSelected(event.target.value);
