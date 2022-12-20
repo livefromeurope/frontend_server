@@ -53,7 +53,7 @@ export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,
     <div>
         <div class="image-upload">
             <label for="file-input">
-            <img id="upload_img"  src="./upload.png"  alt="upload img"/>
+            <img id="upload_img"  src="./icons/upload.png"  alt="upload img"/>
             </label>
             <input id="file-input" name='file' type="file" accept="image/*" onChange={(file)=>{select_image(file)}}/>
         </div>

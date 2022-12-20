@@ -146,7 +146,7 @@ export default function Posts(props){
     
     useEffect(()=>{
         Get_Posts(fetch_url,setData);
-    },[props.comment_update,vote_update])
+    },[props.comment_update])
 
 
     function resetValues(){

@@ -33,7 +33,6 @@
 .navbar{
   max-width: 450px;
   margin: 0 auto;
- 
   padding:3px;
 }
 
@@ -184,7 +183,7 @@ padding: 1px;
 
 .post-action{
   
-  font-size:1px;
+
   text-align:right;
   
   -webkit-appearance: none !important;
@@ -205,6 +204,11 @@ padding: 1px;
     margin: 3px;
     padding: 5px;
     font-size: 12px;
+  }
+
+
+  .btn-primary{
+    font-size:15px;
   }
 
 
@@ -378,17 +382,28 @@ a:hover {
 }
 
 .comments_bucket{
-  color:grey;
+  color:white;
   margin: 2px;
-  border-radius: 5px;
+
   margin-left: 10px;
-  background-color: white;
+  padding-left: 5px;
+  background-color: #1e1e22;
+
+  border: solid; 
+  border-width: 1px;
+  border-top:#1e1e22;
+  border-bottom:#1e1e22;
+  border-right:#1e1e22;
+  border-left-color: rgb(41, 41, 42);
+  
 }
 
 #Comment_Area{
   background-color: white;
   color:#004494;
   font-size: 12px;
+
+  
 }
 
 .comment-actions{
@@ -404,6 +419,7 @@ a:hover {
   padding: 2px;
   width: 100%;
 
+
 }
 
 .profile_img{
@@ -411,14 +427,15 @@ a:hover {
 }
 
 .comment-body{
-  background-color: white;
-  border-bottom: #FFF;
+  background-color: #1e1e22;
   width:90%;
-  border-width: 1px;
+
+
 }
 
 .replies{
   margin-left: 10px;
+  
 }
 .comment-actions{
   font-size:8px;
