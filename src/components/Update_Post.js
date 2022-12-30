@@ -13,26 +13,39 @@ async function Update_Post(mongo_post_id,existing_votes,existing_comment_count,u
         console.log(new_comment_count)
         let body_json = {}
         console.log(updatetype)
-        if(updatetype == 'vote_update'){
-            body_json.updatetype = updatetype
-            body_json.votes = new_votes
 
-        }else if(updatetype == 'comment_count_update'){
+        if(updatetype == 'delete'){
 
-
-            body_json.updatetype = updatetype
-            body_json.comment_count = new_comment_count
-        } else{
-            console.log('no update')
-        }
             fetch(url, 
-        {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json'},
-            body: JSON.stringify(body_json)
-        })  .then(response => response.json())
-            .then(data => console.log(data));
-            Get_Posts(url)
+                {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json'}
+                })  .then(response => response.json())
+                    .then(data => console.log(data));
+                    Get_Posts(url)
+
+        }else{
+            if(updatetype == 'vote_update'){
+                body_json.updatetype = updatetype
+                body_json.votes = new_votes
+
+            }else if(updatetype == 'comment_count_update'){
+
+
+                body_json.updatetype = updatetype
+                body_json.comment_count = new_comment_count
+            } else{
+                console.log('no update')
+            }
+                fetch(url, 
+            {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json'},
+                body: JSON.stringify(body_json)
+            })  .then(response => response.json())
+                .then(data => console.log(data));
+                Get_Posts(url)
+        }
 }
 
 export default Update_Post;

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import Update_Post from './Update_Post';
 import europe_countries from './europe_countries2.json'
+import useAuth from './useAuth';
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -11,6 +12,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
     
     
     const [InfoMessage,setInfoMessage] = useState(0);
+    let {auth} = useAuth();
 
     const setInfo = 
     post_info && 
@@ -83,6 +85,24 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                 <div className="post-container">
                     <div className="post-actions">
                         <div className='row flex-nowrap'>
+                        <div className="post-action" >
+
+                            {auth.image &&
+                                <div>
+                                <button type='button' onClick={()=> 
+                                    {
+                                        if(window.confirm('Are you sure to delete post?')){
+                                        Update_Post(post_mongo_id,null,null,'delete')
+                                        console.log('delete') 
+                                        }   
+                                    }
+                                    }
+                                        id='small-button' class="btn btn-primary btn-sm"> 
+                                    delete
+                                </button>
+                                </div>
+                            }
+                            </div> 
                             <div className="post-action" >
 
                                 { 
@@ -126,6 +146,8 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                 </button>
                             }
                             </div> 
+
+
                             
                         </div>
                     </div>
