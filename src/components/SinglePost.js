@@ -84,7 +84,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                 {/*</Link>*/}
                 <div className="post-container">
                     <div className='row flex-nowrap'>                
-                        <div className="post-action" >
+                        <div className="post-action-left" >
                             {auth.image &&
                                 <div>
                                 <button type='button' onClick={()=> 

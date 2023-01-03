@@ -26,12 +26,21 @@ function Singlepage(){
     return(
         <section>
             <div class= "container">
+
                 <div className="Merch" ref={scrollRef} style={{ overflow: "auto" }}>
+                <div>
+                                <img height="50px"src="../merch/white_arrow.png"></img>
+                                </div>
+                
                 <div style={{ whiteSpace: "nowrap",display: "flex"}}>
+                
                     {
+                        
                         merch && merch.length>0 && merch.map((merch_item)=>
                             (
+
                                 <div class="merch_pics">
+                                    
                                 <img src={merch_item.merch_url}></img>
                                 </div>
                             )
