@@ -46,7 +46,7 @@ export default function Posts(props){
         window.location.href.match(baseurl+'profile/*') ||
         props.show_filter
         ){
-        show_spotlight = false
+        show_spotlight = true
     }
 
     
@@ -244,11 +244,23 @@ export default function Posts(props){
                     }
             </div>
             {show_spotlight  && <div className='Spotlight'>
-            spotlight
+            spotlight: 
                 <div>
-                    test
+                🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦
+                    <iframe style={{
+                        width: '100%',height:"400px", "border-radius":"20px", 
+                        border:"solid", 
+                        "border-bottom-color":"#ffd700",
+                        "border-left-color":"#ffd700",
+                        "border-top-color":"#0057B7",
+                        "border-right-color":"#0057B7",
+                        }}  
+                        src="https://deepstatemap.live/en#7/48.129/36.953" >
+                    </iframe>    
                 </div>
+                lfe-posts:
             </div>
+            
             }
             
             

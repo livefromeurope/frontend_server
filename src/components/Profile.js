@@ -54,7 +54,12 @@ export default function Profile(){
                             required
                             />
                         
-                        
+                        <div ClassName="post-actions-right">
+                          <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
+                                EDIT
+                        </button>
+                        </div>
+                    
                         
                     </form>
                     <div>@{auth.username} posts:</div>

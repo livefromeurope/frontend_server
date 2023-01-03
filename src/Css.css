@@ -152,11 +152,11 @@ img[src=""] {
   font-size: 10px;
   text-align: right;
   width: 55px;
-  margin-left:100%;
+  margin-left:auto;
   color: grey;
   }
 
-  .category  
+.category  
   {
   color: grey;
   }
@@ -175,20 +175,19 @@ img[src=""] {
 
 
 
-.post-actions{
-
-margin-left: 65%;
+.post-actions-right{
+margin-left: auto;
 padding: 1px;
 }
 
 .post-action{
   
-
-  text-align:right;
-  
+  font-size: 14px;
   -webkit-appearance: none !important;
   
+  
 }
+
 
 /* singlepost category */
 
@@ -196,6 +195,7 @@ padding: 1px;
 
 /* button */
   .btn{
+    white-space: nowrap;
     background-color:  #1e1e22 ;
     border-color:white;
     border-width: 1px;

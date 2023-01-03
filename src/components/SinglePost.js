@@ -83,10 +83,8 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                     </div>
                 {/*</Link>*/}
                 <div className="post-container">
-                    <div className="post-actions">
-                        <div className='row flex-nowrap'>
+                    <div className='row flex-nowrap'>                
                         <div className="post-action" >
-
                             {auth.image &&
                                 <div>
                                 <button type='button' onClick={()=> 
@@ -102,55 +100,63 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                 </button>
                                 </div>
                             }
-                            </div> 
-                            <div className="post-action" >
-
-                                { 
-                                    <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
-                                        <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
-                                            {post_comment_count} comments
-                                        </button>
-                                    </Link>
-                                
-                                }
-                            </div>
-                            <div className="post-action" >
-                            {!setLikes &&
-                                <button type='button' onClick={ ()=>(
-                                        Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
-                                        voted(post_mongo_id+post_votes),
-                                        post_likes.push(post_id)
-                                        //update posts?
-                                        
-
-                                        )} id='small-button' class="btn btn-primary btn-sm"> 
-                                    {post_votes} votes
-                                </button>
-                            }
-                            {setLikes &&
-                                <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
-                                voted
-                            </button>
-                            }
-                            </div> 
-                            <div className="post-action" >
-                            {
-                                <button type='button' onClick={()=> 
-                                    {
-                                        set_post_info({id: post_id, type: 'is_info'})
-
-                                        copyText()}
-                                    }
-                                        id='small-button' class="btn btn-primary btn-sm"> 
-                                    share
-                                </button>
-                            }
-                            </div> 
-
-
-                            
                         </div>
+
+                        <div className="post-actions-right">
+
+                            <div className='row flex-nowrap'>
+
+                                <div className="post-action" >
+
+                                    { 
+                                        <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
+                                            <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
+                                                {post_comment_count} comments
+                                            </button>
+                                        </Link>
+                                    
+                                    }
+                                </div>
+                                <div className="post-action" >
+                                {!setLikes &&
+                                    <button type='button' onClick={ ()=>(
+                                            Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
+                                            voted(post_mongo_id+post_votes),
+                                            post_likes.push(post_id)
+                                            //update posts?
+                                            
+
+                                            )} id='small-button' class="btn btn-primary btn-sm"> 
+                                        {post_votes} votes
+                                    </button>
+                                }
+                                {setLikes &&
+                                    <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
+                                    voted
+                                </button>
+                                }
+                                </div> 
+                                <div className="post-action" >
+                                {
+                                    <button type='button' onClick={()=> 
+                                        {
+                                            set_post_info({id: post_id, type: 'is_info'})
+
+                                            copyText()}
+                                        }
+                                            id='small-button' class="btn btn-primary btn-sm"> 
+                                        share
+                                    </button>
+                                }
+                                </div> 
+
+
+                                
+                            </div>
+                        </div>
+
                     </div>
+
                     </div>
                     {setInfo &&
                     <div className="postinfobox">
