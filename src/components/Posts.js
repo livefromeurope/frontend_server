@@ -47,7 +47,7 @@ export default function Posts(props){
         props.show_filter
         ){
         console.log('show_false')
-        show_spotlight = false
+        show_spotlight = true
     }
 
     
