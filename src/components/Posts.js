@@ -2,11 +2,11 @@ import React, {useState, useEffect } from 'react';
 import Multiselect from 'multiselect-react-dropdown';
 import useInfiniteScroll from "./useInfiniteScroll";
 import SinglePost from "./SinglePost";
-import SinglePost_Horizontal from './SinglePost_Horizontal';
 import Get_Posts from './Get_Posts';
 import europe_countries from './europe_countries.json';
 import { useHorizontalScroll} from './functions/useHorizontalScroll';
 import urlify from './functions/urlify';
+import Spotlight from './pages/Spotlight';
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -39,14 +39,15 @@ export default function Posts(props){
     let fetchurl = process.env.REACT_APP_POSTSERVER_URL
     let baseurl = process.env.REACT_APP_FRONTEND_URL
     let show_fetch = true
-    let show_spotlight = false
+    let show_spotlight = true
 
     if( window.location.href.match(baseurl+'category/*') || 
         window.location.href.match(baseurl+'user/*') ||
         window.location.href.match(baseurl+'profile/*') ||
         props.show_filter
         ){
-        show_spotlight = true
+        console.log('show_false')
+        show_spotlight = false
     }
 
     
@@ -80,6 +81,7 @@ export default function Posts(props){
             let category = window_url.split('/').pop();
             add = '?category=' + category + '&limit=' + limit + '&date=' + now_date
             //show_filter = false
+            
             show_fetch = true
             show_spotlight = false
         }else if(window_url.match(baseurl+'user/*')){
@@ -100,9 +102,11 @@ export default function Posts(props){
             let id = window_url.split('/').pop();
             add = '?id=' + id + '&limit=' + limit + '&date=' + now_date
             //show_filter = false
+            console.log('show_true')
             show_fetch = false
             show_spotlight = true
         }
+
         //console.log(fetchurl + 'posts' + add + '&date=' + now_date)
         setFetchUrl(fetchurl + 'posts' + add)
         //console.log(fetch_url)
@@ -243,19 +247,26 @@ export default function Posts(props){
                     />
                     }
             </div>
-            {show_spotlight  && <div className='Spotlight'>
+
+            {/*
+            <Spotlight
+                content = {fetch_url}
+            />
+                */}
+
+            {show_spotlight  &&  <div className='Spotlight'>
             spotlight: 
                 <div>
                 🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦
                     <iframe style={{
-                        width: '100%',height:"400px", "border-radius":"20px", 
+                        width: '100%',height:"450px", "border-radius":"20px", 
                         border:"solid", 
                         "border-bottom-color":"#ffd700",
                         "border-left-color":"#ffd700",
                         "border-top-color":"#0057B7",
                         "border-right-color":"#0057B7",
                         }}  
-                        src="https://deepstatemap.live/en#7/48.129/36.953" >
+                        src="https://deepstatemap.live/en#6/48.129/36.953" >
                     </iframe>    
                 </div>
                 lfe-posts:

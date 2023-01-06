@@ -115,7 +115,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                                             copyText()}
                                         }>
-                                        <img id="upload_img"  src="./icons/share.png" />
+                                        <img id="upload_img"  src="../icons/share.png" />
                                     </label>
                                     </div>
                                 }
