@@ -39,10 +39,10 @@ function Spotlight({content,type,category,selected_country}){
         longitude = selected_country[0].coordinates.longitude
         let bbox = latLngToBounds(latitude,longitude,7,400,400)
 
-        let south = latitude - 8
-        let north = latitude + 8
-        let west = longitude - 4
-        let east = longitude + 4
+        let south = latitude - 4
+        let north = latitude
+        let west = longitude
+        let east = longitude
         console.log(latitude)
 
         console.log(bbox[1][0])
