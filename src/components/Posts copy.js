@@ -4,7 +4,6 @@ import useInfiniteScroll from "./useInfiniteScroll";
 import SinglePost from "./SinglePost";
 import Get_Posts from './Get_Posts';
 import europe_countries from './europe_countries.json';
-import europe_countries_json from './europe_countries2.json';
 import { useHorizontalScroll} from './functions/useHorizontalScroll';
 import urlify from './functions/urlify';
 import Spotlight from './pages/Spotlight';
@@ -27,11 +26,6 @@ export default function Posts(props){
     const [PostInfo,setPostInfo] = useState([]);
     const [PostLikes,setPostLikes] = useState([]);
     let [fetch_url,setFetchUrl] = useState('');
-    let [spotlight_type,setSpotlight_type] = useState('main');
-    let [show_spotlight,setShow_spotlight] = useState(true);
-    let [url_category,setURLCategory] = useState('');
-    let [selected_country,setCountry] = useState({});
-
     
     
 
@@ -45,7 +39,16 @@ export default function Posts(props){
     let fetchurl = process.env.REACT_APP_POSTSERVER_URL
     let baseurl = process.env.REACT_APP_FRONTEND_URL
     let show_fetch = true
+    let show_spotlight = true
 
+    if( window.location.href.match(baseurl+'category/*') || 
+        window.location.href.match(baseurl+'user/*') ||
+        window.location.href.match(baseurl+'profile/*') ||
+        props.show_filter
+        ){
+        console.log('show_false')
+        show_spotlight = true
+    }
 
     
     function set_fetch_url(){
@@ -76,27 +79,24 @@ export default function Posts(props){
 
         }else if(window_url.match(baseurl+'category/*')){
             let category = window_url.split('/').pop();
-            setURLCategory(category)
             add = '?category=' + category + '&limit=' + limit + '&date=' + now_date
             //show_filter = false
-            setCountry(europe_countries_json[category])
+            
             show_fetch = true
-            setShow_spotlight(true)
-            setSpotlight_type('category')
+            show_spotlight = false
         }else if(window_url.match(baseurl+'user/*')){
+            console.log('until herer')
             let category = window_url.split('/').pop();
             add = '?author=' + category + '&limit=' + limit+ '&date=' + now_date
             //show_filter = false
             show_fetch = true
-            setSpotlight_type('user')
-            setShow_spotlight(true)
-
+            show_spotlight = false
         }else if(window_url.match(baseurl+'profile/*')){
             let category = window_url.split('/').pop();
             add = '?author=' + category + '&limit=' + limit+ '&date=' + now_date
             //show_filter = false
             show_fetch = true
-            setShow_spotlight(false)
+            show_spotlight = false
         } 
         else{
             let id = window_url.split('/').pop();
@@ -144,7 +144,7 @@ export default function Posts(props){
 
 
     useEffect(()=>{
-        set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry)
+        set_fetch_url()
     },[props.userid,props.show_filter])
 
     
@@ -248,21 +248,33 @@ export default function Posts(props){
                     }
             </div>
 
+            {/*
+            <Spotlight
+                content = {fetch_url}
+            />
+                */}
 
             {show_spotlight  &&  <div className='Spotlight'>
+            spotlight: 
                 <div>
-                    <Spotlight
-                        content = {fetch_url}
-                        type = {spotlight_type}
-                        category = {url_category}
-                        selected_country = {selected_country}
-                    />  
+                🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦🇺🇦
+                    <iframe style={{
+                        width: '100%',height:"450px", "border-radius":"20px", 
+                        border:"solid", 
+                        "border-bottom-color":"#ffd700",
+                        "border-left-color":"#ffd700",
+                        "border-top-color":"#0057B7",
+                        "border-right-color":"#0057B7",
+                        }}  
+                        src="https://deepstatemap.live/en#6/48.129/36.953" >
+                    </iframe>    
                 </div>
                 lfe-posts:
             </div>
             
             }
-
+            
+            
             {
                 data && data.length>0 && data.map((item)=>
                     (
