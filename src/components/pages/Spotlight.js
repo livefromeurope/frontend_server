@@ -1,6 +1,6 @@
 
 
-function Spotlight({content,type,category,selected_country}){
+function Spotlight({type,category,selected_country}){
 
 
 
@@ -30,25 +30,26 @@ function Spotlight({content,type,category,selected_country}){
 
 
     let iframe_url = ''
-    console.log(type)
     let latitude = ''
     let longitude = ''
+    let height = '450px'
 
     if(type == 'category'){
         latitude = selected_country[0].coordinates.latitude
         longitude = selected_country[0].coordinates.longitude
         let bbox = latLngToBounds(latitude,longitude,7,400,400)
 
-        let south = latitude - 4
-        let north = latitude
-        let west = longitude
-        let east = longitude
-        console.log(latitude)
+        let south = Number(latitude) - 1.5;
+        let north = Number(latitude) + 1.5;
+        let west = Number(longitude) - 1.5;
+        let east = Number(longitude) + 1.5;
+        console.log('lat:' + latitude + ' lng:' + longitude + ' south: ' + south + ' north : ' + north 
+            + ' west: ' + west + ' east: ' + east)
 
-        console.log(bbox[1][0])
         iframe_url = 'https://www.openstreetmap.org/export/embed.html?bbox=' +west+'%2C'+south+'%2C'+east+'%2C'+north+'&amp;layer=mapnik'
         //iframe_url = "https://www.openstreetmap.org/export/embed.html?bbox=11.700439453125%2C42.13082130188811%2C19.489746093750004%2C48.857487002645485&amp;layer=mapnik"
         console.log(iframe_url)
+        height = '300px'
     }else if(type == 'user'){
 
         iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
@@ -67,7 +68,7 @@ function Spotlight({content,type,category,selected_country}){
                 spotlight: {category}
                 <iframe 
                 style={{
-                    width: '100%',height:"450px", "border-radius":"20px", 
+                    width: '100%',height:height, "border-radius":"20px", 
                     border:"solid", 
                     "border-bottom-color":"#ffd700",
                     "border-left-color":"#ffd700",
