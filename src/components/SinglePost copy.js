@@ -108,15 +108,16 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                             <div className="post-action" >
                                 {
-                                    <button type='button' onClick={()=> 
+                                    <div>
+                                    <label for="share" onClick={()=> 
                                         {
                                             set_post_info({id: post_id, type: 'is_info'})
 
                                             copyText()}
-                                        }
-                                            id='small-button' class="btn btn-primary btn-sm"> 
-                                        share
-                                    </button>
+                                        }>
+                                        <img id="upload_img" style={{width: '20px',"margin-top":"25%"}} src="../icons/share.png" />
+                                    </label>
+                                    </div>
                                 }
                                 </div> 
 

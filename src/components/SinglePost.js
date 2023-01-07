@@ -108,7 +108,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                             <div className="post-action" >
                                 {
-                                    <div>
+                                    <div id = 'post-icons'>
                                     <label for="share" onClick={()=> 
                                         {
                                             set_post_info({id: post_id, type: 'is_info'})
@@ -125,30 +125,44 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                                     { 
                                         <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
-                                            <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
-                                                {post_comment_count} comments
-                                            </button>
+                                            <div id = 'post-icons'>
+                                            <label for="comments">
+                                                <img id="comments_img" style={{width: '20px',"margin-top":"20%"}} src="../icons/comments.png" />
+                                                {post_comment_count}
+                                            </label>
+                                            </div>
+
                                         </Link>
                                     
                                     }
                                 </div>
                                 <div className="post-action" >
-                                {!setLikes &&
-                                    <button type='button' onClick={ ()=>(
-                                            Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
-                                            voted(post_mongo_id+post_votes),
-                                            post_likes.push(post_id)
-                                            //update posts?
-                                            
 
-                                            )} id='small-button' class="btn btn-primary btn-sm"> 
-                                        {post_votes} votes
-                                    </button>
+                                {!setLikes &&
+
+                                    <div id = 'post-icons'>
+                                        <label for='vote' onClick={ ()=>(
+                                                Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
+                                                voted(post_mongo_id+post_votes),
+                                                post_likes.push(post_id)
+                                                //update posts?
+                                                )} >
+                                            <img id="upload_img" style={{width: '20px',"margin-top":"20%","margin-right":'5px'}} src="../icons/star_nofill.png" />
+                                            {post_votes}
+                                        </label>
+                                    </div>
+
+
                                 }
+
+
                                 {setLikes &&
-                                    <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
-                                    voted
-                                </button>
+                                    <div id = 'post-icons'>
+                                    <label for='vote'>
+                                        
+                                        <img id="upload_img" style={{width: '25px',"margin-top":"15%","padding-left":"2px"}} src="../icons/star_fill.png" />
+                                    </label>
+                                    </div>
                                 }
                                 </div> 
 
