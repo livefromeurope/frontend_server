@@ -43,6 +43,7 @@ function Spotlight({type,category,selected_country}){
         let north = Number(latitude) + 1.5;
         let west = Number(longitude) - 1.5;
         let east = Number(longitude) + 1.5;
+        
         console.log('lat:' + latitude + ' lng:' + longitude + ' south: ' + south + ' north : ' + north 
             + ' west: ' + west + ' east: ' + east)
 

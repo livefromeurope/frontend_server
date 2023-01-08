@@ -64,6 +64,7 @@ export default function Posts(props){
             show_spotlight = true
             console.log(props.userid)
             setSpotlight_type('main')
+            setShow_spotlight(true)
             if(props.userid && props.show_filter === true && 1 == 2){
                 
                 console.log(props.userid.toLowerCase())
@@ -71,7 +72,7 @@ export default function Posts(props){
                 props.setSelectedValues([{country},{"country":'europe'}])
 
                 console.log(props.selectedValues)
-                setShow_spotlight(true)
+                
                 add = '?category=' + country + '&category=europe&limit=' + limit + '&date=' + now_date
                 //Get_Posts(fetch_url,setData);
             }
@@ -91,7 +92,7 @@ export default function Posts(props){
             //show_filter = false
             show_fetch = true
             setSpotlight_type('user')
-            setShow_spotlight(true)
+            setShow_spotlight(false)
 
         }else if(window_url.match(baseurl+'profile/*')){
             let category = window_url.split('/').pop();
