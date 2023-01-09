@@ -32,6 +32,16 @@ export default function Posts(props){
     let [url_category,setURLCategory] = useState('');
     let [selected_country,setCountry] = useState({});
 
+
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+        setLoading(false);
+        }, 2000);
+    }, []);
+
     
     
 
@@ -205,7 +215,15 @@ export default function Posts(props){
 
     return(
         <div class="jumbotron">
-                <div classname= "col-1">
+
+            {loading ? (
+            <div className="loader-container">
+                <img src="../icons/loading.gif"></img>
+            </div>
+            ) : (
+                
+                <div>
+                    <div classname= "col-1">
                     {props.show_filter &&
                     <Multiselect
                     //customCloseIcon={<>🇪🇺</>}
@@ -252,7 +270,7 @@ export default function Posts(props){
                     }
             </div>
 
-
+            
             {show_spotlight  &&  <div className='Spotlight'>
                 <div>
                     <Spotlight
@@ -297,6 +315,9 @@ export default function Posts(props){
                 <button type='button' onClick={fetchMoreListItems} id="fetch_button" class="btn">fetch more...</button>   
             </div>
             }
+            </div>
+        )}
+        
     </div>
     );
 }
