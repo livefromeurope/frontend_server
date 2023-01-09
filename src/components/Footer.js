@@ -22,15 +22,15 @@ function Footer(){
                                 </a>
                                 </div>
                             </div>
-                            
+
                             {/*
-                            <div class= "col">
-                                <div className='col_footer'>
-                                <a >
-                                    <Scroll_To_Top/>
-                                </a>
+                                <div class= "col">
+                                    <div className='col_footer'>
+                                    <a >
+                                        <Scroll_To_Top/>
+                                    </a>
+                                    </div>
                                 </div>
-                            </div>
                             */}
                 </div>
                 </div>

@@ -160,7 +160,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                     <div id = 'post-icons'>
                                     <label for='vote'>
                                         
-                                        <img id="upload_img" style={{width: '25px',"margin-top":"15%","padding-left":"2px","margin-right":"7px"}} src="../icons/star_fill.png" />
+                                        <img id="upload_img" style={{width: '25px',"margin-top":"8%","padding-left":"1px","margin-right":"8px"}} src="../icons/star_fill.png" />
                                     </label>
                                     </div>
                                 }

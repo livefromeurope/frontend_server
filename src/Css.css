@@ -6,13 +6,14 @@
   padding:5px;
   width:100%;
   overflow-x:hidden;
-  min-height: 100%;
-
 }
 
 .about{
   text-align: justify;
 }
+
+
+
 
 /* background */
 .container {
@@ -91,6 +92,41 @@
 
 .nav-item{
   margin-right: 10px;
+}
+
+
+.Footer{
+  text-align:center;
+  background-color: #1e1e22;
+  color:white;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  border: 1px;
+  border:solid;
+  border-bottom-color:  #1e1e22;
+  border-left-color:  #1e1e22 ;
+  border-right-color: #1e1e22 ;
+  border-width: 1px; 
+  border-top-color: rgb(41, 41, 42);
+
+}
+
+.lfe_footer{
+  text-align:right;
+  margin-right: 10px;
+  margin-left: 10px;
+  width:70%;
+
+}
+
+
+.Footer img
+{
+    cursor: pointer;
+    margin: 5px;
+    max-width: 50px;
+  
 }
 
 
@@ -195,8 +231,6 @@ padding-right: 6%;
 
 /* singlepost category */
 
-
-
 /* button */
   .btn{
     white-space: nowrap;
@@ -242,11 +276,10 @@ padding-right: 6%;
 } 
 
 /* button */
-  .form-group{
-
-    margin: 0px;
-    
-  }
+.form-group{
+  margin: 0px;
+  
+}
 /* button */
 
 
@@ -327,42 +360,7 @@ a:hover {
 /* upload foto */
 
 
-.Footer{
-  text-align:center;
-  background-color: #004494;
-  color:white;
 
- /*
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  */
-  
-
-
-}
-
-.lfe_footer{
-  text-align:right;
-  margin-right: 10px;
-  margin-left: 10px;
-  width:70%;
-  
-  /*position: relative;*/
-
-}
-
-
-.Footer img
-{
-    cursor: pointer;
-    margin: 5px;
-    max-width: 50px;
-
-
-  
-}
 
 /* input */
 #Textarea{
@@ -494,7 +492,7 @@ a:hover {
 
 .loader-container {
   width: 450px;
-  height: 100vh;
+  height: 60vh;
   display: flex;
   justify-content: center;
   align-items: center;
