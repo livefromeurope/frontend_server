@@ -218,7 +218,7 @@ export default function Posts(props){
 
             {loading ? (
             <div className="loader-container">
-                <img src="../icons/loading.gif"></img>
+                <img src="../icons/loading.svg"></img>
             </div>
             ) : (
                 
