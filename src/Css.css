@@ -491,11 +491,11 @@ a:hover {
 }
 
 .loader-container {
-  width: 450px;
-  height: 60vh;
+  
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+
   z-index: 1;
 }
