@@ -39,7 +39,7 @@ export default function Posts(props){
         setLoading(true);
         setTimeout(() => {
         setLoading(false);
-        }, 2000);
+        }, 2500);
     }, []);
 
     
@@ -72,12 +72,12 @@ export default function Posts(props){
             //show_filter = false
             show_fetch = true
             show_spotlight = true
-            console.log(props.userid)
             setSpotlight_type('main')
             setShow_spotlight(true)
+            console.log(0)
             if(props.userid && props.show_filter === true && 1 == 2){
                 
-                console.log(props.userid.toLowerCase())
+
                 let country = props.userid.toLowerCase()
                 props.setSelectedValues([{country},{"country":'europe'}])
 
@@ -95,6 +95,7 @@ export default function Posts(props){
             setCountry(europe_countries_json[category])
             show_fetch = true
             setShow_spotlight(true)
+            console.log(1)
             setSpotlight_type('category')
         }else if(window_url.match(baseurl+'user/*')){
             let category = window_url.split('/').pop();
@@ -102,6 +103,7 @@ export default function Posts(props){
             //show_filter = false
             show_fetch = true
             setSpotlight_type('user')
+            console.log(2)
             setShow_spotlight(false)
 
         }else if(window_url.match(baseurl+'profile/*')){
@@ -109,13 +111,14 @@ export default function Posts(props){
             add = '?author=' + category + '&limit=' + limit+ '&date=' + now_date
             //show_filter = false
             show_fetch = true
+            console.log(3)
             setShow_spotlight(false)
         } 
         else{
             let id = window_url.split('/').pop();
             add = '?id=' + id + '&limit=' + limit + '&date=' + now_date
             //show_filter = false
-            console.log('show_true')
+            console.log(4)
             show_fetch = false
             setSpotlight_type('main')
             setShow_spotlight(true)
@@ -125,6 +128,8 @@ export default function Posts(props){
         setFetchUrl(fetchurl + 'posts' + add)
         //console.log(fetch_url)
         fetch_url = fetchurl + 'posts' + add
+        console.log(fetch_url)
+
         Get_Posts(fetch_url,setData);
         
 
@@ -143,12 +148,13 @@ export default function Posts(props){
         //console.log('fetchmore')
         //console.log(fetch_url)
         
-        
+        console.log(last_data_item)
         fetch_url=fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date'])
         setFetchUrl(fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date']))
         
-       // console.log('passurl: ' + fetch_url)
+        // console.log('passurl: ' + fetch_url)
         
+
         Get_Posts(fetch_url,setData,'fetch_more',setIsFetching);
 
         //setData(prevState => ([...prevState, ...Array.from(Array(2).keys(), n => n + prevState.length + 1)]));
@@ -158,7 +164,7 @@ export default function Posts(props){
 
 
     useEffect(()=>{
-        set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry)
+        set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,Get_Posts,setData,fetchurl)
     },[props.userid,props.show_filter])
 
     
@@ -280,33 +286,32 @@ export default function Posts(props){
                     />  
                 </div>
                 lfe-posts:
-            </div>
-            
+                </div>
             }
 
             {
                 data && data.length>0 && data.map((item)=>
                     (
-                    //console.log(test1),
-                    //props.setpostData({item}),
-                    <SinglePost 
-                        post_id={item.id}
-                        post_info={PostInfo}
-                        set_post_info={setPostInfo}
-                        post_author={item.author}
-                        post_content={urlify(item.content)}
-                        post_image={item.image}
-                        post_created_date={item.created_date}
-                        post_category={item.category}
-                        post_comment_count={item.comment_count}
-                        post_votes={item.votes}
-                        post_mongo_id={item._id}                    
-                        voted={UpdateVoteUpdate}
-                        post_likes={PostLikes}
-                        set_post_likes={setPostLikes}
-                        set_saved_MongoPostID={props.set_saved_MongoPostID}
-                        saved_MongoPostID={props.saved_MongoPostID}
-                    />
+                        //console.log(test1),
+                        //props.setpostData({item}),
+                        <SinglePost 
+                            post_id={item.id}
+                            post_info={PostInfo}
+                            set_post_info={setPostInfo}
+                            post_author={item.author}
+                            post_content={urlify(item.content)}
+                            post_image={item.image}
+                            post_created_date={item.created_date}
+                            post_category={item.category}
+                            post_comment_count={item.comment_count}
+                            post_votes={item.votes}
+                            post_mongo_id={item._id}                    
+                            voted={UpdateVoteUpdate}
+                            post_likes={PostLikes}
+                            set_post_likes={setPostLikes}
+                            set_saved_MongoPostID={props.set_saved_MongoPostID}
+                            saved_MongoPostID={props.saved_MongoPostID}
+                        />
                     )
                 )
             }

@@ -9,7 +9,7 @@ async function Get_Posts(pass_url, setData,fetchtype, setIsFetching){
             }
         }
         ).then(function(response){
-            //console.log(response.json())
+            
             return response.json();
             
         }).then(function(myJson){
@@ -21,6 +21,7 @@ async function Get_Posts(pass_url, setData,fetchtype, setIsFetching){
                 setIsFetching(false);
                 console.log('fetching')
             }else{
+                console.log('dataget')
                 setData(myJson.posts);
                 
             }
