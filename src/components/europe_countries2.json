@@ -34,7 +34,8 @@
     "switzerland":[{"id":1,"emoticon":"🇨🇭","coordinates":{"latitude":"46.818188","longitude":"8.227512"}}],
     "sweden":[{"id":1,"emoticon":"🇸🇪","coordinates":{"latitude":"60.128161","longitude":"18.643501"}}],
     "unitedkingdom":[{"id":1,"emoticon":"🇬🇧","coordinates":{"latitude":"55.378051","longitude":"-3.435973"}}],
-    "ukraine":[{"id":1,"emoticon":"🇺🇦","coordinates":{"latitude":"48.379433","longitude":"31.16558"}}]
+    "ukraine":[{"id":1,"emoticon":"🇺🇦","coordinates":{"latitude":"48.379433","longitude":"31.16558"}}],
+    "earth":[{"id":1,"emoticon":"🌍","coordinates":{"latitude":"48.379433","longitude":"31.16558"}}]
     }
 
 
