@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect,useRef } from 'react';
 import Multiselect from 'multiselect-react-dropdown';
 import useInfiniteScroll from "./useInfiniteScroll";
 import SinglePost from "./SinglePost";
@@ -35,14 +35,15 @@ export default function Posts(props){
 
     const [loading, setLoading] = useState(false);
 
+    
     useEffect(() => {
         setLoading(true);
         setTimeout(() => {
-        setLoading(false);
-        }, 2500);
+            setLoading(false);
+        }, 1000);
     }, []);
-
     
+
     
 
     //let [selectedValues,setSelectedValues] = useState([])
