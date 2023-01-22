@@ -296,8 +296,7 @@ export default function Posts(props){
                     (
                         //console.log(imageExists(item.content)),
                         //props.setpostData({item}),
-                        imageExists(item.content) &&
-    
+                        //imageExists(item.content) &&
                         <SinglePost 
                             post_id={item.id}
                             post_info={PostInfo}
