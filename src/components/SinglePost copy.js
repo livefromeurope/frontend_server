@@ -125,6 +125,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                                     { 
                                         <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
+                                            
                                             <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
                                                 {post_comment_count} comments
                                             </button>

@@ -273,8 +273,7 @@ export default function Posts(props){
             </div>
             
             }
-            
-            
+
             {
                 data && data.length>0 && data.map((item)=>
                     (

@@ -55,7 +55,7 @@ export default function Profile(){
                             />
                         
                         <div ClassName="post-actions-right">
-                          <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
+                            <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
                                 EDIT
                         </button>
                         </div>

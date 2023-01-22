@@ -28,9 +28,10 @@ function Singlepage(){
             <div class= "container">
 
                 <div className="Merch" ref={scrollRef} style={{ overflow: "auto" }}>
+
                 <div>
-                                <img height="50px"src="../merch/white_arrow.png"></img>
-                                </div>
+                    <img height="50px"src="../merch/white_arrow.png"></img>
+                </div>
                 
                 <div style={{ whiteSpace: "nowrap",display: "flex"}}>
                 

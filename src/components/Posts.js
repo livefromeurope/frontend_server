@@ -8,6 +8,7 @@ import europe_countries_json from './europe_countries2.json';
 import { useHorizontalScroll} from './functions/useHorizontalScroll';
 import urlify from './functions/urlify';
 import Spotlight from './pages/Spotlight';
+import imageExists from './functions/check_if_img_exists';
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -293,8 +294,10 @@ export default function Posts(props){
             {
                 data && data.length>0 && data.map((item)=>
                     (
-                        //console.log(test1),
+                        //console.log(imageExists(item.content)),
                         //props.setpostData({item}),
+                        imageExists(item.content) &&
+    
                         <SinglePost 
                             post_id={item.id}
                             post_info={PostInfo}
@@ -313,6 +316,7 @@ export default function Posts(props){
                             set_saved_MongoPostID={props.set_saved_MongoPostID}
                             saved_MongoPostID={props.saved_MongoPostID}
                         />
+                        
                     )
                 )
             }
