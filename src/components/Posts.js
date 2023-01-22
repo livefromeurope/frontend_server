@@ -295,28 +295,28 @@ export default function Posts(props){
 
                 data && data.length>0 && data.map((item)=>
                     (
+                        //{imageExists(item.content) &&
                         <div>
-                        {imageExists(item.content) &&
-
-                        <SinglePost 
-                            post_id={item.id}
-                            post_info={PostInfo}
-                            set_post_info={setPostInfo}
-                            post_author={item.author}
-                            post_content={urlify(item.content)}
-                            post_image={item.image}
-                            post_created_date={item.created_date}
-                            post_category={item.category}
-                            post_comment_count={item.comment_count}
-                            post_votes={item.votes}
-                            post_mongo_id={item._id}                    
-                            voted={UpdateVoteUpdate}
-                            post_likes={PostLikes}
-                            set_post_likes={setPostLikes}
-                            set_saved_MongoPostID={props.set_saved_MongoPostID}
-                            saved_MongoPostID={props.saved_MongoPostID}
-                        />
-                        }
+                            
+                            <SinglePost 
+                                post_id={item.id}
+                                post_info={PostInfo}
+                                set_post_info={setPostInfo}
+                                post_author={item.author}
+                                post_content={urlify(item.content)}
+                                post_image={item.image}
+                                post_created_date={item.created_date}
+                                post_category={item.category}
+                                post_comment_count={item.comment_count}
+                                post_votes={item.votes}
+                                post_mongo_id={item._id}                    
+                                voted={UpdateVoteUpdate}
+                                post_likes={PostLikes}
+                                set_post_likes={setPostLikes}
+                                set_saved_MongoPostID={props.set_saved_MongoPostID}
+                                saved_MongoPostID={props.saved_MongoPostID}
+                            />
+                            
                         </div>
                     )
                     
