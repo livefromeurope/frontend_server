@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import Update_Post from './Update_Post';
 import europe_countries from './europe_countries2.json'
 import useAuth from './useAuth';
+import imageExists from './functions/check_if_img_exists';
+
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -49,9 +51,17 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
 
     return(
+
+
+        
                 <div className = 'singleposts_bucket' key={post_id} id={post_id}>
+
+
                 {/*<Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}> */}
-                    <div >
+
+                
+                <div>
+                    <div>
                         <div class ="singleposts" >
                             <div class="row flex-nowrap" >
                                 <div class="col-5">
@@ -180,7 +190,18 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                         {InfoMessage}
                     </div>
                     }
+
+                    
+
+                    
                 </div>
+
+        
+    
+        </div>
+        
+
+
 
     );
 }
