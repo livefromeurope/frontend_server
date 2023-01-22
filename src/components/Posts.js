@@ -294,9 +294,8 @@ export default function Posts(props){
             {
                 data && data.length>0 && data.map((item)=>
                     (
-                        //console.log(imageExists(item.content)),
-                        //props.setpostData({item}),
-                        //imageExists(item.content) &&
+                        (imageExists(item.content) &&
+                            <div>
                         <SinglePost 
                             post_id={item.id}
                             post_info={PostInfo}
@@ -315,6 +314,8 @@ export default function Posts(props){
                             set_saved_MongoPostID={props.set_saved_MongoPostID}
                             saved_MongoPostID={props.saved_MongoPostID}
                         />
+                        </div>
+                        )
                         
                     )
                 )
