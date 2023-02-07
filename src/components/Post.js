@@ -76,7 +76,8 @@ function Post(){
             <div>
             {
                 postdata && postdata.length>0 && postdata.map((post)=>{
-                checkImage(post.content,setgoodUrl)
+                //checkImage(post.content,setgoodUrl)
+                setgoodUrl(true)
                 if(goodUrl){
                     return  <div>
                             <SinglePost

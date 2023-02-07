@@ -323,8 +323,9 @@ export default function Posts(props){
 
                 data && data.length>0 && data.map( (item) => 
                         {
-                            const good_url = goodUrl && goodUrl.includes(item.id);
-                            checkImage(item.content,setgoodUrl,goodUrl,item.id);
+                            //const good_url = goodUrl && goodUrl.includes(item.id);
+                            //checkImage(item.content,setgoodUrl,goodUrl,item.id);
+                            var good_url = false;
                             if(!good_url){
                             //{imageExists(item.content) && 
                             return <SinglePost
