@@ -9,6 +9,34 @@ import urlify from './functions/urlify';
 
 
 
+
+function checkImage(image_url) {
+    let link = image_url.match(/(https?:\/\/[^ ]*\.(?:gif|png|jpg|jpeg))/);
+
+    fetch(link[0],{
+        method: 'HEAD'
+    }
+    ).then(function(response){
+        
+        //console.log(response)
+        if(response.status == 200){
+            
+            console.log(true)
+            return true;
+            
+        }else{
+            
+            console.log(false)
+            return false;
+
+        }
+
+    })
+    
+}
+
+
+
 function Post(){
     //const [single_post_url, setsingle_post_url] = useState('');
     const [postdata, setpostData] = useState([]);
@@ -44,33 +72,32 @@ function Post(){
             <div class= "container">
             <div>
             {
-                postdata && postdata.length>0 && postdata.map((post)=>
-                <div>
-                    <SinglePost
-                        post_id={post.id}
-                        post_info={PostInfo}
-                        set_post_info={setPostInfo}
-                        post_author={post.author}
-                        post_content={urlify(post.content)}
-                        post_image={post.image}
-                        post_created_date={post.created_date}
-                        post_category={post.category}
-                        post_comment_count={post.comment_count}
-                        post_votes={post.votes}
-                        post_mongo_id={post._id}
-                        
-                        voted={UpdateVoteUpdate}
-                        post_likes={PostLikes}
-                        set_post_likes={setPostLikes}
-
-                    
-                    />
-                    <div><Comment_Section
-                        MongoPostID={post._id}
-                    /></div>
-                    </div>
-
-                    
+                postdata && postdata.length>0 && postdata.map((post)=>{
+                
+                if(!checkImage(post.content)){
+                    return  <div>
+                            <SinglePost
+                                post_id={post.id}
+                                post_info={PostInfo}
+                                set_post_info={setPostInfo}
+                                post_author={post.author}
+                                post_content={urlify(post.content)}
+                                post_image={post.image}
+                                post_created_date={post.created_date}
+                                post_category={post.category}
+                                post_comment_count={post.comment_count}
+                                post_votes={post.votes}
+                                post_mongo_id={post._id}
+                                voted={UpdateVoteUpdate}
+                                post_likes={PostLikes}
+                                set_post_likes={setPostLikes}
+                            />
+                            <div><Comment_Section
+                                MongoPostID={post._id}
+                            /></div>
+                            </div>;
+                }
+                }
                 )
 
             }

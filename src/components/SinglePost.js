@@ -48,18 +48,11 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
         setInfoMessage(<a>You copied the post. Please share and spread.</a>) 
 
     }
-
-
+    
     return(
-
-
-        
-                <div className = 'singleposts_bucket' key={post_id} id={post_id}>
-
-
+        <div>
+            <div className = 'singleposts_bucket' key={post_id} id={post_id}>
                 {/*<Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}> */}
-
-                
                 <div>
                     <div>
                         <div class ="singleposts" >
@@ -114,72 +107,60 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                         <div className="post-actions-right">
 
-                            <div className='row flex-nowrap'>
+                        <div className='row flex-nowrap'>
 
                             <div className="post-action" >
                                 {
                                     <div id = 'post-icons'>
-                                    <label for="share" onClick={()=> 
-                                        {
-                                            set_post_info({id: post_id, type: 'is_info'})
+                                        <label for="share" onClick={()=> 
+                                            {
+                                                set_post_info({id: post_id, type: 'is_info'})
 
-                                            copyText()}
-                                        }>
-                                        <img id="upload_img" style={{width: '20px',"margin-top":"25%"}} src="../icons/share.png" />
-                                    </label>
-                                    </div>
-                                }
-                                </div> 
-
-                                <div className="post-action" >
-
-                                    { 
-                                        <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
-                                            <div id = 'post-icons'>
-                                            <label for="comments">
-                                                <img id="comments_img" style={{width: '20px',"margin-top":"20%"}} src="../icons/comments.png" />
-                                                {post_comment_count}
-                                            </label>
-                                            </div>
-
-                                        </Link>
-                                    
-                                    }
-                                </div>
-                                <div className="post-action" >
-
-                                {!setLikes &&
-
-                                    <div id = 'post-icons'>
-                                        <label for='vote' onClick={ ()=>(
-                                                Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
-                                                voted(post_mongo_id+post_votes),
-                                                post_likes.push(post_id)
-                                                //update posts?
-                                                )} >
-                                            <img id="upload_img" style={{width: '20px',"margin-top":"20%","margin-right":'5px'}} src="../icons/star_nofill.png" />
-                                            {post_votes}
+                                                copyText()}
+                                            }>
+                                            <img id="upload_img" style={{width: '20px',"margin-top":"25%"}} src="../icons/share.png" />
                                         </label>
                                     </div>
-
-
                                 }
+                            </div> 
 
+                            <div className="post-action" >
 
-                                {setLikes &&
+                                <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
                                     <div id = 'post-icons'>
-                                    <label for='vote'>
-                                        
-                                        <img id="upload_img" style={{width: '25px',"margin-top":"8%","padding-left":"1px","margin-right":"8px"}} src="../icons/star_fill.png" />
-                                    </label>
+                                        <label for="comments">
+                                            <img id="comments_img" style={{width: '20px',"margin-top":"20%"}} src="../icons/comments.png" />
+                                            {post_comment_count}
+                                        </label>
                                     </div>
-                                }
-                                </div> 
-
-
-
-                                
+                                </Link>
                             </div>
+                            <div className="post-action" >
+                                    {!setLikes &&
+                                        <div id = 'post-icons'>
+                                            <label for='vote' onClick={ ()=>(
+                                                    Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
+                                                    voted(post_mongo_id+post_votes),
+                                                    post_likes.push(post_id)
+                                                    //update posts?
+                                                    )} >
+                                                <img id="upload_img" style={{width: '20px',"margin-top":"20%","margin-right":'5px'}} src="../icons/star_nofill.png" />
+                                                {post_votes}
+                                            </label>
+                                        </div>
+
+                                    }
+                                    {setLikes &&
+                                        <div id = 'post-icons'>
+                                            <label for='vote'>
+                                                
+                                                <img id="upload_img" style={{width: '25px',"margin-top":"8%","padding-left":"1px","margin-right":"8px"}} src="../icons/star_fill.png" />
+                                            </label>
+                                        </div>
+                                    }
+                            </div> 
+                                </div>
+                            </div> 
                         </div>
 
                     </div>
@@ -192,18 +173,13 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                     }
 
                     
-
-                    
+            
                 </div>
-
-        
-    
         </div>
         
-
-
-
-    );
+    )
+    
 }
+
 
 //export default Posts(); 

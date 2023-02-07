@@ -158,7 +158,7 @@ export default function Posts(props){
         
 
         Get_Posts(fetch_url,setData,'fetch_more',setIsFetching);
-
+        console.log(data)
         //setData(prevState => ([...prevState, ...Array.from(Array(2).keys(), n => n + prevState.length + 1)]));
         //setIsFetching(false);
     }   
@@ -172,6 +172,7 @@ export default function Posts(props){
     
     useEffect(()=>{
         Get_Posts(fetch_url,setData);
+        console.log(data)
     },[props.comment_update])
 
 
@@ -293,12 +294,12 @@ export default function Posts(props){
 
             {
 
-                data && data.length>0 && data.map((item)=>
-                    (
-                        //{imageExists(item.content) &&
-                        <div>
-                            
-                            <SinglePost 
+                data && data.length>0 && data.map( (item) => 
+                        {
+
+                            if(imageExists(item.content)){
+                            //{imageExists(item.content) && 
+                            return <SinglePost
                                 post_id={item.id}
                                 post_info={PostInfo}
                                 set_post_info={setPostInfo}
@@ -316,12 +317,20 @@ export default function Posts(props){
                                 set_saved_MongoPostID={props.set_saved_MongoPostID}
                                 saved_MongoPostID={props.saved_MongoPostID}
                             />
+                            }else{
+                                return <div>no</div>
+                            }
+                        }
+                    
                             
-                        </div>
-                    )
+                            
+                        
+                
                     
                 )
             }
+
+
             {show_fetch && 
             <div id="fetch_button_container"> 
                 <button type='button' onClick={fetchMoreListItems} id="fetch_button" class="btn">fetch more...</button>   

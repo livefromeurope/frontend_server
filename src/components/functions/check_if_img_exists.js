@@ -1,15 +1,26 @@
-function imageExists(image_url){
+export default async function imageExists(image_url){
 
-    let link = image_url.match(/(http:|https:)?\/\/(www\.)?(\?v=)?(\S+)?/);
+    let link = image_url.match(/(https?:\/\/[^ ]*\.(?:gif|png|jpg|jpeg))/);
 
-    var http = new XMLHttpRequest();
-    //console.log(link[0]);
-    console.log('https://i.redd.it/5p5jrtv7lmda1.jpg')
-    http.open('HEAD', link[0], false);
-    http.send();
+    fetch(link[0],{
+        method: 'HEAD'
+    }
+    ).then(function(response){
+        
+        //console.log(response)
+        if(response.status == 200){
+            
+            return true;
 
-    return http.status != 404;
+        }else{
+            
+            console.log(link[0])
+            return false;
+
+        }
+
+    })
+
 
 }
 
-export default imageExists;
