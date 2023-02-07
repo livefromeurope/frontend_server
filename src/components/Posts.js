@@ -25,6 +25,7 @@ export default function Posts(props){
     const [vote_update,UpdateVoteUpdate] = useState([]);
     const multiselectRef = React.createRef();
     //let [url, setUrl] = useState();
+    const [goodUrl,setgoodUrl] = useState([]);
     const [PostInfo,setPostInfo] = useState([]);
     const [PostLikes,setPostLikes] = useState([]);
     let [fetch_url,setFetchUrl] = useState('');
@@ -45,6 +46,31 @@ export default function Posts(props){
     }, []);
     
 
+    function checkImage(image_url,setgoodUrl,goodUrl,itemid) {
+        let link = image_url.match(/(https?:\/\/[^ ]*\.(?:gif|png|jpg|jpeg))/);
+    
+        fetch(link[0],{
+            method: 'HEAD'
+        }
+        ).then(function(response){
+            
+            //console.log(response)
+            if(response.status == 200){
+                
+                console.log(true)
+                return true;
+                
+            }else{
+                
+                console.log(false)
+                setgoodUrl(goodUrl => [...goodUrl,itemid])
+                return false;
+    
+            }
+    
+        })
+        
+    }
     
 
     //let [selectedValues,setSelectedValues] = useState([])
@@ -57,6 +83,7 @@ export default function Posts(props){
     let fetchurl = process.env.REACT_APP_POSTSERVER_URL
     let baseurl = process.env.REACT_APP_FRONTEND_URL
     let show_fetch = true
+    
 
 
     
@@ -296,8 +323,9 @@ export default function Posts(props){
 
                 data && data.length>0 && data.map( (item) => 
                         {
-
-                            if(imageExists(item.content)){
+                            const good_url = goodUrl && goodUrl.includes(item.id);
+                            checkImage(item.content,setgoodUrl,goodUrl,item.id);
+                            if(!good_url){
                             //{imageExists(item.content) && 
                             return <SinglePost
                                 post_id={item.id}
@@ -318,7 +346,7 @@ export default function Posts(props){
                                 saved_MongoPostID={props.saved_MongoPostID}
                             />
                             }else{
-                                return <div>no</div>
+                                return <div></div>
                             }
                         }
                     

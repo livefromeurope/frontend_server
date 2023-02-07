@@ -10,7 +10,7 @@ import urlify from './functions/urlify';
 
 
 
-function checkImage(image_url) {
+function checkImage(image_url,setgoodUrl) {
     let link = image_url.match(/(https?:\/\/[^ ]*\.(?:gif|png|jpg|jpeg))/);
 
     fetch(link[0],{
@@ -22,11 +22,13 @@ function checkImage(image_url) {
         if(response.status == 200){
             
             console.log(true)
+            setgoodUrl(true)
             return true;
             
         }else{
             
             console.log(false)
+            setgoodUrl(false)
             return false;
 
         }
@@ -40,6 +42,7 @@ function checkImage(image_url) {
 function Post(){
     //const [single_post_url, setsingle_post_url] = useState('');
     const [postdata, setpostData] = useState([]);
+    const [goodUrl, setgoodUrl] = useState(true);
     
     const [vote_update,UpdateVoteUpdate] = useState([]);
     const [PostLikes,setPostLikes] = useState([]);
@@ -73,8 +76,8 @@ function Post(){
             <div>
             {
                 postdata && postdata.length>0 && postdata.map((post)=>{
-                
-                if(!checkImage(post.content)){
+                checkImage(post.content,setgoodUrl)
+                if(goodUrl){
                     return  <div>
                             <SinglePost
                                 post_id={post.id}
