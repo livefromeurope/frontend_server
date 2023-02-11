@@ -23,7 +23,9 @@ async function Make_Post(content,category,username,image){
                 'comment_count':0,
                 'votes':0,
                 'created_date': created_date,
-                'status': 'public'
+                'status': '',
+                'tags': [],
+                'type': 'post'
             }
             await fetch(fetchurl, 
             {

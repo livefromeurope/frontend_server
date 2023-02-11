@@ -34,6 +34,7 @@
     {"country":"spain","id":1,"emoticon":"🇪🇸","latitude":"40.463667","longitude":"-3.74922"},
     {"country":"switzerland","id":1,"emoticon":"🇨🇭","latitude":"46.818188","longitude":"8.227512"},
     {"country":"sweden","id":1,"emoticon":"🇸🇪","latitude":"60.128161","longitude":"18.643501"},
+    {"country":"turkey","id":1,"emoticon":"🇺🇦","latitude":"39.00","longitude":"35.00"},
     {"country":"unitedkingdom","id":1,"emoticon":"🇬🇧","latitude":"55.378051","longitude":"-3.435973"},
     {"country":"ukraine","id":1,"emoticon":"🇺🇦","latitude":"48.379433","longitude":"31.16558"},
     {"country":"earth","id":1,"emoticon":"🌍","latitude":"48.379433","longitude":"31.16558"}
