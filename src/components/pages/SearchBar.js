@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import Get_Posts from '../Get_Posts';
 
 
-export default function SearchBar({setData}){
+export default function SearchBar({setData,setShow_spotlight}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "border-radius":"20px",border:"none", padding:"0.5rem"};
     
     let fetchurl = process.env.REACT_APP_POSTSERVER_URL
@@ -32,13 +32,14 @@ export default function SearchBar({setData}){
         console.log(passValue)
         setSearchToken(passValue);
         if(passValue && passValue.length > 3){
-            
+            setShow_spotlight(false);
             console.log(search_token)
 
             setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + passValue +'&limit=' + limit + '&date=' + now_date );
             Get_Posts(fetch_url,setData);
             console.log(fetch_url)
         }else{
+
             setFetchUrl(fetchurl + 'posts' + '?limit=' + limit+ '&date=' + now_date);
             console.log(fetch_url)
             Get_Posts(fetch_url,setData);
@@ -55,9 +56,11 @@ export default function SearchBar({setData}){
             value={search_value}
             placeholder={"search livefromeurope"}
             //onChange={(e) => setSearch(e.target.value)}
-            onChange={(e) => setSearchValue(e.target.value)}
+            onChange={(e) => {
+                    setSearchValue(e.target.value);
+                }
+            }
         />
-        {search_value}
         </form>
     );
     }

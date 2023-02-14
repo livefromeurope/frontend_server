@@ -264,8 +264,10 @@ export default function Posts(props){
                     <div classname= "col-1">
                     {props.show_filter &&
                         <SearchBar
-                    setData={setData}
-                    />
+                            setShow_spotlight={setShow_spotlight}
+                            setData={setData}
+                        />
+                        
                         /*
                     <Multiselect
                     //customCloseIcon={<>🇪🇺</>}
@@ -312,7 +314,6 @@ export default function Posts(props){
                     */
                     }
             </div>
-          
 
             
             {show_spotlight  &&  <div className='Spotlight'>
