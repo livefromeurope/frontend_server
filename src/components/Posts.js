@@ -31,7 +31,7 @@ export default function Posts(props){
     const [PostLikes,setPostLikes] = useState([]);
     let [fetch_url,setFetchUrl] = useState('');
     let [spotlight_type,setSpotlight_type] = useState('main');
-    let [show_spotlight,setShow_spotlight] = useState(true);
+    let [show_spotlight,setShow_spotlight] = useState(false);
     let [url_category,setURLCategory] = useState('');
     let [selected_country,setCountry] = useState({});
 
@@ -43,7 +43,7 @@ export default function Posts(props){
         setLoading(true);
         setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 500);
     }, []);
     
 
@@ -103,7 +103,7 @@ export default function Posts(props){
             show_fetch = true
             show_spotlight = true
             setSpotlight_type('main')
-            setShow_spotlight(true)
+            setShow_spotlight(false)
             console.log(0)
             if(props.userid && props.show_filter === true && 1 == 2){
                 
@@ -267,7 +267,7 @@ export default function Posts(props){
                             setShow_spotlight={setShow_spotlight}
                             setData={setData}
                         />
-                        
+
                         /*
                     <Multiselect
                     //customCloseIcon={<>🇪🇺</>}
