@@ -36,7 +36,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
     
     //let emoticon = get_emoticon(europe_countries,post_category)
-    console.log(post_category)
+    //console.log(post_category)
     let emoticon = ''
     
     function copyText() {

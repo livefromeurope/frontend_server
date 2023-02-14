@@ -9,6 +9,7 @@ import { useHorizontalScroll} from './functions/useHorizontalScroll';
 import urlify from './functions/urlify';
 import Spotlight from './pages/Spotlight';
 import imageExists from './functions/check_if_img_exists';
+import SearchBar from './pages/SearchBar';
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -251,16 +252,21 @@ export default function Posts(props){
 
     return(
         <div class="jumbotron">
+            
 
             {loading ? (
             <div className="loader-container">
                 <img src="../icons/loading.svg"></img>
             </div>
             ) : (
-                
+    
                 <div>
                     <div classname= "col-1">
                     {props.show_filter &&
+                        <SearchBar
+                    setData={setData}
+                    />
+                        /*
                     <Multiselect
                     //customCloseIcon={<>🇪🇺</>}
                     selectedValues={props.selectedValues}
@@ -303,8 +309,10 @@ export default function Posts(props){
                         }
                     }
                     />
+                    */
                     }
             </div>
+          
 
             
             {show_spotlight  &&  <div className='Spotlight'>
