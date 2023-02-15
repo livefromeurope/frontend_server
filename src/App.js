@@ -13,8 +13,9 @@ import Profile from './components/Profile';
 import Login from './components/Login';
 import RequireAuth from './components/RequireAuth';
 import {BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
 import Get_User_IP from './components/Get_User_IP';
+import {HelmetProvider} from 'react-helmet-async';
 
 function App(){
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
@@ -22,48 +23,51 @@ function App(){
   const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
   const isRetina = useMediaQuery({ minResolution: '2dppx' })
+  const helmetContext = {};
 
   let [userid, setUserID] = useState([])
   //const {auth} = useAuth();
 
   useEffect(()=>{
     Get_User_IP(setUserID,userid);
-    
   },[])
 
 
 
     return (
-      
-      <Router>
-      <div className="App">
-        <header className="Navigation">
-          <Nav/>
-        </header>
-          <div className="AppBody">
-            <Routes>
-              <Route path="/" element={<Home 
-                
-                userid = {userid.country_name}
+      <HelmetProvider context={helmetContext}>
+        <Router>
+        <div className="App">
+        
+          <header className="Navigation">
+            <Nav/>
+          </header>
+            <div className="AppBody">
+              <Routes>
+                <Route path="/" element={<Home 
+                  
+                  userid = {userid.country_name}
 
-              />} />
-              <Route path="/about" element={<About/>} />
-              <Route path="/merch" element={<Merch/>} />
-              <Route path="/login" element={<Login/>} />
-              <Route path="/odata" element={<Odata/>} />
-              <Route path="/post/:id" element={<Post/>} />
-              <Route path="/category/:id" element={<Category/>}/>
-              <Route path="/user/:id" element={<User/>}/>
-              <Route element={<RequireAuth/>}>
-                <Route path="/profile/:id" element={<Profile/>}/>
-              </Route>
-            </Routes>
-          </div>
-        <footer class="Footer">
-          <Footer/>
-        </footer>
-      </div>
-      </Router>
+                />} />
+                <Route path="/about" element={<About/>} />
+                <Route path="/merch" element={<Merch/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/odata" element={<Odata/>} />
+                <Route path="/post/:id" element={<Post/>} />
+                <Route path="/category/:id" element={<Category/>}/>
+                <Route path="/user/:id" element={<User/>}/>
+                <Route element={<RequireAuth/>}>
+                  <Route path="/profile/:id" element={<Profile/>}/>
+                </Route>
+              </Routes>
+            </div>
+        
+          <footer class="Footer">
+            <Footer/>
+          </footer>
+        </div>
+        </Router>
+      </HelmetProvider>
     );
 }
 
