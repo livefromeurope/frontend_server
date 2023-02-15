@@ -15,7 +15,7 @@ import RequireAuth from './components/RequireAuth';
 import {BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import Get_User_IP from './components/Get_User_IP';
-import {HelmetProvider} from 'react-helmet-async';
+
 
 function App(){
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
@@ -35,7 +35,7 @@ function App(){
 
 
     return (
-      <HelmetProvider context={helmetContext}>
+
         <Router>
         <div className="App">
         
@@ -67,7 +67,7 @@ function App(){
           </footer>
         </div>
         </Router>
-      </HelmetProvider>
+
     );
 }
 

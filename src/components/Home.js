@@ -5,7 +5,7 @@ import { useState,useEffect} from 'react';
 import Scroll_To_Top from './Scroll_To_Top';
 import useAuth from './useAuth';
 import { useNavigate } from "react-router-dom";
-import { Helmet } from 'react-helmet-async';
+
 
 
 function Home(props){
@@ -64,10 +64,7 @@ function Home(props){
     return(
 
         <section>
-            <Helmet>
-            <title>LiveFromEurope</title>
-            <meta name='description' content='Pro European Online Platform for news, memes and opinions.' />
-            </Helmet>
+
             
             <div class= "container">
                     {/*<div>Welcome stranger from  {userid.region}, {userid.country_name}</div> */}
