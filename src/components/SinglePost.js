@@ -78,11 +78,13 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                 </div>
                                 
                             </div>
+                            
                             <div class="main-content">
-                                    <div>{post_content}</div>
+                            <h1 class="main-content">{post_content}</h1>
 
                                     <div class="post_dates">{post_created_date.split('.')[0].replace("T"," ")}</div>
                             </div>
+                            
                         </div>
                     </div>
                 {/*</Link>*/}
