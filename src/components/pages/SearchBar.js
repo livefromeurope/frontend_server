@@ -4,7 +4,11 @@ import Get_Posts from '../Get_Posts';
 
 export default function SearchBar({setData,setShow_spotlight}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "border-radius":"20px",border:"none", padding:"0.5rem"};
-    const TagStyle = {"padding-left":"6px","padding-right":"6px","color":"#FFFFFF","text-align":"center","border-radius":"10px","margin-left":"5%","max-width":"25%",margin:"3px", background:"#003399", width:"auto"}
+    
+    const TagStyle = {"padding-left":"6px","padding-right":"6px","color":"#FFFFFF","text-align":"center","border-radius":"10px","margin-left":"5%",margin:"3px",display: "inline-block"}
+    const Xstyle = {"background-color":"grey","border-radius":"15px","margin-left":"3px","padding":"6"}
+    const TextStyle = {"margin-left":"25%"}
+    
     let fetchurl = process.env.REACT_APP_POSTSERVER_URL
     let limit = 15;
     let now_date = new Date().toISOString()
@@ -49,16 +53,21 @@ export default function SearchBar({setData,setShow_spotlight}){
     }
 
 
+
     return (
         <form onSubmit={(e) => {e.preventDefault() 
             setSearch(search_value.replace(" ",'%20'));
+            setSearchValue('')
             setShowToken(true);
             }}>
         <input 
+            type="text"
+            class="form-control"
             style={BarStyle}
             key="search-bar"
             value={search_value}
-            placeholder={"search livefromeurope"}
+            //value={()=><div>test</div>}
+            placeholder={"search and enter"}
             //onChange={(e) => setSearch(e.target.value)}
             onChange={(e) => {
                     setSearchValue(e.target.value);
@@ -71,8 +80,12 @@ export default function SearchBar({setData,setShow_spotlight}){
         {show_token &&
 
             <div className='input_tag' style={TagStyle}>
-                {search_value}
+                <div className='row flex-nowrap' >
+                    <div style={TextStyle}>{search_token} </div>
+                    <div style={Xstyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch('');setShowToken(false)}}>x</div>
+                </div>
             </div>
+            
         }
         </form>
     );

@@ -359,13 +359,8 @@ export default function Posts(props){
                                 return <div></div>
                             }
                         }
-                    
-                            
-                            
-                        
+                ) || (<div>no posts found. search again</div>)
                 
-                    
-                )
             }
 
 
