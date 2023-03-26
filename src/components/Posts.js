@@ -107,10 +107,8 @@ export default function Posts(props){
             console.log(0)
             if(props.userid && props.show_filter === true && 1 == 2){
                 
-
                 let country = props.userid.toLowerCase()
                 props.setSelectedValues([{country},{"country":'europe'}])
-
                 console.log(props.selectedValues)
                 
                 add = '?category=' + country + '&category=europe&limit=' + limit + '&date=' + now_date

@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import Get_Posts from '../Get_Posts';
-
+import europe_countries from '../europe_countries.json';
 
 export default function SearchBar({setData,setShow_spotlight}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "border-radius":"20px",border:"none", padding:"0.5rem"};
@@ -8,6 +8,8 @@ export default function SearchBar({setData,setShow_spotlight}){
     const TagStyle = {"padding-left":"6px","padding-right":"6px","color":"#FFFFFF","text-align":"center","border-radius":"10px","margin-left":"5%",margin:"3px",display: "inline-block"}
     const Xstyle = {"background-color":"grey","border-radius":"15px","margin-left":"3px","padding":"6"}
     const TextStyle = {"margin-left":"25%"}
+
+
     
     let fetchurl = process.env.REACT_APP_POSTSERVER_URL
     let limit = 15;
@@ -40,7 +42,11 @@ export default function SearchBar({setData,setShow_spotlight}){
             setShow_spotlight(false);
             console.log(search_token)
 
+            
+            
             setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + passValue +'&limit=' + limit + '&date=' + now_date );
+            //setFetchUrl(fetchurl + 'posts?' + 'search=' + passValue +'&limit=' + limit + '&date=' + now_date );
+            
             Get_Posts(fetch_url,setData);
             console.log(fetch_url)
         }else{
@@ -51,8 +57,6 @@ export default function SearchBar({setData,setShow_spotlight}){
             Get_Posts(fetch_url,setData);
         }
     }
-
-
 
     return (
         <form onSubmit={(e) => {e.preventDefault() 
@@ -78,7 +82,6 @@ export default function SearchBar({setData,setShow_spotlight}){
             }
         />
         {show_token &&
-
             <div className='input_tag' style={TagStyle}>
                 <div className='row flex-nowrap' >
                     <div style={TextStyle}>{search_token} </div>

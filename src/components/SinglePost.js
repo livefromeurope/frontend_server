@@ -21,6 +21,22 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
     post_info.type === "is_info" &&
     post_info.id === post_id;
 
+
+    //calc duration
+    let currentTime = new Date()
+    let expireTime = new Date(post_created_date);
+    let minutes = Math.round((currentTime - expireTime) / (1000 * 60));
+    let duration;
+    if(minutes < 60){
+        duration = minutes + 'm'
+    }else if(minutes <  1440){
+        duration = Math.round(minutes/60) + 'h'
+    }else{
+        duration = Math.round(minutes/1440) + 'd'
+    }
+    //console.log(duration)
+
+
     const setLikes = 
     post_likes && 
     post_likes.includes(post_id);
@@ -62,7 +78,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                     <div class ="postcategory" id="postcategory">
                                         <Link style={{textDecoration: 'none'}}  to={`/category/${post_category}` }>
                                             <div class="category">
-                                            {emoticon} {post_category}
+                                            {emoticon} {post_category} • {duration}
                                             </div>
                                         </Link>
                                     </div>
@@ -82,7 +98,9 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                             <div class="main-content">
                             <h1 class="main-content">{post_content}</h1>
 
-                                    <div class="post_dates">{post_created_date.split('.')[0].replace("T"," ")}</div>
+                                    {/*<div class="post_dates">{post_created_date.split('.')[0].replace("T"," ")}</div>
+                                    <div class="post_dates">{duration}</div>*/}
+
                             </div>
                             
                         </div>
@@ -118,7 +136,6 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                         <label for="share" onClick={()=> 
                                             {
                                                 set_post_info({id: post_id, type: 'is_info'})
-
                                                 copyText()}
                                             }>
                                             <img id="upload_img" style={{width: '20px',"margin-top":"25%"}} src="../icons/share.png" />
