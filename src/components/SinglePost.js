@@ -62,7 +62,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
         console.log(posturl)
         navigator.clipboard.writeText
             (posturl)
-        setInfoMessage(<a>You copied the post. Please share and spread.</a>) 
+        setInfoMessage(<a>You copied the post. share and spread.</a>) 
 
     }
     

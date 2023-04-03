@@ -99,6 +99,7 @@ function Postform({Update_Trigger}){
             resetTextarea();
             Update_Trigger(textdata);
             setNowpost('')
+            window.location.reload(false);
     }
 
 
@@ -199,6 +200,7 @@ function Postform({Update_Trigger}){
                                                 <div class="col-3" id="post-btn">
                                                         <button type='button' onClick={()=>(Upload_Or_Post())} id="" class="btn btn-md btn-outline btn-primary"> post</button>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                     </div>

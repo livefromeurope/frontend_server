@@ -209,6 +209,8 @@ img[src=""] {
   position: relative;
   text-align: left;
   min-width: 70px;
+  white-space: nowrap;
+  display: inline-block;
   /*transform: rotate(-90deg);*/
 
 }
