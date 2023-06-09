@@ -5,7 +5,7 @@ import MerchDropdown from '../functions/merch_dropdown';
 
 
 
-function Singlepage(){
+function Merch(){
 
     const scrollRef = useHorizontalScroll();
     const [user, setUser] = useState('');
@@ -37,7 +37,7 @@ function Singlepage(){
             console.log(shirt)
             */
             
-            
+
 
             setEmail('');
             setUser('');
@@ -71,11 +71,12 @@ function Singlepage(){
     
     return(
         <section>
-            <div class= "container">
 
-                <div className="Merch" ref={scrollRef} style={{ overflow: "auto" }}>
+            <div class= "container" style={{ "max-height":"100%"}}>
 
-                <div>
+                <div className="Merch"  ref={scrollRef} style={{ overflow: "auto" }}>
+
+                <div >
                 scroll right to order &nbsp;
                     <img height="50px"src="../merch/white_arrow.png"></img>
                 </div>
@@ -175,4 +176,4 @@ function Singlepage(){
     );
 }
 
-export default Singlepage;
+export default Merch;
