@@ -37,6 +37,7 @@ function Singlepage(){
             console.log(shirt)
             */
             
+            
 
             setEmail('');
             setUser('');
