@@ -4,6 +4,7 @@ import { useHorizontalScroll} from '../functions/useHorizontalScroll';
 import MerchDropdown from '../functions/merch_dropdown';
 
 
+
 function Singlepage(){
 
     const scrollRef = useHorizontalScroll();
@@ -11,9 +12,7 @@ function Singlepage(){
     const [email, setEmail] = useState('');
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
-    const [shirt,setShirt] = useState('')
-
-
+    const [shirt,setShirt] = useState('../merch/green_deal_shirt.jpg')
     const merch = [
         
         {"merch_url":"../merch/DSC00777.JPG"},
@@ -21,8 +20,54 @@ function Singlepage(){
         {"merch_url":"../merch/DSC00881.JPG"},
         {"merch_url":"../merch/DSC00877.JPG"},
         {"merch_url":"../merch/DSC00883.JPG"},
-        {"merch_url":"../merch/DSC00889.JPG"}];
+        {"merch_url":"../merch/DSC00889.JPG"}
+    
+    ];
 
+
+    function SubmitIT(){
+
+        if(user && email && street && city ) {
+        
+            /*
+            console.log(user)
+            console.log(email)
+            console.log(street)
+            console.log(city)
+            console.log(shirt)
+            */
+            
+
+            setEmail('');
+            setUser('');
+            setEmail('');
+            setStreet('');
+            setCity('');
+            alert('you ordered a livefromeurope shirt. thank you very much for your support - we will contact you.')
+            
+        }else{
+
+            alert('there is some information missing. please complete the form.')
+        
+        }
+    }
+
+    function Mailto({ email, subject, body}) {
+
+
+        body = 'User: '+user+' '+ 'Email: '+email+' '+ 'Shirt: '+shirt+' '+ 'Street: '+street+' '+ ' City: '+street
+        subject = 'livefromeurope.com - shirt order: ' + user
+
+        return (
+            <a href={`mailto:livefromeurope@outlook.com?subject=${subject || ""}&body=${body || ""}`}>
+                <button onClick={()=>{}} type='button' class="btn btn-md btn-outline btn-primary">
+                    Order
+                </button>
+            </a>
+        );
+
+    }
+    
     return(
         <section>
             <div class= "container">
@@ -30,6 +75,7 @@ function Singlepage(){
                 <div className="Merch" ref={scrollRef} style={{ overflow: "auto" }}>
 
                 <div>
+                scroll right to order &nbsp;
                     <img height="50px"src="../merch/white_arrow.png"></img>
                 </div>
                 
@@ -50,9 +96,12 @@ function Singlepage(){
                 <div>
             </div>
 
+                <div>
+                    <p>  &nbsp;&nbsp;&nbsp;   </p>
+                </div>
                 <div class='Merch_container'>
                 
-                <form class="merch_form" id="login_form" onSubmit={(console.log('d'))}>
+                <form class="merch_form" id="login_form">
 
                 <MerchDropdown
 
@@ -106,16 +155,21 @@ function Singlepage(){
                             value={city}
                             required
                             />
-
-                    <button class="btn btn-md btn-outline btn-primary">Order</button>
-                
+                    {/*
+                    <Mailto email="livefromeurope@outlook.com" subject="Hello" body="Hello world!">
+                    </Mailto> 
+                    */} 
+                    <button onClick={()=>(SubmitIT())} type='button' class="btn btn-md btn-outline btn-primary">Order</button>
+                    
             </form>
                 </div>
-                
-                    
                 </div>
                 </div>
+                <div>
+                    <p>  &nbsp;&nbsp;&nbsp;   </p>
             </div>
+            </div>
+
         </section>
     );
 }
