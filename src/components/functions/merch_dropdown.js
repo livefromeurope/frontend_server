@@ -5,7 +5,7 @@ const MerchDropdown = (props) => {
 
     {value: 'green_deal', text: 'Green Deal', url:'../merch/green_deal_shirt.jpg'},
     {value: 'fight_rights', text: 'Fight for your Rights', url:'../merch/fight_for_your_rights_shirt.jpg'},
-    {value: 'lázadás', text: 'Lázadás', url:'../merch/lazadas.jpg'},
+    {value: 'lázadás', text: 'Lázadás', url:'../merch/lazadas.jpeg'},
   
   ];
   
