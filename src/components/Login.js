@@ -167,7 +167,7 @@ function Login(){
                     
                     <form class="form" id="login_form" onSubmit={handleLogin}>
                         <div>Sign In</div>
-                        <label class='lables' htmlFor="email">Enter Email:</label>
+                        <label class='lables' htmlFor="email">Email:</label>
                         <input
                             class="form-control"
                             type="text"
@@ -176,9 +176,13 @@ function Login(){
                             autoComplete="off"
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
+                            placeholder={'Enter username'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            textContentType={'username'}
                             required
                             />
-                        <label class='lables' htmlFor="password">Enter Password:</label>
+                        <label class='lables' htmlFor="password">Password:</label>
                         <input
                             class="form-control"
                             type="password"
@@ -186,6 +190,11 @@ function Login(){
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
                             minlength="10"
+                            placeholder={'Enter password'}
+                            autoCapitalize={'none'}
+                            autoCorrect={false}
+                            secureTextEntry={true}
+                            textContentType={'password'}
                             required
                             />
                         <button class="btn btn-md btn-outline btn-primary">Sign In</button>
