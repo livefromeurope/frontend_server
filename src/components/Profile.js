@@ -35,6 +35,18 @@ export default function Profile(){
                             value={auth.username}
                             required
                             />
+                        <label class='lables' htmlFor="bio">Your Bio:</label>
+                        <textarea
+                            class="form-control"
+                            type="text"
+                            id="bio"
+                            rows="3"
+                            
+                            autoComplete="off"
+                            //onChange={(e) => setEmail(e.target.value)}
+                            value={auth.bio}
+
+                            />
                         <label class='lables' htmlFor="email">Your Email:</label>
                         <input
                             class="form-control"

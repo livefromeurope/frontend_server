@@ -19,6 +19,7 @@ function Login(){
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [image, setImage] = useState('');
+    const [bio, setBio] = useState('');
     const [repwd, ResetPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
     const [signup, setSignUp] = useState(true);
@@ -57,13 +58,12 @@ function Login(){
             const username = data.username;
             const email = data.email;
             const image = data.image;
-            console.log(username);
-            
+            const bio = data.bio;
 
             if(status === 200){
                 setEmail('');
                 setPwd(''); 
-                setAuth({accessToken,username,email,image});
+                setAuth({accessToken,username,email,image,bio});
                 console.log('success')
                 navigate(from, {replace: true})
                 console.log(auth)
@@ -104,6 +104,7 @@ function Login(){
                     'email': email,
                     'password': pwd,
                     'image': image,
+                    'bio':bio,
                     'created_date':created_date,
                 }
                 await fetch(registerurl, 
@@ -124,6 +125,7 @@ function Login(){
                     ResetPwd('');
                     setUser('');
                     setImage('');
+                    setBio('');
                     alert('You are now registered at LiveFromEurope')
                     setSignUp(true);
                 }else{
@@ -235,6 +237,17 @@ function Login(){
                             autoComplete="off"
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
+                            required
+                            />
+                <label class='lables' htmlFor="bio">Enter Bio:</label>
+                    <input
+                            class="form-control"
+                            type="text"
+                            id="bio"
+                            ref={userRef}
+                            autoComplete="off"
+                            onChange={(e) => setBio(e.target.value)}
+                            value={bio}
                             required
                             />
                     <label class='lables' htmlFor="image">Enter Image URL:</label>

@@ -10,12 +10,7 @@ function About(){
 
     return(
 
-        
-
-
         <section>
-
-
 
             <div class= "container">
             <p>

@@ -27,29 +27,12 @@ function Spotlight({type,category,selected_country}){
     }
     //
 
-    function return_div(passed_url){
-        return (
-            <div>
-            spotlight: {category}
-            <iframe 
-            style={{
-                width: '100%',height:height, "border-radius":"20px", 
-                border:"solid", 
-                "border-bottom-color":"#ffd700",
-                "border-left-color":"#ffd700",
-                "border-top-color":"#0057B7",
-                "border-right-color":"#0057B7",
-                }} 
-            src={passed_url} />
-            </div>
-        )
-    }
+
 
     let iframe_url = ''
     let latitude = ''
     let longitude = ''
     let height = '450px'
-    let divver;
 
     if(type == 'category'){
         latitude = selected_country[0].coordinates.latitude
@@ -68,23 +51,14 @@ function Spotlight({type,category,selected_country}){
         //iframe_url = "https://www.openstreetmap.org/export/embed.html?bbox=11.700439453125%2C42.13082130188811%2C19.489746093750004%2C48.857487002645485&amp;layer=mapnik"
         //console.log(iframe_url)
         height = '300px'
-
-        divver = return_div(iframe_url)
-
-
     }else if(type == 'user'){
 
         iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
-
-        divver = return_div(iframe_url)
 
     }else{
         category = 'urkaine'
         
         iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
-
-        divver = return_div(iframe_url)
-
     }
 
 //<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-4.174804687500001%2C38.25543637637949%2C3.7133789062500004%2C51.754240074033525&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=6/45.406/-0.231">View Larger Map</a></small>
@@ -92,7 +66,17 @@ function Spotlight({type,category,selected_country}){
     return(
         <section>
             <div class= "container">
-                {divver}
+                spotlight: {category}
+                <iframe 
+                style={{
+                    width: '100%',height:height, "border-radius":"20px", 
+                    border:"solid", 
+                    "border-bottom-color":"#ffd700",
+                    "border-left-color":"#ffd700",
+                    "border-top-color":"#0057B7",
+                    "border-right-color":"#0057B7",
+                    }} 
+                src={iframe_url} />
             </div>
         </section>
     );

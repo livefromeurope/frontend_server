@@ -1,6 +1,7 @@
 
 
 function User_Update(){
+
     const {setAuth,auth} = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -11,12 +12,10 @@ function User_Update(){
     const [email, setEmail] = useState('');
     const [pwd, setPwd] = useState('');
     const [image, setImage] = useState('');
-
-
+    const [bio, setBio] = useState('');
 
     const handleLogin = async (e) => {
         e.preventDefault();
-
 
         let registerurl = process.env.REACT_APP_AUTHSERVER_URL + 'user/register'
         let created_date = new Date().toISOString()
@@ -26,9 +25,9 @@ function User_Update(){
             'email': email,
             'password': pwd,
             'image': image,
+            'bio': bio,
             'created_date':created_date,
         }
-            
             await fetch(authurl, 
             {
                 method: 'POST',
@@ -39,9 +38,7 @@ function User_Update(){
             console.log(data)
         });
 
-
-
-
+    }
 }
 
 export default User_Update;
