@@ -32,11 +32,16 @@ export default function User(){
                     <div>
                         @{user}
                     </div>
+
                     {userdata.image && 
                         <div>
-                            <img src={userdata.image} height="300"></img>
+                            <img src={userdata.image} class='profile_img' height="300"></img>
                         </div>
                     }
+                    {!userdata.image && 
+                        <img src="../EU-Flag.jpeg" class='profile_img'height="300"></img>
+                    }
+
                     {userdata.bio && 
                         <div>
                             Bio: {userdata.bio}

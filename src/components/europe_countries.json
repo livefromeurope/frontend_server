@@ -2,9 +2,11 @@
     
     
     {"country":"europe","id":1,"emoticon":"🇪🇺","latitude":"47.516231","longitude":"14.550072"},
+    {"country":"albania","id":2,"emoticon":"🇦🇱","latitude":"41.327953","longitude":"19.819025"},
     {"country":"austria","id":2,"emoticon":"🇦🇹","latitude":"47.516231","longitude":"14.550072"},
     {"country":"belgium","id":3,"emoticon":"🇧🇪","latitude":"50.503887","longitude":"4.469936"},
     {"country":"bulgaria","id":4,"emoticon":"🇧🇬","latitude":"49.817492","longitude":"15.472962"},
+    {"country":"bosnia and herzegovina","id":1,"emoticon":"🇺🇦","latitude":"43.545954","longitude":"31.16558"},
     {"country":"croatia","id":5,"emoticon":"🇭🇷","latitude":"45.1","longitude":"15.2"},
     {"country":"cyprus","id":6,"emoticon":"🇨🇾","latitude":"35.126413","longitude":"33.429859"},
     {"country":"czechia","id":7,"emoticon":"🇨🇿","latitude":"49.817492","longitude":"15.472962"},
@@ -17,6 +19,7 @@
     {"country":"hungary","id":1,"emoticon":"🇭🇺","latitude":"47.162494","longitude":"19.503304"},
     {"country":"ireland","id":1,"emoticon":"🇮🇪","latitude":"53.41291","longitude":"-8.24389"},
     {"country":"italia","id":1,"emoticon":"🇮🇹","latitude":"41.87194","longitude":"12.56738"},
+    {"country":"kosovo","id":1,"emoticon":"🇽🇰","latitude":"42.667542","longitude":"21.166191"},
     {"country":"latvia","id":1,"emoticon":"🇱🇻","latitude":"56.879635","longitude":"24.603189"},
     {"country":"lithuania","id":1,"emoticon":"🇱🇹","latitude":"55.169438","longitude":"23.881275"},
     {"country":"liechtenstein","id":1,"emoticon":"🇱🇮","latitude":"47.166","longitude":"9.555373"},
@@ -34,7 +37,9 @@
     {"country":"spain","id":1,"emoticon":"🇪🇸","latitude":"40.463667","longitude":"-3.74922"},
     {"country":"switzerland","id":1,"emoticon":"🇨🇭","latitude":"46.818188","longitude":"8.227512"},
     {"country":"sweden","id":1,"emoticon":"🇸🇪","latitude":"60.128161","longitude":"18.643501"},
-    {"country":"turkey","id":1,"emoticon":"🇺🇦","latitude":"39.00","longitude":"35.00"},
+    {"country":"serbia","id":1,"emoticon":"🇷🇸","latitude":"44.787197","longitude":"20.457273"},
+    {"country":"montenegro","id":1,"emoticon":"🇲🇪","latitude":"42.442574","longitude":"19.268646"},
+    {"country":"turkey","id":1,"emoticon":"🇹🇷","latitude":"41.015137","longitude":"28.979530"},
     {"country":"unitedkingdom","id":1,"emoticon":"🇬🇧","latitude":"55.378051","longitude":"-3.435973"},
     {"country":"ukraine","id":1,"emoticon":"🇺🇦","latitude":"48.379433","longitude":"31.16558"},
     {"country":"earth","id":1,"emoticon":"🌍","latitude":"48.379433","longitude":"31.16558"}

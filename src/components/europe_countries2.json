@@ -5,6 +5,8 @@
     "belgium":[{"id":3,"emoticon":"🇧🇪","emoticon_uni":"U+1F1E7 U+1F1EA","coordinates":{"latitude":"50.503887","longitude":"4.469936"}}],
     "bulgaria":[{"id":4,"emoticon":"🇧🇬","emoticon_uni":"U+1F1E6 U+1F1F9","coordinates":{"latitude":"49.817492","longitude":"15.472962"}}],
     "croatia":[{"id":5,"emoticon":"🇭🇷","emoticon_uni":"U+1F1ED U+1F1F7","coordinates":{"latitude":"45.1","longitude":"15.2"}}],
+    "bosnia and herzegovina":[{"id":11,"emoticon":"🇫🇷","emoticon_uni":"U+1F1EB U+1F1F7","coordinates":{"latitude":"46.227638","longitude":"2.213749"}}],
+ 
     "cyprus":[{"id":6,"emoticon":"🇨🇾","emoticon_uni":"U+1F1E8 U+1F1FE","coordinates":{"latitude":"35.126413","longitude":"33.429859"}}],
     "czechia":[{"id":7,"emoticon":"🇨🇿","emoticon_uni":"U+1F1E8 U+1F1FF","coordinates":{"latitude":"49.817492","longitude":"15.472962"}}],
     "denmark":[{"id":8,"emoticon":"🇩🇰","emoticon_uni":"U+1F1E9 U+1F1F0","coordinates":{"latitude":"56.26392","longitude":"9.501785"}}],
