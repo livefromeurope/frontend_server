@@ -15,12 +15,18 @@ function Merch(){
     const [shirt,setShirt] = useState('../merch/green_deal_shirt.jpg')
     const merch = [
         
-        {"merch_url":"../merch/DSC00777.JPG"},
+       
+        {"merch_url":"../merch/lfe5.jpg"},
+
+        
         {"merch_url":"../merch/green_deal.jpg"},
+
+        {"merch_url":"../merch/lfe2.jpg"},
         {"merch_url":"../merch/DSC00881.JPG"},
-        {"merch_url":"../merch/DSC00877.JPG"},
+
         {"merch_url":"../merch/DSC00883.JPG"},
-        {"merch_url":"../merch/DSC00889.JPG"}
+        {"merch_url":"../merch/lfe6.jpg"},
+        //{"merch_url":"../merch/lfe4.jpg"},
     
     ];
 
