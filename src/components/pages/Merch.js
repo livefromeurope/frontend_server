@@ -12,7 +12,7 @@ function Merch(){
     const [email, setEmail] = useState('');
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
-    const [shirt,setShirt] = useState('../merch/green_deal_shirt.jpg')
+    const [shirt,setShirt] = useState('../merch/lazadas.jpeg')
     const merch = [
         
        
