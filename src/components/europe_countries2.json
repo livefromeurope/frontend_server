@@ -1,18 +1,31 @@
 
     {
     "europe":[{"id":1,"emoticon":"🇪🇺","emoticon_uni":"","coordinates":{"latitude":"47.516231","longitude":"14.550072"}}],
+    
+    "albania":[{"id":2,"emoticon":"🇦🇱","emoticon_uni":"U+1F1E6 U+1F1F9","coordinates":{"latitude":"41.327953","longitude":"19.819025"}}],
+
     "austria":[{"id":2,"emoticon":"🇦🇹","emoticon_uni":"U+1F1E6 U+1F1F9","coordinates":{"latitude":"47.516231","longitude":"14.550072"}}],
+    
     "belgium":[{"id":3,"emoticon":"🇧🇪","emoticon_uni":"U+1F1E7 U+1F1EA","coordinates":{"latitude":"50.503887","longitude":"4.469936"}}],
+    
+    "bosnia and herzegovina":[{"id":11,"emoticon":"🇺🇦","emoticon_uni":"U+1F1EB U+1F1F7","coordinates":{"latitude":"43.545954","longitude":"31.16558"}}],
+
     "bulgaria":[{"id":4,"emoticon":"🇧🇬","emoticon_uni":"U+1F1E6 U+1F1F9","coordinates":{"latitude":"49.817492","longitude":"15.472962"}}],
+    
     "croatia":[{"id":5,"emoticon":"🇭🇷","emoticon_uni":"U+1F1ED U+1F1F7","coordinates":{"latitude":"45.1","longitude":"15.2"}}],
-    "bosnia and herzegovina":[{"id":11,"emoticon":"🇫🇷","emoticon_uni":"U+1F1EB U+1F1F7","coordinates":{"latitude":"46.227638","longitude":"2.213749"}}],
- 
+    
     "cyprus":[{"id":6,"emoticon":"🇨🇾","emoticon_uni":"U+1F1E8 U+1F1FE","coordinates":{"latitude":"35.126413","longitude":"33.429859"}}],
+    
     "czechia":[{"id":7,"emoticon":"🇨🇿","emoticon_uni":"U+1F1E8 U+1F1FF","coordinates":{"latitude":"49.817492","longitude":"15.472962"}}],
+    
     "denmark":[{"id":8,"emoticon":"🇩🇰","emoticon_uni":"U+1F1E9 U+1F1F0","coordinates":{"latitude":"56.26392","longitude":"9.501785"}}],
+    
     "estonia":[{"id":9,"emoticon":"🇪🇪","emoticon_uni":"U+1F1EA U+1F1EA","coordinates":{"latitude":"58.595272","longitude":"25.013607"}}],
+    
     "finland":[{"id":10,"emoticon":"🇫🇮","emoticon_uni":"U+1F1EB U+1F1EE","coordinates":{"latitude":"61.92411","longitude":"25.748151"}}],
+    
     "france":[{"id":11,"emoticon":"🇫🇷","emoticon_uni":"U+1F1EB U+1F1F7","coordinates":{"latitude":"46.227638","longitude":"2.213749"}}],
+    
     "germany":[{"id":13,"emoticon":"🇩🇪","emoticon_uni":"U+1F1E9 U+1F1EA","coordinates":{"latitude":"51.165691","longitude":"10.451526"}}],
     "greece":[{"id":1,"emoticon":"🇬🇷","emoticon_uni":"U+1F1EC U+1F1F7","coordinates":{"latitude":"39.074208","longitude":"21.824312"}}],
     "hungary":[{"id":1,"emoticon":"🇭🇺","emoticon_uni":"U+1F1ED U+1F1FA","coordinates":{"latitude":"47.162494","longitude":"19.503304"}}],
@@ -23,6 +36,8 @@
     "liechtenstein":[{"id":1,"emoticon":"🇱🇮","emoticon_uni":"U+1F1F1 U+1F1EE","coordinates":{"latitude":"47.166","longitude":"9.555373"}}],
     "luxembourg":[{"id":1,"emoticon":"🇱🇺","emoticon_uni":"U+1F1F1 U+1F1FA","coordinates":{"latitude":"49.815273","longitude":"6.129583"}}],
     "malta":[{"id":1,"emoticon":"🇲🇹","emoticon_uni":"U+1F1F2 U+1F1F9","coordinates":{"latitude":"35.937496","longitude":"14.375416"}}],
+    "montenegro":[{"id":1,"emoticon":"🇲🇹","emoticon_uni":"U+1F1F2 U+1F1F9","coordinates":{"latitude":"42.442574","longitude":"19.268646"}}],
+
     "netherlands":[{"id":1,"emoticon":"🇳🇱","emoticon_uni":"U+1F1F3 U+1F1F1","coordinates":{"latitude":"52.132633","longitude":"5.291266"}}],
     "norway":[{"id":1,"emoticon":"🇳🇴","emoticon_uni":"U+1F1F3 U+1F1F4","coordinates":{"latitude":"60.472024","longitude":"8.468946"}}],
     "poland":[{"id":1,"emoticon":"🇵🇱","emoticon_uni":"U+1F1F5 U+1F1F1","coordinates":{"latitude":"51.919438","longitude":"19.145136"}}],
@@ -33,6 +48,10 @@
     "slovakia":[{"id":1,"emoticon":"🇸🇰","emoticon_uni":"U+1F1F8 U+1F1F0","coordinates":{"latitude":"48.669026","longitude":"19.699024"}}],
     "slovenia":[{"id":1,"emoticon":"🇸🇮","emoticon_uni":"U+1F1F8 U+1F1EE","coordinates":{"latitude":"46.151241","longitude":"14.995463"}}],
     "spain":[{"id":1,"emoticon":"🇪🇸","emoticon_uni":"U+1F1EA U+1F1F8","coordinates":{"latitude":"40.463667","longitude":"-3.74922"}}],
+    
+    "serbia":[{"id":1,"emoticon":"🇷🇸","emoticon_uni":"U+1F1EA U+1F1F8","coordinates":{"latitude":"44.787197","longitude":"20.457273"}}],
+
+    
     "switzerland":[{"id":1,"emoticon":"🇨🇭","emoticon_uni":"U+1F1E8 U+1F1ED","coordinates":{"latitude":"46.818188","longitude":"8.227512"}}],
     "sweden":[{"id":1,"emoticon":"🇸🇪","emoticon_uni":"U+1F1F8 U+1F1EA","coordinates":{"latitude":"60.128161","longitude":"18.643501"}}],
     "turkey":[{"id":1,"emoticon":"🇹🇷","emoticon_uni":"U+1F1F9 U+1F1F7","coordinates":{"latitude":"39.00","longitude":"35.00"}}],
