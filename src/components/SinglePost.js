@@ -90,19 +90,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                                 @{post_author}
                                                 
                                             </div>
-                                        {/*
-                                        <div class="row flex-nowrap">
-                                            <div class="usr_name">
-                                                @{post_author}
-                                                
-                                            </div>
-                                           
-                                            <div>
-                                                <img src="../icons/boty.png" width="30" alt=""></img>
-                                            </div>
-                                            
-                                        </div>
-                                        */}
+
                                 </Link>
                                 </div>
                                 </div>

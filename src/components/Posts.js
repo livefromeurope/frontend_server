@@ -7,7 +7,7 @@ import europe_countries from './europe_countries.json';
 import europe_countries_json from './europe_countries2.json';
 import { useHorizontalScroll} from './functions/useHorizontalScroll';
 import urlify from './functions/urlify';
-import Spotlight from './pages/Spotlight';
+import Spotlight from './pages/Spotlight_old';
 import imageExists from './functions/check_if_img_exists';
 import SearchBar from './pages/SearchBar';
 
@@ -266,50 +266,6 @@ export default function Posts(props){
                             setData={setData}
                         />
 
-                        /*
-                    <Multiselect
-                    //customCloseIcon={<>🇪🇺</>}
-                    selectedValues={props.selectedValues}
-                    classname="countryselect"
-                    name="countries"
-                    id = "Populate"
-                    options={options}
-                    onSelect={onSelect}
-                    onRemove={onRemove}
-                    onChange={setValue}
-                    displayValue="country"
-                    placeholder="filter content"
-                    hidePlaceholder={true}
-                    closeOnSelect
-                    getOptionLabel={(option) => option.country}
-                    getOptionValue={(option) => option.id}
-                    style=
-                    {
-                        {
-                            multiselectContainer:{
-                            color:"white",
-                            "border-radius":"5px"
-                            },
-                            searchBox: {
-                            'border-radius': '0px',
-                            "font-size":"16px",
-                            height:"40px",
-                            padding:"1px",
-                            background: "white",
-                            "border-radius":"5px"
-                            },chips: { // To change css chips(Selected options)
-                                background: "#004494",
-                                color:"white",
-                                "font-size":"16px"
-                            },option: { // To change css for dropdown options
-                                color: "#004494",
-                                background:"white",
-                                "font-size":"16px"
-                            }
-                        }
-                    }
-                    />
-                    */
                     }
             </div>
 
@@ -350,8 +306,8 @@ export default function Posts(props){
                                 voted={UpdateVoteUpdate}
                                 post_likes={PostLikes}
                                 set_post_likes={setPostLikes}
-                                set_saved_MongoPostID={props.set_saved_MongoPostID}
-                                saved_MongoPostID={props.saved_MongoPostID}
+                                set_saved_MongoPostID={props.setSavedMongoPostID}
+                                saved_MongoPostID={props.savedMongoPostID}
                             />
                             }else{
                                 return <div></div>
