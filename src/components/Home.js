@@ -17,7 +17,7 @@ function Home(props){
     const [postformButton, setPostformButton] = useState('Create Post');
     const [showFilter, setShowFilter] = useState(true);
     const [filterButton, setFilterButton] = useState('Hide & Remove Filter');
-    const [selectedValues, setSelectedValues] = useState({});
+    const [selectedValues, setSelectedValues] = useState([]);
     const navigate = useNavigate();
     const [savedMongoPostID,setSavedMongoPostID] = useState({});
 
@@ -40,7 +40,7 @@ function Home(props){
             setFilterButton('Hide Filter');
         } else {
             setShowFilter(false);
-            setSelectedValues({});
+            setSelectedValues([]);
             setFilterButton('Filter Content');
         }
     }

@@ -10,7 +10,7 @@ import europe_countries from './europe_countries.json'
 
 
 
-function Postform({Update_Trigger}){
+function Postform({UpdateTrigger}){
     let options = europe_countries
     const [value_dd, setValue] = React.useState({});
     const [textdata,setTextData]=useState('');
@@ -101,7 +101,7 @@ function Postform({Update_Trigger}){
             Make_Post(text_and_image,selected_country,auth.username,imageurl)
             resetValues();
             resetTextarea();
-            Update_Trigger(textdata);
+            UpdateTrigger(textdata);
             setNowpost('')
             
     }
