@@ -18,15 +18,15 @@ export default function Profile(){
     return(
         
         <section>
-            <div class= "container">
+            <div className= "container">
                 <div>
-                    <form class="form" id="profile_form" onSubmit={()=>{}}>
+                    <form className="form" id="profile_form" onSubmit={()=>{}}>
                         <div>Profile: @{auth.username}</div>
-                        <label class='lables' htmlFor="image">Your Image:</label>
-                        <div class='profile_img'><img width="250px" class='profile_img'src={auth.image}></img></div>
-                        <label class='lables' htmlFor="username">Your Username:</label>
+                        <label className='lables' htmlFor="image">Your Image:</label>
+                        <div className='profile_img'><img width="250px" className='profile_img'src={auth.image}></img></div>
+                        <label className='lables' htmlFor="username">Your Username:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="username"
                             
@@ -35,9 +35,9 @@ export default function Profile(){
                             value={auth.username}
                             required
                             />
-                        <label class='lables' htmlFor="bio">Your Bio:</label>
+                        <label className='lables' htmlFor="bio">Your Bio:</label>
                         <textarea
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="bio"
                             rows="3"
@@ -47,18 +47,18 @@ export default function Profile(){
                             value={auth.bio}
 
                             />
-                        <label class='lables' htmlFor="email">Your Email:</label>
+                        <label className='lables' htmlFor="email">Your Email:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="email"
                             id="email"
                             //onChange={(e) => setPwd(e.target.value)}
                             value={auth.email}
                             required
                             />
-                        <label class='lables' htmlFor="image">Your Image URL:</label>
+                        <label className='lables' htmlFor="image">Your Image URL:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="image"
                             //onChange={(e) => setPwd(e.target.value)}
@@ -66,8 +66,8 @@ export default function Profile(){
                             required
                             />
                         
-                        <div ClassName="post-actions-right">
-                            <button type='button' id='small-button' class="btn btn-primary btn-sm"> 
+                        <div className="post-actions-right">
+                            <button type='button' id='small-button' className="btn btn-primary btn-sm"> 
                                 EDIT
                         </button>
                         </div>

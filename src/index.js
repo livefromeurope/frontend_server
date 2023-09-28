@@ -1,14 +1,22 @@
+// React and ReactDOM
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
+// Main App Component and Providers
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import './fonts/VCR_OSD_MONO.ttf';
 import { AuthProvider } from './components/AuthProvider';
 
-const rootElement = document.getElementById("root");
-const root = ReactDOM.createRoot(rootElement);
+// Styles and Fonts
+import './index.css';
+import './fonts/VCR_OSD_MONO.ttf';
 
+// Utilities
+import reportWebVitals from './reportWebVitals';
+
+// Create a root for rendering
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// Render the main application wrapped with necessary providers
 root.render(
   <React.StrictMode>
     <AuthProvider>
@@ -17,5 +25,6 @@ root.render(
   </React.StrictMode>
 );
 
-// Measure performance in your app
+// Performance measurement (optional)
+// Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

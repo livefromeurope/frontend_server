@@ -72,7 +72,7 @@ function Post(){
         <section>
             
             
-            <div class= "container">
+            <div className= "container">
             <div>
             {
                 postdata && postdata.length>0 && postdata.map((post)=>{

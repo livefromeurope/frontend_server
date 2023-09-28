@@ -66,7 +66,7 @@ export default function SearchBar({setData,setShow_spotlight}){
             }}>
         <input 
             type="text"
-            class="form-control"
+            className="form-control"
             style={BarStyle}
             key="search-bar"
             value={search_value}

@@ -65,16 +65,16 @@ function Spotlight({type,category,selected_country}){
 
     return(
         <section>
-            <div class= "container">
+            <div className= "container">
                 spotlight: {category}
                 <iframe 
                 style={{
-                    width: '100%',height:height, "border-radius":"20px", 
+                    width: '100%',height:height, "borderRadius":"20px", 
                     border:"solid", 
-                    "border-bottom-color":"#ffd700",
-                    "border-left-color":"#ffd700",
-                    "border-top-color":"#0057B7",
-                    "border-right-color":"#0057B7",
+                    "borderBottomColor":"#ffd700",
+                    "borderLeftColor":"#ffd700",
+                    "borderTopColor":"#0057B7",
+                    "borderRightColor":"#0057B7",
                     }} 
                 src={iframe_url} />
             </div>

@@ -19,7 +19,7 @@ function Urlify(text) {
     }        
     else{
         //return <div>{text.replace(imgurl[0],"")} <img src = {imgurl[0]} loading='lazy' /></div>
-        return <div class="singlepost_container"><div class="singlepost_text">{text.replace(imgurl[0],"")}</div> <div class="singlepost_img"><img src = {imgurl[0]} loading='lazy' /></div></div>
+        return <div className="singlepost_container"><div className="singlepost_text">{text.replace(imgurl[0],"")}</div> <div className="singlepost_img"><img src = {imgurl[0]} loading='lazy' /></div></div>
     }
     
 };

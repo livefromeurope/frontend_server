@@ -33,11 +33,11 @@ function CommentFormObject({post_reference_id,comment_label,setCommentUpdate,isR
     return(
         (auth.username &&
         <section>
-            <div class= "write_comment">
+            <div className= "write_comment">
                     <form>
-                    <div class="form-group">
-                        <textarea class="form-control" id="Comment_Area" rows="1" ref={Comment_Area} placeholder="write comment"></textarea>
-                        <div class="col" id="post-btn">
+                    <div className="form-group">
+                        <textarea className="form-control" id="Comment_Area" rows="1" ref={Comment_Area} placeholder="write comment"></textarea>
+                        <div className="col" id="post-btn">
                             <button type='button' onClick=
                             {
                                 ()=>(Make_Comment(Comment_Area.current.value,post_id, auth.username, post_reference_id,setCommentUpdate)
@@ -46,7 +46,7 @@ function CommentFormObject({post_reference_id,comment_label,setCommentUpdate,isR
                                 ,Update_Post(MongoPostID,null,comment_count,'comment_count_update')
                                 )
                             }
-                                class="btn btn-md btn-outline btn-primary">{comment_label}</button>
+                                className="btn btn-md btn-outline btn-primary">{comment_label}</button>
                         </div>
                     </div>    
                     </form>

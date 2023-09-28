@@ -68,25 +68,25 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
     
     return(
         <div>
-            <div className = 'singleposts_bucket' key={post_id} id={post_id}>
+            <div className = 'singleposts_bucket' /*key={post_id}*/ id={post_id}>
                 {/*<Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}> */}
                 <div>
                     <div>
-                        <div class ="singleposts" >
-                            <div class="row flex-nowrap" >
-                                <div class="col-5">
-                                    <div class ="postcategory" id="postcategory">
+                        <div className ="singleposts" >
+                            <div className="row flex-nowrap" >
+                                <div className="col-5">
+                                    <div className ="postcategory" id="postcategory">
                                         <Link style={{textDecoration: 'none'}}  to={`/category/${post_category}` }>
-                                            <div class="category">
+                                            <div className="category">
                                             {emoticon} {post_category} • {duration}
                                             </div>
                                         </Link>
                                     </div>
                                 </div>
-                                <div class="col-5">
-                                <div class ="usr">
+                                <div className="col-5">
+                                <div className ="usr">
                                 <Link style={{textDecoration: 'none'}}  to={`/user/${post_author}`}>
-                                            <div class="usr_name">
+                                            <div className="usr_name">
                                                 @{post_author}
                                                 
                                             </div>
@@ -97,11 +97,11 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                 
                             </div>
                             
-                            <div class="main-content">
-                            <h1 class="main-content">{post_content}</h1>
+                            <div className="main-content">
+                            <h1 className="main-content">{post_content}</h1>
 
-                                    {/*<div class="post_dates">{post_created_date.split('.')[0].replace("T"," ")}</div>
-                                    <div class="post_dates">{duration}</div>*/}
+                                    {/*<div className="post_dates">{post_created_date.split('.')[0].replace("T"," ")}</div>
+                                    <div className="post_dates">{duration}</div>*/}
 
                             </div>
                             
@@ -121,7 +121,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                         }   
                                     }
                                     }
-                                        id='small-button' class="btn btn-primary btn-sm"> 
+                                        id='small-button' className="btn btn-primary btn-sm"> 
                                     delete
                                 </button>
                                 </div>
@@ -135,12 +135,12 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                             <div className="post-action" >
                                 {
                                     <div id = 'post-icons'>
-                                        <label for="share" onClick={()=> 
+                                        <label htmlFor="share" onClick={()=> 
                                             {
                                                 set_post_info({id: post_id, type: 'is_info'})
                                                 copyText()}
                                             }>
-                                            <img id="upload_img" style={{width: '20px',"margin-top":"25%"}} src="../icons/share.png" />
+                                            <img id="upload_img" style={{width: '20px',"marginTop":"25%"}} src="../icons/share.png" />
                                         </label>
                                     </div>
                                 }
@@ -150,8 +150,8 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
                                 <Link style={{textDecoration: 'none'}}  to={`/post/${post_id}`}>
                                     <div id = 'post-icons'>
-                                        <label for="comments">
-                                            <img id="comments_img" style={{width: '20px',"margin-top":"20%"}} src="../icons/comments.png" />
+                                        <label htmlFor="comments">
+                                            <img id="comments_img" style={{width: '20px',"marginTop":"20%"}} src="../icons/comments.png" />
                                             {post_comment_count}
                                         </label>
                                     </div>
@@ -160,13 +160,13 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                             <div className="post-action" >
                                     {!setLikes &&
                                         <div id = 'post-icons'>
-                                            <label for='vote' onClick={ ()=>(
+                                            <label htmlFor='vote' onClick={ ()=>(
                                                     Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
                                                     voted(post_mongo_id+post_votes),
                                                     post_likes.push(post_id)
                                                     //update posts?
                                                     )} >
-                                                <img id="upload_img" style={{width: '20px',"margin-top":"20%","margin-right":'5px'}} src="../icons/star_nofill.png" />
+                                                <img id="upload_img" style={{width: '20px',"marginTop":"20%","marginRight":'5px'}} src="../icons/star_nofill.png" />
                                                 {post_votes}
                                             </label>
                                         </div>
@@ -174,9 +174,9 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                     }
                                     {setLikes &&
                                         <div id = 'post-icons'>
-                                            <label for='vote'>
+                                            <label htmlFor='vote'>
                                                 
-                                                <img id="upload_img" style={{width: '25px',"margin-top":"8%","padding-left":"1px","margin-right":"8px"}} src="../icons/star_fill.png" />
+                                                <img id="upload_img" style={{width: '25px',"marginTop":"8%","padding-left":"1px","marginRight":"8px"}} src="../icons/star_fill.png" />
                                             </label>
                                         </div>
                                     }

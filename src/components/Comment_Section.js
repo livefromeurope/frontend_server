@@ -75,7 +75,7 @@ export default function Comment_Section({MongoPostID}){
 
     return(
         <section>
-                <div class= "container">
+                <div className= "container">
 
                     <CommentForm
 

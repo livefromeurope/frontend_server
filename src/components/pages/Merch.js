@@ -67,7 +67,7 @@ function Merch(){
 
         return (
             <a href={`mailto:livefromeurope@outlook.com?subject=${subject || ""}&body=${body || ""}`}>
-                <button onClick={()=>{}} type='button' class="btn btn-md btn-outline btn-primary">
+                <button onClick={()=>{}} type='button' className="btn btn-md btn-outline btn-primary">
                     Order
                 </button>
             </a>
@@ -78,7 +78,7 @@ function Merch(){
     return(
         <section>
 
-            <div class= "container" style={{ "max-height":"100%"}}>
+            <div className= "container" style={{ "max-height":"100%"}}>
 
                 <div className="Merch"  ref={scrollRef} style={{ overflow: "auto" }}>
 
@@ -94,7 +94,7 @@ function Merch(){
                         merch && merch.length>0 && merch.map((merch_item)=>
                             (
 
-                                <div class="merch_pics">
+                                <div className="merch_pics">
                                     
                                 <img src={merch_item.merch_url}></img>
                                 </div>
@@ -107,9 +107,9 @@ function Merch(){
                 <div>
                     <p>  &nbsp;&nbsp;&nbsp;   </p>
                 </div>
-                <div class='Merch_container'>
+                <div className='Merch_container'>
                 
-                <form class="merch_form" id="login_form">
+                <form className="merch_form" id="login_form">
 
                 <MerchDropdown
 
@@ -117,9 +117,9 @@ function Merch(){
                 />
 
 
-                    <label class='lables' htmlFor="username">Enter Name:</label>
+                    <label className='lables' htmlFor="username">Enter Name:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="username"
                             ref={userRef}
@@ -129,9 +129,9 @@ function Merch(){
                             required
                             />
 
-                    <label class='lables' htmlFor="email">Enter Email:</label>
+                    <label className='lables' htmlFor="email">Enter Email:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="email"
                             ref={userRef}
@@ -140,9 +140,9 @@ function Merch(){
                             value={email}
                             required
                             />
-                    <label class='lables' htmlFor="email">Enter Street:</label>
+                    <label className='lables' htmlFor="email">Enter Street:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="email"
                             ref={userRef}
@@ -152,9 +152,9 @@ function Merch(){
                             required
                             />
 
-                    <label class='lables' htmlFor="email">Enter City:</label>
+                    <label className='lables' htmlFor="email">Enter City:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="city"
                             ref={userRef}
@@ -167,7 +167,7 @@ function Merch(){
                     <Mailto email="livefromeurope@outlook.com" subject="Hello" body="Hello world!">
                     </Mailto> 
                     */} 
-                    <button onClick={()=>(SubmitIT())} type='button' class="btn btn-md btn-outline btn-primary">Order</button>
+                    <button onClick={()=>(SubmitIT())} type='button' className="btn btn-md btn-outline btn-primary">Order</button>
                     
             </form>
                 </div>

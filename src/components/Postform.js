@@ -115,10 +115,10 @@ function Postform({UpdateTrigger}){
     return(
         <section>
                 
-                <div class= "Postform">
+                <div className= "Postform">
                 
                     <form>
-                        <div class="form-group">
+                        <div className="form-group">
                         <div>
                                 
                             <TextareaAutosize 
@@ -137,13 +137,13 @@ function Postform({UpdateTrigger}){
                                 <label>{image.imageName}</label>
                                 <label>{image.imageSize}</label>
                             </div>
-                            <div class="row mb-4 flex-nowrap" id="form-row">
-                                <div class="col-8">
-                                    <div class="row">
-                                        <div class="col-12">
+                            <div className="row mb-4 flex-nowrap" id="form-row">
+                                <div className="col-8">
+                                    <div className="row">
+                                        <div className="col-12">
                                             <Multiselect
                                             //customCloseIcon={<>🇪🇺</>}
-                                            classname="countryselect"
+                                            className="countryselect"
                                             name="countries"
                                             id = "Populate"
                                             options={options}
@@ -186,11 +186,11 @@ function Postform({UpdateTrigger}){
                                         </div>
                                     </div>
                                 </div>
-                                <div class = "col" >
+                                <div className= "col" >
                                     <div id='form_button_container'>
                                         <div id='form_buttons'>
-                                            <div class="row mb-4 flex-nowrap" >
-                                                <div class="col-3"> 
+                                            <div className="row mb-4 flex-nowrap" >
+                                                <div className="col-3"> 
                                                     <Upload_Image
                                                         files={files}
                                                         setFiles={setFiles}
@@ -201,8 +201,8 @@ function Postform({UpdateTrigger}){
                                                         setNowpost={setNowpost}
                                                     />
                                                 </div>
-                                                <div class="col-3" id="post-btn">
-                                                        <button type='button' onClick={()=>(Upload_Or_Post())} id="" class="btn btn-md btn-outline btn-primary"> post</button>
+                                                <div className="col-3" id="post-btn">
+                                                        <button type='button' onClick={()=>(Upload_Or_Post())} id="" className="btn btn-md btn-outline btn-primary"> post</button>
                                                 </div>
                                                 
                                             </div>

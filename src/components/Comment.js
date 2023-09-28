@@ -18,26 +18,26 @@ function CommentObject ({comment_mongo_id,comment_id,comment_author,comment_comm
 
     return(
         <section>
-            <div class="comments_container">
-                <div class = 'comments_bucket' key={comment_id} id={comment_id}  >
-                        <div class="comment_usr">
-                            <div class="comment_usr_name">
+            <div className="comments_container">
+                <div className = 'comments_bucket' key={comment_id} id={comment_id}  >
+                        <div className="comment_usr">
+                            <div className="comment_usr_name">
                                 {comment_author}
                             </div>
                         </div>
-                        <div class="comment-body">
-                                <div class='comment' >
+                        <div className="comment-body">
+                                <div className='comment' >
                                 {!isEditing && <div>{comment_comment}</div>}
-                                <div class="post_dates">{comment_created_date}</div>
-                                <div class='comment-actions'>
-                                    <div class="row">
-                                        {canReply && <div class="comment-action" type='button' onClick={()=>
+                                <div className="post_dates">{comment_created_date}</div>
+                                <div className='comment-actions'>
+                                    <div className="row">
+                                        {canReply && <div className="comment-action" type='button' onClick={()=>
                                                 setActiveComment({id: comment_id, type: 'replying'})}>Reply</div>}
-                                        {canEdit && <div type='button' class="comment-action" onClick={async ()=>{
+                                        {canEdit && <div type='button' className="comment-action" onClick={async ()=>{
                                                 if(window.confirm('Are you sure to delete comment?'))
                                                 {Update_Comment('delete',comment_mongo_id,null,setCommentUpdate)
                                                 setCommentUpdate(new Date().toISOString())}}}>Delete</div>}
-                                        {canEdit && <div class="comment-action" type='button' onClick={()=>
+                                        {canEdit && <div className="comment-action" type='button' onClick={()=>
                                                 {Update_Comment('vote_update',comment_mongo_id,comment_upvotes,setCommentUpdate)
                                                 setCommentUpdate(new Date().toISOString())
                                                 }}>{comment_upvotes} vote</div>}

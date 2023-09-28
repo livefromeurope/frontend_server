@@ -20,11 +20,11 @@ export default function Scroll_To_Top() {
           fontSize: '20px',
           bottom: '50px',
           right: '40px',
-          'border-radius': '20px',
-          'border-color': '#fffff',
+          'borderRadius': '20px',
+          'borderColor': '#fffff',
           backgroundColor: 'transparent',
           color: '#ffff',
-          'font-size': '14px',
+          'fontSize': '14px',
           textAlign: 'center',
         }}
       >

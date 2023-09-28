@@ -1,3 +1,4 @@
+
 import React, {useState, useEffect,useRef } from 'react';
 import Multiselect from 'multiselect-react-dropdown';
 import useInfiniteScroll from "./useInfiniteScroll";
@@ -87,7 +88,7 @@ export default function Posts(props){
     
 
 
-    
+
     function set_fetch_url(){
         let window_url = window.location.href;
         if(!window_url.includes('www') && !window_url.includes('localhost')){
@@ -175,16 +176,20 @@ export default function Posts(props){
         //console.log(data[last_data_item])
         //console.log('fetchmore')
         //console.log(fetch_url)
-        
         console.log(last_data_item)
+        try{
         fetch_url=fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date'])
-        setFetchUrl(fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date']))
-        
-        // console.log('passurl: ' + fetch_url)
-        
+            setFetchUrl(fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date']))
+            
+            // console.log('passurl: ' + fetch_url)
+            
 
-        Get_Posts(fetch_url,setData,'fetch_more',setIsFetching);
-        console.log(data)
+            Get_Posts(fetch_url,setData,'fetch_more',setIsFetching);
+            
+            console.log(data)
+        }catch{
+            console.log('nodata fetched')
+        }
         //setData(prevState => ([...prevState, ...Array.from(Array(2).keys(), n => n + prevState.length + 1)]));
         //setIsFetching(false);
     }   
@@ -197,8 +202,10 @@ export default function Posts(props){
 
     
     useEffect(()=>{
+
         Get_Posts(fetch_url,setData);
-        console.log(data)
+        console.log(data);
+
     },[props.comment_update])
 
 
@@ -249,7 +256,7 @@ export default function Posts(props){
 
 
     return(
-        <div class="jumbotron">
+        <div className="jumbotron">
             
 
             {loading ? (
@@ -259,7 +266,7 @@ export default function Posts(props){
             ) : (
     
                 <div>
-                    <div classname= "col-1">
+                    <div className= "col-1">
                     {props.show_filter &&
                         <SearchBar
                             setShow_spotlight={setShow_spotlight}
@@ -292,6 +299,7 @@ export default function Posts(props){
                             if(!good_url){
                             //{imageExists(item.content) && 
                             return <SinglePost
+                                key={item.id} 
                                 post_id={item.id}
                                 post_info={PostInfo}
                                 set_post_info={setPostInfo}
@@ -320,11 +328,12 @@ export default function Posts(props){
 
             {show_fetch && 
             <div id="fetch_button_container"> 
-                <button type='button' onClick={fetchMoreListItems} id="fetch_button" class="btn">fetch more...</button>   
+                <button type='button' onClick={fetchMoreListItems} id="fetch_button" className="btn">fetch more...</button>   
             </div>
             }
             </div>
         )}
+        
         
     </div>
     );

@@ -27,7 +27,7 @@ export default function User(){
     return(
         
         <section>
-            <div class= "container">
+            <div className= "container">
                 <div>
                     <div>
                         @{user}
@@ -35,11 +35,11 @@ export default function User(){
 
                     {userdata.image && 
                         <div>
-                            <img src={userdata.image} class='profile_img' height="300"></img>
+                            <img src={userdata.image} className='profile_img' height="300"></img>
                         </div>
                     }
                     {!userdata.image && 
-                        <img src="../EU-Flag.jpeg" class='profile_img'height="300"></img>
+                        <img src="../EU-Flag.jpeg" className='profile_img'height="300"></img>
                     }
 
                     {userdata.bio && 

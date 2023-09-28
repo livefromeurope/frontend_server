@@ -18,7 +18,7 @@ function Odata(){
 
     return(
         <section>
-            <div class= "container">
+            <div className= "container">
                 <div>
                 < oda />
                 {

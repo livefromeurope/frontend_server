@@ -17,7 +17,7 @@ function Urlify(text) {
 
                 else{
                     let link_url = link[0]
-                    return <div class="singlepost_text"><a href={link_url} target="_blank">{text.replace(link_url,'')}</a></div>
+                    return <div className="singlepost_text"><a href={link_url} target="_blank">{text.replace(link_url,'')}</a></div>
                 }
             }else{
                 let youtube_id = youtube_url[0].split('/').pop();
@@ -33,9 +33,9 @@ function Urlify(text) {
         if(
             link == null
         ){
-            return <div class="singlepost_container"><div class="singlepost_text">{new_text}</div> <div class="singlepost_img"><img src = {imgurl[0]} loading="lazy" /></div></div>
+            return <div className="singlepost_container"><div className="singlepost_text">{new_text}</div> <div className="singlepost_img"><img src = {imgurl[0]} loading="lazy" /></div></div>
         }else{
-            return <div class="singlepost_container"><a href={link[0]} target="_blank"><div class="singlepost_text">{new_text.replace(link[0],'')}</div> <div class="singlepost_img"><img src = {imgurl[0]} loading="lazy" /></div></a></div>
+            return <div className="singlepost_container"><a href={link[0]} target="_blank"><div className="singlepost_text">{new_text.replace(link[0],'')}</div> <div className="singlepost_img"><img src = {imgurl[0]} loading="lazy" /></div></a></div>
         
     }
     }

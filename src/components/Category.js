@@ -16,7 +16,7 @@ export default function Category(){
     return(
         
         <section>
-            <div class= "container">
+            <div className= "container">
                 <div><Posts query_params={data} /></div>
             </div>
         </section>

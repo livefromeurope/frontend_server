@@ -51,7 +51,7 @@ export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,
 
   return (
     <div>
-        <div class="image-upload">
+        <div className="image-upload">
             <label for="file-input">
             <img id="upload_img"  src="./icons/upload.png"  alt="upload img"/>
             </label>

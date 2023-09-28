@@ -26,12 +26,6 @@
     "eject": "react-scripts eject",
     "dev": "webpack --env.API_URL=http://localhost:3000 --config webpack.config.dev.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",

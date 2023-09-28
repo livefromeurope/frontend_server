@@ -156,22 +156,22 @@ function Login(){
 
     return(
         <>
-        <div class= "container">
+        <div className= "container">
         {signup ? (
 
             <section >
                 <div>
                         <img width="200px" src="./icons/lfe.png"></img>
                     </div>
-                <div class="jumbotron">
+                <div className="jumbotron">
                     
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
                     
-                    <form class="form" id="login_form" onSubmit={handleLogin}>
+                    <form className="form" id="login_form" onSubmit={handleLogin}>
                         <div>Sign In</div>
-                        <label class='lables' htmlFor="email">Email:</label>
+                        <label className='lables' htmlFor="email">Email:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="email"
                             ref={userRef}
@@ -184,9 +184,9 @@ function Login(){
                             textContentType={'username'}
                             required
                             />
-                        <label class='lables' htmlFor="password">Password:</label>
+                        <label className='lables' htmlFor="password">Password:</label>
                         <input
-                            class="form-control"
+                            className="form-control"
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -199,11 +199,11 @@ function Login(){
                             textContentType={'password'}
                             required
                             />
-                        <button class="btn btn-md btn-outline btn-primary">Sign In</button>
+                        <button className="btn btn-md btn-outline btn-primary">Sign In</button>
                     </form>
                     <p>
-                        <label class='lables' >Need an Account?</label>
-                        <button class="btn btn-md btn-outline btn-primary" onClick={()=>setSignUp(false)} >Sign Up</button>
+                        <label className='lables' >Need an Account?</label>
+                        <button className="btn btn-md btn-outline btn-primary" onClick={()=>setSignUp(false)} >Sign Up</button>
                     </p>
                 </div>
             </section>
@@ -212,14 +212,14 @@ function Login(){
             <div>
                         <img width="200px" src="/lfe.png"></img>
                     </div>
-            <div class="jumbotron">
+            <div className="jumbotron">
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"}>{errMsg}</p>
             
-            <form class="form" id="login_form" onSubmit={handleSignUp}>
+            <form className="form" id="login_form" onSubmit={handleSignUp}>
                 <div>Sign Up</div>
-                <label class='lables' htmlFor="username">Enter Username:</label>
+                <label className='lables' htmlFor="username">Enter Username:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="username"
                             ref={userRef}
@@ -228,9 +228,9 @@ function Login(){
                             value={user}
                             required
                             />
-                <label class='lables' htmlFor="email">Enter Email:</label>
+                <label className='lables' htmlFor="email">Enter Email:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="email"
                             ref={userRef}
@@ -239,9 +239,9 @@ function Login(){
                             value={email}
                             required
                             />
-                <label class='lables' htmlFor="bio">Enter Bio:</label>
+                <label className='lables' htmlFor="bio">Enter Bio:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="bio"
                             ref={userRef}
@@ -250,9 +250,9 @@ function Login(){
                             value={bio}
                             required
                             />
-                    <label class='lables' htmlFor="image">Enter Image URL:</label>
+                    <label className='lables' htmlFor="image">Enter Image URL:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="text"
                             id="url"
                             ref={userRef}
@@ -261,9 +261,9 @@ function Login(){
                             value={image}
                             required
                             />
-                    <label class='lables' htmlFor="password">Enter Password:</label>
+                    <label className='lables' htmlFor="password">Enter Password:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -271,9 +271,9 @@ function Login(){
                             minlength="10"
                             required
                     />
-                    <label class='lables' htmlFor="password">ReEnter Password:</label>
+                    <label className='lables' htmlFor="password">ReEnter Password:</label>
                     <input
-                            class="form-control"
+                            className="form-control"
                             type="password"
                             id="password-reenter"
                             onChange={(e) => ResetPwd(e.target.value)}
@@ -281,7 +281,7 @@ function Login(){
                             minlength="10"
                             required
                     />
-                    <button class="btn btn-md btn-outline btn-primary">Sign Up</button>
+                    <button className="btn btn-md btn-outline btn-primary">Sign Up</button>
             </form>
             </div>
         </section> 

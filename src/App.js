@@ -1,5 +1,10 @@
-import Css from './Css.css';
-import { useEffect,useState } from 'react';
+// React and Hooks
+import { useEffect, useState } from 'react';
+
+// Styles
+import './Css.css';
+
+// Components
 import Nav from './components/Nav';
 import Home from './components/Home';
 import About from './components/About';
@@ -12,64 +17,51 @@ import User from './components/User';
 import Profile from './components/Profile';
 import Login from './components/Login';
 import RequireAuth from './components/RequireAuth';
-import {BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
 import Get_User_IP from './components/Get_User_IP';
 
+// Router
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App(){
-  const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
-  const isBigScreen = useMediaQuery({ minWidth: 1824 })
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 })
-  const isPortrait = useMediaQuery({ orientation: 'portrait' })
-  const isRetina = useMediaQuery({ minResolution: '2dppx' })
-  const helmetContext = {};
+// Utilities
+import { useMediaQuery } from 'react-responsive';
 
-  let [userid, setUserID] = useState([])
-  //const {auth} = useAuth();
+function App() {
+  const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 });
+  const isBigScreen = useMediaQuery({ minWidth: 1824 });
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
+  const isPortrait = useMediaQuery({ orientation: 'portrait' });
+  const isRetina = useMediaQuery({ minResolution: '2dppx' });
 
-  useEffect(()=>{
-    Get_User_IP(setUserID,userid);
-  },[])
-
+  const [userid, setUserID] = useState([]);
 
 
-    return (
-
-        <Router>
-        <div className="App">
-        
-          <header className="Navigation">
-            <Nav/>
-          </header>
-            <div className="AppBody">
-              <Routes>
-                <Route path="/" element={<Home 
-                  
-                  userid = {userid.country_name}
-
-                />} />
-                <Route path="/about" element={<About/>} />
-                <Route path="/merch" element={<Merch/>} />
-                <Route path="/login" element={<Login/>} />
-                <Route path="/odata" element={<Odata/>} />
-                <Route path="/post/:id" element={<Post/>} />
-                <Route path="/category/:id" element={<Category/>}/>
-                <Route path="/user/:id" element={<User/>}/>
-                <Route element={<RequireAuth/>}>
-                  <Route path="/profile/:id" element={<Profile/>}/>
-                </Route>
-              </Routes>
-            </div>
-        
-          <footer class="Footer">
-            <Footer/>
-          </footer>
+  return (
+    <Router>
+      <div className="App">
+        <header className="Navigation">
+          <Nav />
+        </header>
+        <div className="AppBody">
+          <Routes>
+            <Route path="/" element={<Home userid={userid.country_name} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/merch" element={<Merch />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/odata" element={<Odata />} />
+            <Route path="/post/:id" element={<Post />} />
+            <Route path="/category/:id" element={<Category />} />
+            <Route path="/user/:id" element={<User />} />
+            <Route element={<RequireAuth />}>
+              <Route path="/profile/:id" element={<Profile />} />
+            </Route>
+          </Routes>
         </div>
-        </Router>
-
-    );
+        <footer className="Footer">
+          <Footer />
+        </footer>
+      </div>
+    </Router>
+  );
 }
-
 
 export default App;

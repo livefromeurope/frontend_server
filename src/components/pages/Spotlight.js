@@ -3,7 +3,6 @@
 function Spotlight({type,category,selected_country}){
 
 
-
     //https://gist.github.com/pianosnake/b4a45ef6bdf2ffb2e1b44bbcca107298    
     const EARTH_CIR_METERS = 40075016.686;
     const degreesPerMeter = 360 / EARTH_CIR_METERS;
@@ -33,12 +32,12 @@ function Spotlight({type,category,selected_country}){
             spotlight: {category}
             <iframe 
             style={{
-                width: '100%',height:height, "border-radius":"20px", 
+                width: '100%',height:height, "borderRadius":"20px", 
                 border:"solid", 
-                "border-bottom-color":"#ffd700",
-                "border-left-color":"#ffd700",
-                "border-top-color":"#0057B7",
-                "border-right-color":"#0057B7",
+                "borderBottomColor":"#ffd700",
+                "borderLeftColor":"#ffd700",
+                "borderTopColor":"#0057B7",
+                "borderRightColor":"#0057B7",
                 }} 
             src={passed_url} />
             </div>
@@ -91,7 +90,7 @@ function Spotlight({type,category,selected_country}){
 
     return(
         <section>
-            <div class= "container">
+            <div className= "container">
                 {divver}
             </div>
         </section>
