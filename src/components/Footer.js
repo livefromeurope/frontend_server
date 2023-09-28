@@ -10,7 +10,7 @@ function Footer(){
                 <div className="row">
                             <div className= "col">
                                 <div className='col_footer'>
-                                    <a href="www.livefromeurope.com">
+                                    <a href="/">
                                         <img src="../icons/lfe.png" alt=""></img>
                                     </a>
                                 </div>
