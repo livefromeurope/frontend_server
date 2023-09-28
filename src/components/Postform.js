@@ -97,7 +97,7 @@ function Postform({UpdateTrigger}){
             }else{
                 text_and_image =  textdata 
             }
-            console.log(text_and_image)
+            //console.log(text_and_image)
             Make_Post(text_and_image,selected_country,auth.username,imageurl)
             resetValues();
             resetTextarea();

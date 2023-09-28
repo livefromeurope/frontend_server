@@ -2,7 +2,7 @@ import React from 'react';
 import Posts from './Posts';
 import { useState, useEffect,setShowMessage  } from 'react';
 import Comment_Section from './Comment_Section';
-import Get_Posts from './Get_Posts';
+import getPosts from './getPosts';
 import SinglePost from './SinglePost';
 import urlify from './functions/urlify';
 
@@ -61,7 +61,7 @@ function Post(){
         let single_post_url = process.env.REACT_APP_POSTSERVER_URL + 'posts?id=' + id + '&limit=1&date=' +now_date
         //single_post_url = 'http://localhost:9000/posts?id=6ak9k6jgo8kgq&limit=15&date=2022-11-08T22:03:00.321Z'
         console.log(single_post_url)
-        Get_Posts(single_post_url,setpostData)
+        getPosts(single_post_url,setpostData)
         console.log(postdata)
 
     },[])

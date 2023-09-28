@@ -15,7 +15,7 @@ async function Get_Comment_Count(pass_url,setCommentCount){
 
             
             setCommentCount(myJson.comment_count)
-            console.log(myJson.comment_count);
+            //console.log(myJson.comment_count);
             // iterate over the comments again and correctly nest the children
         }
         )

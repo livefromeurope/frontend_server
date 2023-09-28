@@ -2,7 +2,7 @@ import React from 'react';
 import {useRef, useState, useEffect} from 'react';
 import Make_Comment from './Make_Comment';
 import Get_Comment_Count from './Get_Comment_Count';
-import Update_Post from './Update_Post';
+import updatePost from './updatePost';
 import useAuth from './useAuth';
 
 
@@ -43,7 +43,7 @@ function CommentFormObject({post_reference_id,comment_label,setCommentUpdate,isR
                                 ()=>(Make_Comment(Comment_Area.current.value,post_id, auth.username, post_reference_id,setCommentUpdate)
                                 ,setCommentUpdate(new Date().toISOString()),Comment_Area.current.value = '', setActiveComment([])
                                 //,Get_Comment_Count(get_url,setCommentCount)
-                                ,Update_Post(MongoPostID,null,comment_count,'comment_count_update')
+                                ,updatePost(MongoPostID,null,comment_count,'comment_count_update')
                                 )
                             }
                                 className="btn btn-md btn-outline btn-primary">{comment_label}</button>

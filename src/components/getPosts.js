@@ -1,5 +1,5 @@
 
-async function Get_Posts(pass_url, setData,fetchtype, setIsFetching){
+async function getPosts(pass_url, setData,fetchtype, setIsFetching){
         //console.log("get data from: " + pass_url);
         fetch(pass_url,{
             method: 'GET',
@@ -19,14 +19,14 @@ async function Get_Posts(pass_url, setData,fetchtype, setIsFetching){
                 [...prevState, ...myJson.posts]
                 ));
                 setIsFetching(false);
-                console.log('fetching')
+                console.log('######## fetching...')
             }else{
-                console.log('dataget')
+                console.log('######## dataget...')
                 setData(myJson.posts);
                 
             }
         });
 }
 
-export default Get_Posts;
+export default getPosts;
 

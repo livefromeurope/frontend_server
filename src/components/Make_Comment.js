@@ -33,7 +33,7 @@ async function Make_Comment(comment,post_id,user,post_reference_id,setCommentUpd
 
 
         }else{
-            console.log("PFLICHTFELD")
+            //console.log("PFLICHTFELD")
         };
 }
 

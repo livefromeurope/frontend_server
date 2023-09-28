@@ -3,7 +3,7 @@ import React, {useState, useEffect,useRef } from 'react';
 import Multiselect from 'multiselect-react-dropdown';
 import useInfiniteScroll from "./useInfiniteScroll";
 import SinglePost from "./SinglePost";
-import Get_Posts from './Get_Posts';
+import getPosts from './getPosts';
 import europe_countries from './europe_countries.json';
 import europe_countries_json from './europe_countries2.json';
 import { useHorizontalScroll} from './functions/useHorizontalScroll';
@@ -59,12 +59,12 @@ export default function Posts(props){
             //console.log(response)
             if(response.status == 200){
                 
-                console.log(true)
+                //console.log(true)
                 return true;
                 
             }else{
                 
-                console.log(false)
+                //console.log(false)
                 setgoodUrl(goodUrl => [...goodUrl,itemid])
                 return false;
     
@@ -113,7 +113,7 @@ export default function Posts(props){
                 console.log(props.selectedValues)
                 
                 add = '?category=' + country + '&category=europe&limit=' + limit + '&date=' + now_date
-                //Get_Posts(fetch_url,setData);
+                //getPosts(fetch_url,setData);
             }
 
         }else if(window_url.match(baseurl+'category/*')){
@@ -124,7 +124,7 @@ export default function Posts(props){
             setCountry(europe_countries_json[category])
             show_fetch = true
             setShow_spotlight(true)
-            console.log(1)
+            //console.log(1)
             setSpotlight_type('category')
         }else if(window_url.match(baseurl+'user/*')){
             let category = window_url.split('/').pop();
@@ -132,7 +132,7 @@ export default function Posts(props){
             //show_filter = false
             show_fetch = true
             setSpotlight_type('user')
-            console.log(2)
+            //console.log(2)
             setShow_spotlight(false)
 
         }else if(window_url.match(baseurl+'profile/*')){
@@ -140,14 +140,14 @@ export default function Posts(props){
             add = '?author=' + category + '&limit=' + limit+ '&date=' + now_date
             //show_filter = false
             show_fetch = true
-            console.log(3)
+            //console.log(3)
             setShow_spotlight(false)
         } 
         else{
             let id = window_url.split('/').pop();
             add = '?id=' + id + '&limit=' + limit + '&date=' + now_date
             //show_filter = false
-            console.log(4)
+            //console.log(4)
             show_fetch = false
             setSpotlight_type('main')
             setShow_spotlight(true)
@@ -157,9 +157,9 @@ export default function Posts(props){
         setFetchUrl(fetchurl + 'posts' + add)
         //console.log(fetch_url)
         fetch_url = fetchurl + 'posts' + add
-        console.log(fetch_url)
+        //console.log(fetch_url)
 
-        Get_Posts(fetch_url,setData);
+        getPosts(fetch_url,setData);
         
 
     }
@@ -184,9 +184,9 @@ export default function Posts(props){
             // console.log('passurl: ' + fetch_url)
             
 
-            Get_Posts(fetch_url,setData,'fetch_more',setIsFetching);
+            getPosts(fetch_url,setData,'fetch_more',setIsFetching);
             
-            console.log(data)
+            //console.log(data)
         }catch{
             console.log('nodata fetched')
         }
@@ -197,14 +197,14 @@ export default function Posts(props){
 
 
     useEffect(()=>{
-        set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,Get_Posts,setData,fetchurl)
+        set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,getPosts,setData,fetchurl)
     },[props.userid,props.show_filter])
 
     
     useEffect(()=>{
 
-        Get_Posts(fetch_url,setData);
-        console.log(data);
+        getPosts(fetch_url,setData);
+        //console.log(data);
 
     },[props.comment_update])
 
@@ -219,18 +219,18 @@ export default function Posts(props){
     function onSelect(selectedList, selectedItem){
         let pass = ''
         let selectedcountry = ''
-        console.log(selectedList)
+        //console.log(selectedList)
         for (let i = 0; i < selectedList.length; i++) {
             //console.log(selectedList[i]['country']);
             selectedcountry = selectedList[i]['country']
-            console.log(selectedList)
+            //console.log(selectedList)
             pass = pass.concat('category=').concat(selectedcountry).concat('&')
             //console.log(pass);
         }
         fetch_url = fetchurl + 'posts?' + pass.slice(0,-1) + '&limit=' + limit + '&date=' + now_date
         setFetchUrl(fetchurl + 'posts?' + pass.slice(0,-1) + '&limit=' + limit + '&date=' + now_date);
         //console.log(url)
-        Get_Posts(fetch_url,setData);
+        getPosts(fetch_url,setData);
     };
 
 
@@ -247,7 +247,7 @@ export default function Posts(props){
         }
         fetch_url = fetchurl + 'posts?' + pass.slice(0,-1) + '&limit=' + limit + '&date=' + now_date
         setFetchUrl(fetchurl + 'posts?' + pass.slice(0,-1) + '&limit=' + limit + '&date=' + now_date)
-        Get_Posts(fetch_url,setData);
+        getPosts(fetch_url,setData);
         
     };
 

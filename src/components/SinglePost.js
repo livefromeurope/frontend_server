@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import Update_Post from './Update_Post';
+import updatePost from './updatePost';
 import europe_countries from './europe_countries2.json'
 import useAuth from './useAuth';
 import imageExists from './functions/check_if_img_exists';
@@ -59,7 +59,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
 
         /* Copy text into clipboard */
         let posturl = 'https://www.livefromeurope.eu/post/' + post_id;
-        console.log(posturl)
+        //console.log(posturl)
         navigator.clipboard.writeText
             (posturl)
         setInfoMessage(<a>You copied the post. share and spread.</a>) 
@@ -116,8 +116,8 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                 <button type='button' onClick={()=> 
                                     {
                                         if(window.confirm('Are you sure to delete post?')){
-                                        Update_Post(post_mongo_id,null,null,'delete')
-                                        console.log('delete') 
+                                        updatePost(post_mongo_id,null,null,'delete')
+                                        //console.log('delete') 
                                         }   
                                     }
                                     }
@@ -161,7 +161,7 @@ export default function SinglePost({post_id,post_info, post_likes, set_post_like
                                     {!setLikes &&
                                         <div id = 'post-icons'>
                                             <label htmlFor='vote' onClick={ ()=>(
-                                                    Update_Post(post_mongo_id,post_votes,null,'vote_update'), 
+                                                    updatePost(post_mongo_id,post_votes,null,'vote_update'), 
                                                     voted(post_mongo_id+post_votes),
                                                     post_likes.push(post_id)
                                                     //update posts?

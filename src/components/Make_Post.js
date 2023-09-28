@@ -4,14 +4,14 @@ async function Make_Post(content,category,username,image){
     
         //console.log(value_dd);
         let created_date = new Date().toISOString()
-        console.log(created_date)
-        console.log(content)
-        console.log(category)
+        //console.log(created_date)
+        //console.log(content)
+        //console.log(category)
         
         let fetchurl = process.env.REACT_APP_POSTSERVER_URL + 'posts'
         let randomstring = Math.random().toString(36).slice(-15);
         if(content && category){
-            console.log(content);
+            //console.log(content);
             let body_json = 
             {
                 'title': content,

@@ -1,8 +1,8 @@
-import Get_Posts from "./Get_Posts";
+import getPosts from "./getPosts";
 import Get_Comment_Count from "./Get_Comment_Count"
 
 
-async function Update_Post(mongo_post_id,existing_votes,existing_comment_count,updatetype){
+async function updatePost(mongo_post_id,existing_votes,existing_comment_count,updatetype){
         
         
 
@@ -22,7 +22,7 @@ async function Update_Post(mongo_post_id,existing_votes,existing_comment_count,u
                     headers: { 'Content-Type': 'application/json'}
                 })  .then(response => response.json())
                     .then(data => console.log(data));
-                    Get_Posts(url)
+                    getPosts(url)
 
         }else{
             if(updatetype == 'vote_update'){
@@ -44,8 +44,8 @@ async function Update_Post(mongo_post_id,existing_votes,existing_comment_count,u
                 body: JSON.stringify(body_json)
             })  .then(response => response.json())
                 .then(data => console.log(data));
-                Get_Posts(url)
+                getPosts(url)
         }
 }
 
-export default Update_Post;
+export default updatePost;

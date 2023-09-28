@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import Get_Posts from '../Get_Posts';
+import getPosts from '../getPosts';
 import europe_countries from '../europe_countries.json';
 
 export default function SearchBar({setData,setShow_spotlight}){
@@ -26,10 +26,10 @@ export default function SearchBar({setData,setShow_spotlight}){
     useEffect(()=>{
         if(search_token  && search_token.length > 3){
             setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + search_token +'&limit=' + limit + '&date=' + now_date );
-            Get_Posts(fetch_url,setData);
+            getPosts(fetch_url,setData);
         }else{
             setFetchUrl(fetchurl + '?limit=' + limit+ '&date=' + now_date);
-            Get_Posts(fetch_url,setData);
+            getPosts(fetch_url,setData);
         }
     },[search_token])
     
@@ -47,14 +47,14 @@ export default function SearchBar({setData,setShow_spotlight}){
             setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + passValue +'&limit=' + limit + '&date=' + now_date );
             //setFetchUrl(fetchurl + 'posts?' + 'search=' + passValue +'&limit=' + limit + '&date=' + now_date );
             
-            Get_Posts(fetch_url,setData);
+            getPosts(fetch_url,setData);
             console.log(fetch_url)
         }else{
 
             setFetchUrl(fetchurl + 'posts' + '?limit=' + limit+ '&date=' + now_date);
             console.log(fetch_url)
             setShowToken(false);
-            Get_Posts(fetch_url,setData);
+            getPosts(fetch_url,setData);
         }
     }
 

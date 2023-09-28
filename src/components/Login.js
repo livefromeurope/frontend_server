@@ -52,7 +52,7 @@ function Login(){
                 body: JSON.stringify(body_json)
             })  .then(response => response.json())
                 .then(data => {
-            console.log(data)
+            //console.log(data)
             const status = parseInt(data.status);
             const accessToken = data.token;
             const username = data.username;
@@ -64,12 +64,12 @@ function Login(){
                 setEmail('');
                 setPwd(''); 
                 setAuth({accessToken,username,email,image,bio});
-                console.log('success')
+                //console.log('success')
                 navigate(from, {replace: true})
-                console.log(auth)
+                //console.log(auth)
 
             }else{
-                console.log('no success')
+                //console.log('no success')
                 setEmail('');
                 setPwd(''); 
             }
@@ -114,9 +114,9 @@ function Login(){
                     body: JSON.stringify(body_json)
                 })  .then(response => response.json())
                     .then(data => {
-                console.log(data)
+                //console.log(data)
                 const status = parseInt(data.status);
-                console.log(status)
+                //console.log(status)
 
                 if(status === 200){
                     console.log('success')
