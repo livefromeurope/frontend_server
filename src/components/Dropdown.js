@@ -32,7 +32,7 @@ export default function MultiDropdown(setDropDownList){
             <div>
                 <Multiselect
                     //customCloseIcon={<>🇪🇺</>}
-                    classname="countryselect"
+                    className="countryselect"
                     name="countries"
                     id = "Populate"
                     options={options}

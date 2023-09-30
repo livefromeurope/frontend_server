@@ -269,7 +269,6 @@ export default function Posts(props){
 
             <div>
                     <div>
-
                     {props.showFilter &&
                         <SearchBar
                             setShow_spotlight={setShow_spotlight}

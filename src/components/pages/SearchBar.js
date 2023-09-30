@@ -28,12 +28,10 @@ export default function SearchBar({setData,setShow_spotlight}){
             getPosts(fetch_url,setData);
             //console.log('tech');
             //changed if logic
-        }else if(search_token){
+        }else {
             //console.log('nothing2');
             setFetchUrl(fetchurl + '?limit=' + limit+ '&date=' + now_date);
             getPosts(fetch_url,setData);
-        }else{
-            console.log('notoken');
         }
     },[search_token])
     
