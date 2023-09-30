@@ -5,7 +5,7 @@ import useAuth from './useAuth';
 export default function Nav() {
     const { setAuth, auth } = useAuth();
     let profileurl = "/profile/" + auth.username;
-
+    console.log("show",auth)
     return (
         <nav className="navbar ">
             <div id='nav_img'>
@@ -14,7 +14,7 @@ export default function Nav() {
                 </Link>
             </div>
             <div className="navbar navbar-inverse " id="navbarNav">
-                {!auth.username &&
+                {auth.username &&
                     <Link to={profileurl}>
                         <button className="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                             <img src={auth.image} alt="user-icon" />
@@ -31,7 +31,7 @@ export default function Nav() {
                         <img width="25px" src="../icons/logout.png" alt="logout-icon" />
                     </Link>
                 }
-                {!auth.username &&
+                {!auth.username && 
                     <Link to='/login' className="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <img width="20px" src="../icons/home.png" alt="home-icon" />
                     </Link>

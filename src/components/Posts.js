@@ -106,7 +106,7 @@ export default function Posts(props){
             setSpotlight_type('main')
             setShow_spotlight(true)
             console.log(0)
-            if(props.userid && props.show_filter === true && 1 == 2){
+            if(props.userid && props.showFilter === true && 1 == 2){
                 
                 let country = props.userid.toLowerCase()
                 props.setSelectedValues([{country},{"country":'europe'}])
@@ -198,7 +198,7 @@ export default function Posts(props){
 
     useEffect(()=>{
         set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,getPosts,setData,fetchurl)
-    },[props.userid,props.show_filter])
+    },[props.userid,props.showFilter])
 
     
     useEffect(()=>{
@@ -206,7 +206,7 @@ export default function Posts(props){
         getPosts(fetch_url,setData);
         //console.log(data);
 
-    },[props.comment_update])
+    },[props.commentUpdate])
 
 
     function resetValues(){
@@ -265,9 +265,12 @@ export default function Posts(props){
             </div>
             ) : (
     
-                <div>
-                    <div className= "col-1">
-                    {props.show_filter &&
+
+
+            <div>
+                    <div>
+
+                    {props.showFilter &&
                         <SearchBar
                             setShow_spotlight={setShow_spotlight}
                             setData={setData}
