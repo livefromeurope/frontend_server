@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import getPosts from '../getPosts';
 import europe_countries from '../europe_countries.json';
 
-export default function SearchBar({setData,setShow_spotlight}){
+export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_url}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "borderRadius":"20px",border:"none", padding:"0.5rem"};
     
     const TagStyle = {"padding-left":"6px","padding-right":"6px","color":"#FFFFFF","text-align":"center","border-radius":"10px","margin-left":"5%",margin:"3px",display: "inline-block"}
@@ -15,12 +15,9 @@ export default function SearchBar({setData,setShow_spotlight}){
     let now_date = new Date().toISOString()
     let [search_token,setSearchToken] = useState('');
     let [search_value,setSearchValue] = useState('');
-    let [fetch_url,setFetchUrl] = useState('');
     let [show_token,setShowToken] = useState(false);
-    //let search_token = ''
 
 
-    //console.log(url)
     useEffect(()=>{
         console.log(fetchurl)
         if(search_token  && search_token.length > 3){
@@ -40,16 +37,15 @@ export default function SearchBar({setData,setShow_spotlight}){
         //search_token = passValue;
         console.log(passValue)
         setSearchToken(passValue);
+
         if(passValue && passValue.length > 3){
             setShow_spotlight(false);
             console.log(search_token)
             
             setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + passValue +'&limit=' + limit + '&date=' + now_date );
-            //setFetchUrl(fetchurl + 'posts?' + 'search=' + passValue +'&limit=' + limit + '&date=' + now_date );
             
             getPosts(fetch_url,setData);
-            console.log(fetch_url)
-        }else{
+            }else{
 
             setFetchUrl(fetchurl + 'posts' + '?limit=' + limit+ '&date=' + now_date);
             console.log(fetch_url)

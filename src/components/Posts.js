@@ -21,7 +21,6 @@ export default function Posts(props){
 
     var options = europe_countries
 
-    const [value_dd, setValue] = React.useState({});
     //const [data,setData] = useState(Array.from(Array(50).keys(), n => n + 1));
     const [data,setData] = useState([]);
     const [vote_update,UpdateVoteUpdate] = useState([]);
@@ -89,7 +88,7 @@ export default function Posts(props){
 
 
 
-    function set_fetch_url(){
+    function urlBuilder(){
         let window_url = window.location.href;
         if(!window_url.includes('www') && !window_url.includes('localhost')){
             window_url = window_url.replace('https://','https://www.' )
@@ -157,10 +156,10 @@ export default function Posts(props){
         setFetchUrl(fetchurl + 'posts' + add)
         //console.log(fetch_url)
         fetch_url = fetchurl + 'posts' + add
-        //console.log(fetch_url)
+        console.log(fetch_url)
 
         getPosts(fetch_url,setData);
-        
+
 
     }
 
@@ -172,39 +171,31 @@ export default function Posts(props){
     function fetchMoreListItems() {
         //hier hol ich mir die neuen daten
         let last_data_item = data.length - 1;
-        //console.log(last_data_item)
-        //console.log(data[last_data_item])
-        //console.log('fetchmore')
-        //console.log(fetch_url)
         console.log(last_data_item)
-        try{
-        fetch_url=fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date'])
-            setFetchUrl(fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date']))
-            
-            // console.log('passurl: ' + fetch_url)
-            
+        console.log(fetch_url)
 
-            getPosts(fetch_url,setData,'fetch_more',setIsFetching);
-            
+
+        setFetchUrl(fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date']))
+        fetch_url=fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date'])
+
+        // console.log('passurl: ' + fetch_url)
+        
+        getPosts(fetch_url,setData,'fetch_more',setIsFetching);
+        
             //console.log(data)
-        }catch{
-            console.log('nodata fetched')
-        }
         //setData(prevState => ([...prevState, ...Array.from(Array(2).keys(), n => n + prevState.length + 1)]));
         //setIsFetching(false);
     }   
 
-
-
     useEffect(()=>{
-        set_fetch_url(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,getPosts,setData,fetchurl)
+        urlBuilder(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,getPosts,setData,fetchurl)
     },[props.userid,props.showFilter])
 
     
     useEffect(()=>{
 
         getPosts(fetch_url,setData);
-        //console.log(data);
+        console.log(data);
 
     },[props.commentUpdate])
 
@@ -273,6 +264,8 @@ export default function Posts(props){
                         <SearchBar
                             setShow_spotlight={setShow_spotlight}
                             setData={setData}
+                            setFetchUrl={setFetchUrl}
+                            fetch_url={fetch_url}
                         />
 
                     }

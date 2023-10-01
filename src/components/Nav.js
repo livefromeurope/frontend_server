@@ -14,13 +14,7 @@ export default function Nav() {
                 </Link>
             </div>
             <div className="navbar navbar-inverse " id="navbarNav">
-                {auth.username &&
-                    <Link to={profileurl}>
-                        <button className="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <img src={auth.image} alt="user-icon" />
-                        </button>
-                    </Link>
-                }
+
                 {auth.username &&
                     <Link to={profileurl} className="nav-item nav-link">
                         <img width="30px" className="profile_img" src={auth.image} alt="user-icon" />
