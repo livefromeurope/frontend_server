@@ -20,14 +20,18 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
 
     useEffect(()=>{
         console.log(fetchurl)
+        let searchUrl;
         if(search_token  && search_token.length > 3){
-            setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + search_token +'&limit=' + limit + '&date=' + now_date );
+            searchUrl = fetchurl + 'posts?' + 'category=earth' + '&search=' + search_token +'&limit=' + limit + '&date=' + now_date;
+            setFetchUrl(searchUrl);
             getPosts(fetch_url,setData);
             //console.log('tech');
             //changed if logic
         }else {
             //console.log('nothing2');
-            setFetchUrl(fetchurl + '?limit=' + limit+ '&date=' + now_date);
+            searchUrl = fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date;
+
+            setFetchUrl(searchUrl);
             getPosts(fetch_url,setData);
         }
     },[search_token])
@@ -47,7 +51,7 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             getPosts(fetch_url,setData);
             }else{
 
-            setFetchUrl(fetchurl + 'posts' + '?limit=' + limit+ '&date=' + now_date);
+            setFetchUrl(fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date);
             console.log(fetch_url)
             setShowToken(false);
             getPosts(fetch_url,setData);

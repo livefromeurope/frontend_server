@@ -20,7 +20,6 @@ export default function Posts(props){
     //https://www.npmjs.com/package/multiselect-react-dropdown
 
     var options = europe_countries
-
     //const [data,setData] = useState(Array.from(Array(50).keys(), n => n + 1));
     const [data,setData] = useState([]);
     const [vote_update,UpdateVoteUpdate] = useState([]);
@@ -52,8 +51,7 @@ export default function Posts(props){
     
         fetch(link[0],{
             method: 'HEAD'
-        }
-        ).then(function(response){
+        }).then(function(response){
             
             //console.log(response)
             if(response.status == 200){
@@ -75,8 +73,8 @@ export default function Posts(props){
     
 
     //let [selectedValues,setSelectedValues] = useState([])
-
     //const [saved_MongoPostID,set_saved_MongoPostID] = useState('');
+    
     const scrollRef = useHorizontalScroll();
 
     let limit = 15
@@ -87,8 +85,8 @@ export default function Posts(props){
     
 
 
-
     function urlBuilder(){
+
         let window_url = window.location.href;
         if(!window_url.includes('www') && !window_url.includes('localhost')){
             window_url = window_url.replace('https://','https://www.' )
@@ -98,6 +96,7 @@ export default function Posts(props){
         let add = ''
         
         if(window_url === baseurl){
+
             add = '?limit=' + limit+ '&date=' + now_date
             //show_filter = false
             show_fetch = true
@@ -151,18 +150,16 @@ export default function Posts(props){
             setSpotlight_type('main')
             setShow_spotlight(true)
         }
-
         //console.log(fetchurl + 'posts' + add + '&date=' + now_date)
-        setFetchUrl(fetchurl + 'posts' + add)
-        //console.log(fetch_url)
-        fetch_url = fetchurl + 'posts' + add
-        console.log(fetch_url)
+        let setStartUrl = fetchurl + 'posts' + add
+        
+        setFetchUrl(setStartUrl)
 
-        getPosts(fetch_url,setData);
+        //fetch_url = setStartUrl
 
+        //getPosts(fetch_url,setData);
 
     }
-
 
     //https://upmostly.com/tutorials/build-an-infinite-scroll-component-in-react-using-react-hooks
     const [isFetching, setIsFetching] = useInfiniteScroll(fetchMoreListItems);
@@ -173,16 +170,15 @@ export default function Posts(props){
         let last_data_item = data.length - 1;
         console.log(last_data_item)
         console.log(fetch_url)
+        try{
+            let adjusturl = fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date'])
+            setFetchUrl(adjusturl)
+            getPosts(fetch_url,setData,'fetch_more',setIsFetching);
 
-
-        setFetchUrl(fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date']))
-        fetch_url=fetch_url.replace(fetch_url.split('=').pop(),data[last_data_item]['created_date'])
-
-        // console.log('passurl: ' + fetch_url)
-        
-        getPosts(fetch_url,setData,'fetch_more',setIsFetching);
-        
-            //console.log(data)
+        }catch{
+            console.log('nodata found')
+        }
+        //console.log(data)
         //setData(prevState => ([...prevState, ...Array.from(Array(2).keys(), n => n + prevState.length + 1)]));
         //setIsFetching(false);
     }   
@@ -191,12 +187,15 @@ export default function Posts(props){
         urlBuilder(setShow_spotlight,setSpotlight_type,setURLCategory,setCountry,setFetchUrl,getPosts,setData,fetchurl)
     },[props.userid,props.showFilter])
 
-    
     useEffect(()=>{
+        getPosts(fetch_url,setData);
+        },[fetch_url]);
+    
 
+
+    useEffect(()=>{
         getPosts(fetch_url,setData);
         console.log(data);
-
     },[props.commentUpdate])
 
 
@@ -259,7 +258,8 @@ export default function Posts(props){
 
 
             <div>
-                    <div>
+                
+                <div>
                     {props.showFilter &&
                         <SearchBar
                             setShow_spotlight={setShow_spotlight}
@@ -269,9 +269,9 @@ export default function Posts(props){
                         />
 
                     }
-            </div>
+                </div>
+                
 
-            
             {show_spotlight  &&  <div className='Spotlight'>
                 <div>
                     <Spotlight
@@ -283,6 +283,7 @@ export default function Posts(props){
                 lfe-posts:
                 </div>
             }
+
 
             {
 
