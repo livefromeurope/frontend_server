@@ -2,8 +2,9 @@
 import {useState, useEffect} from "react";
 
 
-export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,start_upload,upload_percentage,set_upload_percentage}) {
-  
+//export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,start_upload,upload_percentage,set_upload_percentage}) {
+export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,start_upload}) {
+
   const chunkSize = 10 * 1024;
   //const chunkSize = 10 * 4096;
   //const [files, setFiles] = useState([]);
@@ -37,37 +38,31 @@ export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,
   function readAndUploadCurrentChunk() {
     const reader = new FileReader();
     const file = files[0];
-    console.log(file)
-    console.log('readAndUploadCurrentChunk')
     const from = currentChunkIndex * chunkSize;
     const to = from + chunkSize;
-    console.log(chunkSize)
-    console.log(from + ' bis ' + to)
     const blob = file.slice(from, to);
     reader.onload = e => uploadChunk(e);
-    reader.readAsDataURL(blob);
-}
+    reader.readAsArrayBuffer(blob);  // Change to readAsArrayBuffer
+  }
 
 
-    function uploadChunk(readerEvent) {
+  function uploadChunk(readerEvent) {
     const file = files[0];
-    const data = readerEvent.target.result;
+    const data = readerEvent.target.result;  // This will now be an ArrayBuffer
     const params = new URLSearchParams();
     params.set('name', file.name);
     params.set('size', file.size);
     params.set('currentChunkIndex', currentChunkIndex);
     params.set('totalChunks', Math.ceil(file.size / chunkSize));
-    console.log(Math.round((currentChunkIndex/Math.ceil(file.size / chunkSize))*100))
-    set_upload_percentage(Math.round((currentChunkIndex/Math.ceil(file.size / chunkSize))*100))
+    //set_upload_percentage(Math.round((currentChunkIndex/Math.ceil(file.size / chunkSize))*100))
     const headers = {'Content-Type': 'application/octet-stream'};
-    const url = process.env.REACT_APP_IMAGESERVER_URL + 'images?'+params.toString();
-
+    const url = process.env.REACT_APP_IMAGESERVER_URL + 'images?' + params.toString();
 
     fetch(url, 
       {
           method: 'POST',
           headers: headers,
-          body: JSON.stringify(data)
+          body: data  // Send the raw binary data directly
       }).then(response => response.json())
       .then(data => {
         console.log(data)
@@ -84,7 +79,7 @@ export default function Upload_Image({files,setFiles,setNowpost,setImage,upload,
             console.log(data.finalFilename)
             setCurrentChunkIndex(null);
             start_upload(false);
-            set_upload_percentage(0);
+            //set_upload_percentage(0);
             setFiles([]);
             setImage([]);
             setNowpost(data.finalFilename);

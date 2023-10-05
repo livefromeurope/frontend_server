@@ -5,6 +5,7 @@ import Make_Post from './Make_Post';
 //https://www.npmjs.com/package/react-textarea-autosize
 import TextareaAutosize from 'react-textarea-autosize';
 import Upload_Image from './Upload_Image';
+//import Upload_Image from './Upload_Image_chunk';
 import useAuth from './useAuth';
 import europe_countries from './europe_countries.json'
 

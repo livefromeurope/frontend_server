@@ -191,12 +191,12 @@ function Login(){
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
                             value={pwd}
-                            minlength="10"
+                            minLength="10"
                             placeholder={'Enter password'}
                             autoCapitalize={'none'}
                             autoCorrect={false}
-                            secureTextEntry={true}
-                            textContentType={'password'}
+                            securetextentry={true}
+                            textcontenttype={'password'}
                             required
                             />
                         <button className="btn btn-md btn-outline btn-primary">Sign In</button>

@@ -2,7 +2,7 @@ import React from 'react';
 import {useState,userRef} from 'react';
 import { useHorizontalScroll} from '../functions/useHorizontalScroll';
 import MerchDropdown from '../functions/merch_dropdown';
-
+import MerchForm from './MerchForm';
 
 
 function Merch(){
@@ -78,7 +78,7 @@ function Merch(){
     return(
         <section>
 
-            <div className= "container" style={{ "max-height":"100%"}}>
+            <div className= "container" style={{ "maxHeight":"100%"}}>
 
                 <div className="Merch"  ref={scrollRef} style={{ overflow: "auto" }}>
 
@@ -94,7 +94,7 @@ function Merch(){
                         merch && merch.length>0 && merch.map((merch_item)=>
                             (
 
-                                <div className="merch_pics">
+                                <div className="merch_pics" key={merch_item.merch_url} id={merch_item.merch_url}>
                                     
                                 <img src={merch_item.merch_url}></img>
                                 </div>
@@ -115,6 +115,7 @@ function Merch(){
 
                     setShirt={setShirt}
                 />
+
 
 
                     <label className='lables' htmlFor="username">Enter Name:</label>
@@ -170,6 +171,7 @@ function Merch(){
                     <button onClick={()=>(SubmitIT())} type='button' className="btn btn-md btn-outline btn-primary">Order</button>
                     
             </form>
+            
                 </div>
                 </div>
                 </div>
