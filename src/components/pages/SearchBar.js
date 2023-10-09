@@ -24,16 +24,17 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         {"value":"Climate Change"},
         {"value":"Ukraine"},
         {"value":"Kosovo"},
-
-
     
     ];
 
+    
     useEffect(()=>{
         console.log(fetchurl)
         let searchUrl;
         if(search_token  && search_token.length > 3){
-            searchUrl = fetchurl + 'posts?search=' + search_token +'&limit=' + limit + '&date=' + now_date;
+            search_token = search_token.replace(" ",";")
+
+            searchUrl = fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + search_token +'&date=' + now_date;
             setFetchUrl(searchUrl);
             getPosts(fetch_url,setData);
             //console.log('tech');
@@ -56,8 +57,8 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         if(passValue && passValue.length > 3){
             setShow_spotlight(false);
             console.log(search_token)
-            
-            setFetchUrl(fetchurl + 'posts?' + 'category=earth' + '&search=' + passValue +'&limit=' + limit + '&date=' + now_date );
+            passValue = passValue.replace(" ",";")
+            setFetchUrl(fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + passValue + '&date=' + now_date );
             
             getPosts(fetch_url,setData);
             }else{
