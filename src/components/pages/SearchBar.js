@@ -20,7 +20,7 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
 
     const tokens = [
         {"value":"European Union"},
-
+        {"value":"Israel"},
         {"value":"Climate Change"},
         {"value":"Ukraine"},
         {"value":"Kosovo"},
@@ -33,7 +33,7 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         console.log(fetchurl)
         let searchUrl;
         if(search_token  && search_token.length > 3){
-            searchUrl = fetchurl + 'posts?' + 'category=earth' + '&search=' + search_token +'&limit=' + limit + '&date=' + now_date;
+            searchUrl = fetchurl + 'posts?search=' + search_token +'&limit=' + limit + '&date=' + now_date;
             setFetchUrl(searchUrl);
             getPosts(fetch_url,setData);
             //console.log('tech');
