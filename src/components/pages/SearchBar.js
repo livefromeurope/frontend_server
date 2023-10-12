@@ -21,8 +21,10 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
     const tokens = [
         {"value":"European Union"},
         {"value":"Israel"},
+        {"value":"Energy"},
         {"value":"Climate Change"},
         {"value":"Ukraine"},
+        {"value":"Green Deal"},
         {"value":"Kosovo"},
     
     ];
@@ -106,25 +108,20 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
 
         
         </form>
-            {!show_token &&
-                <div className='input_tag' style={TagStyle}>
-                    {/*<div className='row'style={{ display: "flex","flex-wrap":"wrap","width":"100%"}} >*/}
-                    <div className='row' >
-
-                        <div style={{ display: "flex"}}>
-                    
-                            {
-                                tokens && tokens.length>0 && tokens.map((token)=>
-                                    (
-                                        <div style={Ystyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch(token.value);setShowToken(true)}}> {token.value} </div>
-                                    )
-                                )
-                            }
-                            </div>
+        {!show_token &&
+            <div className='input_tag' style={{...TagStyle, display: "flex", flexWrap: "wrap"}}>
+                {tokens && tokens.length > 0 && tokens.map((token) => (
+                    <div key={token.value} style={{...Ystyle, marginRight: "10px", marginBottom: "10px"}} type="button" onClick={(e) => {
+                        setSearchValue("");
+                        setSearch(token.value);
+                        setShowToken(true);
+                    }}>
+                        {token.value}
                     </div>
-                </div>
-                }
-        </div>
+                ))}
+            </div>
+        }
+    </div>
     );
     }
 
