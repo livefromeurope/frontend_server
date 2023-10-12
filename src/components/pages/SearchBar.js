@@ -71,12 +71,13 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
     }
 
     return (
+        <div>
         <form onSubmit={(e) => {e.preventDefault() 
             setSearch(search_value.replace(" ",';'));
             setSearchValue('')
             setShowToken(true);
             }}>
-        <input 
+            <input 
             type="text"
             className="form-control"
             style={BarStyle}
@@ -102,25 +103,28 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             </div>
             
         }
-        {!show_token &&
-            <div className='input_tag' style={TagStyle}>
-                <div className='row' >
 
-                    <div style={{ display: "flex"}}>
-                
-                        {
-                            tokens && tokens.length>0 && tokens.map((token)=>
-                                (
-                                    <div style={Ystyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch(token.value);setShowToken(true)}}> {token.value} </div>
-                                )
-                            )
-                        }
-                        </div>
-                </div>
-            </div>
-            }
         
         </form>
+            {!show_token &&
+                <div className='input_tag' style={TagStyle}>
+                    {/*<div className='row'style={{ display: "flex","flex-wrap":"wrap","width":"100%"}} >*/}
+                    <div className='row' >
+
+                        <div style={{ display: "flex"}}>
+                    
+                            {
+                                tokens && tokens.length>0 && tokens.map((token)=>
+                                    (
+                                        <div style={Ystyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch(token.value);setShowToken(true)}}> {token.value} </div>
+                                    )
+                                )
+                            }
+                            </div>
+                    </div>
+                </div>
+                }
+        </div>
     );
     }
 
