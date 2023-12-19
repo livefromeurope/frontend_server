@@ -1,8 +1,8 @@
-
+import GraphWidget from '../functions/GraphWidget';
+import european_countries from '../europe_countries.json';
 
 function Spotlight({type,category,selected_country}){
-
-
+    console.log(selected_country)
 
     //https://gist.github.com/pianosnake/b4a45ef6bdf2ffb2e1b44bbcca107298    
     const EARTH_CIR_METERS = 40075016.686;
@@ -27,7 +27,22 @@ function Spotlight({type,category,selected_country}){
     }
     //
 
-
+    // Function to get ISO code by country name
+    function getIsoCodeByCountryName(countryName) {
+        // Normalize the country name to ensure case-insensitive matching
+        const normalizedCountryName = countryName.toLowerCase();
+    
+        // Find the country object
+        const countryObject = european_countries.find(
+        country => country.country.toLowerCase() === normalizedCountryName
+        );
+    
+        // Return the ISO code or null if not found
+        return countryObject ? countryObject.isocode : null;
+    }
+    
+    // Example usage:
+    let isoCode = getIsoCodeByCountryName(category);
 
     let iframe_url = ''
     let latitude = ''
@@ -35,22 +50,27 @@ function Spotlight({type,category,selected_country}){
     let height = '450px'
 
     if(type == 'category'){
-        latitude = selected_country[0].coordinates.latitude
-        longitude = selected_country[0].coordinates.longitude
-        let bbox = latLngToBounds(latitude,longitude,7,400,400)
+        try{
+            latitude = selected_country[0].coordinates.latitude
+            longitude = selected_country[0].coordinates.longitude
+            let bbox = latLngToBounds(latitude,longitude,7,400,400)
 
-        let south = Number(latitude) - 1.5;
-        let north = Number(latitude) + 1.5;
-        let west = Number(longitude) - 1.5;
-        let east = Number(longitude) + 1.5;
-        
-        //console.log('lat:' + latitude + ' lng:' + longitude + ' south: ' + south + ' north : ' + north 
-         //   + ' west: ' + west + ' east: ' + east)
+            let south = Number(latitude) - 1.5;
+            let north = Number(latitude) + 1.5;
+            let west = Number(longitude) - 1.5;
+            let east = Number(longitude) + 1.5;
+            
+            //console.log('lat:' + latitude + ' lng:' + longitude + ' south: ' + south + ' north : ' + north 
+            //   + ' west: ' + west + ' east: ' + east)
 
-        iframe_url = 'https://www.openstreetmap.org/export/embed.html?bbox=' +west+'%2C'+south+'%2C'+east+'%2C'+north+'&amp;layer=mapnik'
-        //iframe_url = "https://www.openstreetmap.org/export/embed.html?bbox=11.700439453125%2C42.13082130188811%2C19.489746093750004%2C48.857487002645485&amp;layer=mapnik"
-        //console.log(iframe_url)
-        height = '300px'
+            iframe_url = 'https://www.openstreetmap.org/export/embed.html?bbox=' +west+'%2C'+south+'%2C'+east+'%2C'+north+'&amp;layer=mapnik'
+            //iframe_url = "https://www.openstreetmap.org/export/embed.html?bbox=11.700439453125%2C42.13082130188811%2C19.489746093750004%2C48.857487002645485&amp;layer=mapnik"
+            //console.log(iframe_url)
+            height = '300px'
+        }catch{
+            iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
+
+        }
     }else if(type == 'user'){
 
         iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
@@ -67,6 +87,7 @@ function Spotlight({type,category,selected_country}){
         <section>
             <div className= "container">
                 spotlight: {category}
+
                 <iframe 
                 style={{
                     width: '100%',height:height, "borderRadius":"20px", 
@@ -77,6 +98,8 @@ function Spotlight({type,category,selected_country}){
                     "borderRightColor":"#0057B7",
                     }} 
                 src={iframe_url} />
+                <GraphWidget initialCountry={isoCode}/>
+
             </div>
         </section>
     );

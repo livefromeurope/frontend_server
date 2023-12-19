@@ -33,6 +33,14 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
     useEffect(()=>{
         console.log(fetchurl)
         let searchUrl;
+
+        search_token = search_token.replace(" ",";")
+
+        searchUrl = fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + search_token +'&date=' + now_date;
+        setFetchUrl(searchUrl);
+        getPosts(fetch_url,setData);
+
+        /*
         if(search_token  && search_token.length > 3){
             search_token = search_token.replace(" ",";")
 
@@ -48,6 +56,7 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             setFetchUrl(searchUrl);
             getPosts(fetch_url,setData);
         }
+        */
     },[search_token])
     
 
@@ -56,6 +65,14 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         console.log(passValue)
         setSearchToken(passValue);
 
+        setShow_spotlight(false);
+        console.log(search_token)
+        passValue = passValue.replace(" ",";")
+        setFetchUrl(fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + passValue + '&date=' + now_date );
+        
+        getPosts(fetch_url,setData);
+
+        /*
         if(passValue && passValue.length > 3){
             setShow_spotlight(false);
             console.log(search_token)
@@ -70,6 +87,18 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             setShowToken(false);
             getPosts(fetch_url,setData);
         }
+        */
+    }
+
+    function setBack() {
+        //search_token = passValue;
+
+        setShow_spotlight(false); 
+        setFetchUrl(fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date);
+        console.log(fetch_url)
+        setShowToken(false);
+        getPosts(fetch_url,setData);
+ 
     }
 
     return (
@@ -100,7 +129,7 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             <div className='input_tag' style={TagStyle}>
                 <div className='row flex-nowrap' >
                     <div style={TextStyle}>{search_token} </div>
-                    <div style={Xstyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch('');setShowToken(false)}}>x</div>
+                    <div style={Xstyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch('');setBack()}}>x</div>
                 </div>
             </div>
             

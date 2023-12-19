@@ -8,6 +8,7 @@ import Postform from './Postform';
 import ScrollToTop from './Scroll_To_Top';
 import useAuth from './useAuth';
 
+
 function Home(props) {
     const [commentUpdate, setCommentUpdate] = useState('');
     const { auth } = useAuth();
@@ -58,6 +59,8 @@ function Home(props) {
                     }
                     {showPostform && <Postform UpdateTrigger={setCommentUpdate} />}
                 </div>
+                
+                
                 <Posts
                     commentUpdate={commentUpdate}
                     showFilter={showFilter}
@@ -68,6 +71,10 @@ function Home(props) {
                     selectedValues={selectedValues}
                     setSelectedValues={setSelectedValues}
                 />
+                               
+
+                
+                
                 <ScrollToTop />
             </div>
         </section>

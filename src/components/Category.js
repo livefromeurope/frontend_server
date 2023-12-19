@@ -7,6 +7,9 @@ export default function Category(){
     const [data, setData] = useState('');
     const url = window.location.href;
     const category = url.split('/').pop();
+
+
+
     var query_params = () => {
         setData(process.env.REACT_APP_POSTSERVER_URL + 'posts?category=' + category);
     }
@@ -17,6 +20,7 @@ export default function Category(){
         
         <section>
             <div className= "container">
+
                 <div><Posts query_params={data} /></div>
             </div>
         </section>

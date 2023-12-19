@@ -30,7 +30,7 @@
     "greece":[{"id":1,"emoticon":"🇬🇷","emoticon_uni":"U+1F1EC U+1F1F7","coordinates":{"latitude":"39.074208","longitude":"21.824312"}}],
     "hungary":[{"id":1,"emoticon":"🇭🇺","emoticon_uni":"U+1F1ED U+1F1FA","coordinates":{"latitude":"47.162494","longitude":"19.503304"}}],
     "ireland":[{"id":1,"emoticon":"🇮🇪","emoticon_uni":"U+1F1EE U+1F1EA","coordinates":{"latitude":"53.41291","longitude":"-8.24389"}}],
-    "italia":[{"id":1,"emoticon":"🇮🇹","emoticon_uni":"U+1F1EE U+1F1F9","coordinates":{"latitude":"41.87194","longitude":"12.56738"}}],
+    "italy":[{"id":1,"emoticon":"🇮🇹","emoticon_uni":"U+1F1EE U+1F1F9","coordinates":{"latitude":"41.87194","longitude":"12.56738"}}],
     "kosovo":[{"id":1,"emoticon":"🇽🇰","emoticon_uni":"U+1F1F2 U+1F1F9","coordinates":{"latitude":"42.667542","longitude":"21.166191"}}],
     "latvia":[{"id":1,"emoticon":"🇱🇻","emoticon_uni":"U+1F1F1 U+1F1FB","coordinates":{"latitude":"56.879635","longitude":"24.603189"}}],
     "lithuania":[{"id":1,"emoticon":"🇱🇹","emoticon_uni":"U+1F1F1 U+1F1F9","coordinates":{"latitude":"55.169438","longitude":"23.881275"}}],
@@ -52,7 +52,6 @@
     
     "serbia":[{"id":1,"emoticon":"🇷🇸","emoticon_uni":"U+1F1EA U+1F1F8","coordinates":{"latitude":"44.787197","longitude":"20.457273"}}],
 
-    
     "switzerland":[{"id":1,"emoticon":"🇨🇭","emoticon_uni":"U+1F1E8 U+1F1ED","coordinates":{"latitude":"46.818188","longitude":"8.227512"}}],
     "sweden":[{"id":1,"emoticon":"🇸🇪","emoticon_uni":"U+1F1F8 U+1F1EA","coordinates":{"latitude":"60.128161","longitude":"18.643501"}}],
     "turkey":[{"id":1,"emoticon":"🇹🇷","emoticon_uni":"U+1F1F9 U+1F1F7","coordinates":{"latitude":"39.00","longitude":"35.00"}}],
