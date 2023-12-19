@@ -44,16 +44,26 @@ const GraphWidget = ({ initialCountry = 'EU' }) => {
     loadData();
   }, [initialCountry]); // Dependency on initialCountry
 
-  if (!initialCountry) return <p>Please select a country to display data.</p>;
-  if (loading) return <p>Loading...</p>;
+  if (!initialCountry) return <p>Please select a country to display graph data.</p>;
+  if (loading) return <p>Loading graph data...</p>;
   if (error) return <p>Error: {error.message}</p>;
-  if (!Object.keys(topicsData).length) return <p>No data available</p>;
+
+  // Check if there is any data available
+  const isDataAvailable = Object.values(topicsData).some(topicData => topicData && topicData.values && topicData.values[initialCountry]);
+
+  if (!isDataAvailable) return <p>No graph data available</p>;
 
   return (
     <div className="graph-widget">
-      {Object.entries(topicsData).map(([topicKey, topicData]) => (
-        <Graph key={topicKey} data={topicData.values[topicKey][initialCountry]} topic={topics[topicKey]} />
-      ))}
+      {Object.entries(topicsData).map(([topicKey, topicData]) => {
+        // Check if data for this topic is available before rendering the Graph
+        if (topicData && topicData.values && topicData.values[topicKey] && topicData.values[topicKey][initialCountry]) {
+          return (
+            <Graph key={topicKey} data={topicData.values[topicKey][initialCountry]} topic={topics[topicKey]} />
+          );
+        }
+        return null; // Skip rendering if no data
+      })}
     </div>
   );
 };
