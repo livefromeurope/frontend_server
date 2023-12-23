@@ -4,7 +4,6 @@ import european_countries from '../europe_countries.json';
 function Spotlight({type,category,selected_country}){
     console.log(selected_country)
 
-    //https://gist.github.com/pianosnake/b4a45ef6bdf2ffb2e1b44bbcca107298    
     const EARTH_CIR_METERS = 40075016.686;
     const degreesPerMeter = 360 / EARTH_CIR_METERS;
 
@@ -55,10 +54,10 @@ function Spotlight({type,category,selected_country}){
             longitude = selected_country[0].coordinates.longitude
             let bbox = latLngToBounds(latitude,longitude,7,400,400)
 
-            let south = Number(latitude) - 1.5;
-            let north = Number(latitude) + 1.5;
-            let west = Number(longitude) - 1.5;
-            let east = Number(longitude) + 1.5;
+            let south = Number(latitude) - 3;
+            let north = Number(latitude) + 3;
+            let west = Number(longitude) - 3;
+            let east = Number(longitude) + 3;
             
             //console.log('lat:' + latitude + ' lng:' + longitude + ' south: ' + south + ' north : ' + north 
             //   + ' west: ' + west + ' east: ' + east)

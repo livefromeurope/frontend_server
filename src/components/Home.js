@@ -73,8 +73,7 @@ function Home(props) {
                 />
                                
 
-                
-                
+            
                 <ScrollToTop />
             </div>
         </section>

@@ -49,9 +49,9 @@ const GraphWidget = ({ initialCountry = 'EU' }) => {
   if (error) return <p>Error: {error.message}</p>;
 
   // Check if there is any data available
-  const isDataAvailable = Object.values(topicsData).some(topicData => topicData && topicData.values && topicData.values[initialCountry]);
+  //const isDataAvailable = Object.values(topicsData).some(topicData => topicData && topicData.values && topicData.values[initialCountry]);
 
-  if (!isDataAvailable) return <p>No graph data available</p>;
+  if (!topicsData) return <p>No graph data available</p>;
 
   return (
     <div className="graph-widget">

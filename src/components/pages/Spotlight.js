@@ -1,6 +1,5 @@
 
-import GraphWidget from '../functions/GraphWidget';
-import european_countries from '../europe_countries.json';
+
 
 
 function Spotlight({type,category,selected_country}){
@@ -28,22 +27,7 @@ function Spotlight({type,category,selected_country}){
         return [[lat-shiftDegreesNS, lng-shiftDegreesEW], [lat+shiftDegreesNS, lng+shiftDegreesEW]];
     }
     //
-    // Function to get ISO code by country name
-    function getIsoCodeByCountryName(countryName) {
-        // Normalize the country name to ensure case-insensitive matching
-        const normalizedCountryName = countryName.toLowerCase();
-    
-        // Find the country object
-        const countryObject = european_countries.find(
-        country => country.country.toLowerCase() === normalizedCountryName
-        );
-    
-        // Return the ISO code or null if not found
-        return countryObject ? countryObject.isocode : null;
-    }
-    
-    // Example usage:
-    let isoCode = getIsoCodeByCountryName(category);
+
         
     function return_div(passed_url){
         return (
@@ -116,7 +100,6 @@ function Spotlight({type,category,selected_country}){
             <div className= "container">
                 {divver}
             </div>
-            <GraphWidget initialCountry={isoCode}/>
 
         </section>
     );

@@ -4,7 +4,7 @@ const fetchImfData = async (topic, country) => {
 
     const fetchurl = process.env.REACT_APP_DATASERVER_URL
     try {
-        console.log()
+        console.log(fetchurl)
         const uri = fetchurl + `/fetch-data?topic=${topic}&country=${country}`;
         const response = await fetch(uri);
         const data = await response.json();

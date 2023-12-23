@@ -102,7 +102,7 @@ export default function Posts(props){
             show_fetch = true
             show_spotlight = false
             setSpotlight_type('main')
-            setShow_spotlight(true)
+            setShow_spotlight(false)
             console.log(0)
             if(props.userid && props.showFilter === true && 1 == 2){
                 
