@@ -2,7 +2,8 @@ import {useState, useEffect} from 'react';
 
 const MerchDropdown = (props) => {
   const options = [
-    {value: 'lázadás', text: 'Lázadás/Riot', url:'../merch/lazadas.jpeg'},
+    {value: 'lázadás', text: 'Lázadás/Riot', url:'../merch/lazadas.jpg'},
+    {value: 'diversity', text: 'Diversity', url:'../merch/diversity.jpg'},
     {value: 'green_deal', text: 'Green Deal', url:'../merch/green_deal_shirt.jpg'},
     {value: 'fight_rights', text: 'Fight for your Rights', url:'../merch/fight_for_your_rights_shirt.jpg'},
     {value: 'Stickers', text: '20xStickers', url:'../merch/lfe_stickers.jpg'},
@@ -14,7 +15,7 @@ const MerchDropdown = (props) => {
 
   
   useEffect(()=>{
-    setSelected('../merch/lazadas.jpeg');
+    setSelected('../merch/lazadas.jpg');
 },[])
 
 

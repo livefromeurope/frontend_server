@@ -12,7 +12,8 @@ function Merch(){
     const [email, setEmail] = useState('');
     const [street, setStreet] = useState('');
     const [city, setCity] = useState('');
-    const [shirt,setShirt] = useState('../merch/lazadas.jpeg')
+    const [country, setCountry] = useState('');  // Add state for country
+    const [shirt,setShirt] = useState('../merch/lazadas.jpg')
     const merch = [
         
        
@@ -31,48 +32,19 @@ function Merch(){
     ];
 
 
-    function SubmitIT(){
-
-        if(user && email && street && city ) {
-        
-            /*
-            console.log(user)
-            console.log(email)
-            console.log(street)
-            console.log(city)
-            console.log(shirt)
-            */
-            
-
-
-            setEmail('');
-            setUser('');
-            setEmail('');
-            setStreet('');
-            setCity('');
-            alert('you ordered a livefromeurope shirt. thank you very much for your support - we will contact you.')
-            
-        }else{
-
-            alert('there is some information missing. please complete the form.')
-        
-        }
+    function createMailtoLink() {
+        const subject = encodeURIComponent(`livefromeurope.com - shirt order: ${user}`);
+        const body = encodeURIComponent(`User: ${user}\nEmail: ${email}\nShirt: ${shirt}\nStreet: ${street}\nCity: ${city}\nCountry: ${country}`); // Include country in the body
+        return `mailto:livefromeurope@outlook.com?subject=${subject}&body=${body}`;
     }
 
-    function Mailto({ email, subject, body}) {
-
-
-        body = 'User: '+user+' '+ 'Email: '+email+' '+ 'Shirt: '+shirt+' '+ 'Street: '+street+' '+ ' City: '+street
-        subject = 'livefromeurope.com - shirt order: ' + user
-
-        return (
-            <a href={`mailto:livefromeurope@outlook.com?subject=${subject || ""}&body=${body || ""}`}>
-                <button onClick={()=>{}} type='button' className="btn btn-md btn-outline btn-primary">
-                    Order
-                </button>
-            </a>
-        );
-
+    function handleSubmit(e) {
+        e.preventDefault();
+        if (user && email && street && city && country) { // Check if country is filled in
+            window.location.href = createMailtoLink();
+        } else {
+            alert('There is some information missing. Please complete the form.');
+        }
     }
     
     return(
@@ -109,8 +81,7 @@ function Merch(){
                 </div>
                 <div className='Merch_container'>
                 
-                <form className="merch_form" id="login_form">
-
+                <form className="merch_form" id="login_form" onSubmit={handleSubmit}>
                 <MerchDropdown
 
                     setShirt={setShirt}
@@ -164,12 +135,19 @@ function Merch(){
                             value={city}
                             required
                             />
-                    {/*
-                    <Mailto email="livefromeurope@outlook.com" subject="Hello" body="Hello world!">
-                    </Mailto> 
-                    */} 
-                    <button onClick={()=>(SubmitIT())} type='button' className="btn btn-md btn-outline btn-primary">Order</button>
-                    
+                            
+                    {/* Country input field */}
+                    <label className='lables' htmlFor="country">Enter Country:</label>
+                    <input
+                        className="form-control"
+                        type="text"
+                        id="country"
+                        autoComplete="off"
+                        onChange={(e) => setCountry(e.target.value)}
+                        value={country}
+                        required
+                    />
+                <button type="submit" className="btn btn-md btn-outline btn-primary">Order</button>                    
             </form>
             
                 </div>
