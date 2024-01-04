@@ -21,7 +21,7 @@ function Urlify(text) {
 
 
     const linkStyle = {
-        color: '#003399',  // European Union blue
+        color: '#004494',  // European Union blue
         textDecoration: 'none'  // Optional, if you want to remove the underline from links
     };
 
