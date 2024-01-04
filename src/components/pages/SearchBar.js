@@ -71,39 +71,25 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
     
 
     function setSearch(passValue) {
-        //search_token = passValue;
-        
         console.log(passValue)
         setSearchToken(passValue);
-        if(passValue){
-
-                setShow_spotlight(false);
-                console.log(search_token)
-                passValue = passValue.replace(" ",";")
-                setFetchUrl(fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + passValue + '&date=' + now_date );
-                
-                getPosts(fetch_url,setData);
-
-            }else{
-
-            setFetchUrl(fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date);
-            console.log(fetch_url)
-            setShowToken(false);
-            getPosts(fetch_url,setData);
-        }
-        
+        setShow_spotlight(false);
+    
+        let newFetchUrl = fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + passValue.replace(" ", ";") + '&date=' + now_date;
+        setFetchUrl(newFetchUrl);
+        getPosts(newFetchUrl, setData); // Call getPosts with the new URL
     }
+    
 
     function setBack() {
-        //search_token = passValue;
-
         setShow_spotlight(false); 
-        setFetchUrl(fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date);
-        console.log(fetch_url)
+        let newFetchUrl = fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date;
+        setFetchUrl(newFetchUrl);
+        console.log(newFetchUrl)
         setShowToken(false);
-        getPosts(fetch_url,setData);
- 
+        getPosts(newFetchUrl, setData); // Call getPosts with the new URL
     }
+    
 
     return (
         <div>
@@ -133,12 +119,11 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             <div className='input_tag' style={TagStyle}>
                 <div className='row flex-nowrap' >
                     <div style={TextStyle}>{search_token} </div>
-                    <div style={Xstyle} type="button"onClick={(e)=>{setSearchValue(""); setSearch('');setBack()}}>x</div>
+                    <div style={Xstyle} type="button" onClick={(e) => {setSearchValue(""); setBack()}}>x</div>
                 </div>
             </div>
             
         }
-
         
         </form>
         {!show_token &&
