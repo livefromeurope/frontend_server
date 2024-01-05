@@ -18,13 +18,9 @@ function Merch(){
         
        
         {"merch_url":"../merch/lfe5.jpg"},
-
-        
         {"merch_url":"../merch/green_deal.jpg"},
-
         {"merch_url":"../merch/lfe2.jpg"},
         {"merch_url":"../merch/DSC00881.JPG"},
-
         {"merch_url":"../merch/DSC00883.JPG"},
         {"merch_url":"../merch/lfe6.jpg"},
         {"merch_url":"../merch/lfe4.jpg"},
@@ -87,7 +83,7 @@ function Merch(){
                         <div className="form-grid">
                             {/* Column 1 */}
                             <div className="form-drop">
-                            <   MerchDropdown setShirt={setShirt} />
+                                <  MerchDropdown setShirt={setShirt} />
                             </div>
                             
                             {/* Column 2 */}

@@ -12,7 +12,7 @@ const MerchDropdown = (props) => {
   
 
   const [selected, setSelected] = useState(options[0]);
-
+  const [isModalOpen, setIsModalOpen] = useState(false);
   
   useEffect(()=>{
     setSelected('../merch/lazadas.jpg');
@@ -21,26 +21,37 @@ const MerchDropdown = (props) => {
 
   
   const handleChange = event => {
-    console.log(event.target.value);
     setSelected(event.target.value);
     props.setShirt(event.target.value);
+  };
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
 
   return (
     <div>
         <select value={selected} onChange={handleChange}>
-        {options.map(option => (
-            <option key={option.value} value={option.url}>
-            {option.text}
-            </option>
-            
-        ))}
+            {options.map(option => (
+                <option key={option.value} value={option.url}>
+                    {option.text}
+                </option>
+            ))}
         </select>
-        <p>
-        <img src={selected}></img>
+        <p onClick={toggleModal}>
+            <img src={selected} style={{ cursor: 'pointer' }} />
         </p>
+        {isModalOpen && (
+            <div className="modal" onClick={toggleModal}>
+                <div className="modal-content">
+                    <span className="close">&times;</span>
+                    <img src={selected} className="enlarged-image" />
+                </div>
+            </div>
+        )}
     </div>
-  );
+);
 };
 
 export default MerchDropdown;
+
