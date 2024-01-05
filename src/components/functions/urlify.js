@@ -21,7 +21,7 @@ function Urlify(text) {
 
 
     const linkStyle = {
-        color: '#004494',  // European Union blue
+        color: '#FFCC00',  // European Union blue
         textDecoration: 'none'  // Optional, if you want to remove the underline from links
     };
 
@@ -62,14 +62,15 @@ function Urlify(text) {
             let domainName = extractDomain(link[0]);
             return (
                 <div className="singlepost_container">
-                    <a href={link[0]} target="_blank" style={linkStyle}>
+                    
                         <div className="singlepost_text">
-                            Link to {domainName} {new_text.replace(link[0], '')}
+                             {new_text.replace(link[0], '')} 
                         </div>
                         <div className="singlepost_img">
                             <img src={imgurl[0]} loading="lazy" />
                         </div>
-                    </a>
+                        <p><a href={link[0]} target="_blank" style={linkStyle}>Link to {domainName}</a></p>
+                    
                 </div>
             );        }
     }
