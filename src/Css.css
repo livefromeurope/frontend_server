@@ -273,7 +273,7 @@ padding-right: 9%;
   }
 
 
-/* button */
+
 
 
 #form_button_container{
@@ -492,13 +492,49 @@ a:hover {
   min-width: 300px;
 }
 
-.merch_pics{
-  min-width: 100%;
-  height: 100%;
+.merch_pics {
+  margin: 0; /* Removes margin around each image container */
+  padding: 0; /* Removes padding inside each image container */
 }
+
+.merch_pics img {
+  height: 150px; /* Example height, adjust as needed */
+  object-fit: cover; /* or 'contain' to fit the whole image */
+  width: auto; /* Maintains the aspect ratio */
+  display: block; /* Removes any default inline spacing */
+  margin-right: -4px; /* Optional: Adjust if there's a small gap due to image rendering */
+  min-width: 250px;
+  min-height: 450px;
+}
+
+/* Parent container styling (if necessary) */
+div[style*="whiteSpace: nowrap; display: flex;"] {
+  margin: 0;
+  padding: 0;
+}
+
+
 
 .merch_form{
   min-width: 200px;
+}
+
+/* button merch */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+  gap: 20px; /* Adjust the gap as needed */
+}
+/* Set minimum width for input fields */
+.form-grid input {
+  min-width: 200px;
+}
+
+/* Responsive adjustment, if needed */
+@media (max-width: 600px) {
+  .form-grid {
+      grid-template-columns: 1fr;
+  }
 }
 
 .loader-container {

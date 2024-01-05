@@ -34,7 +34,7 @@ function Merch(){
 
     function createMailtoLink() {
         const subject = encodeURIComponent(`livefromeurope.com - shirt order: ${user}`);
-        const body = encodeURIComponent(`User: ${user}\nEmail: ${email}\nShirt: ${shirt}\nStreet: ${street}\nCity: ${city}\nCountry: ${country}`); // Include country in the body
+        const body = encodeURIComponent(`Livefromeurope Order:\nUser: ${user}\nEmail: ${email}\nShirt: ${shirt}\nStreet: ${street}\nCity: ${city}\nCountry: ${country}`); // Include country in the body
         return `mailto:livefromeurope@outlook.com?subject=${subject}&body=${body}`;
     }
 
@@ -79,83 +79,82 @@ function Merch(){
                 <div>
                     <p>  &nbsp;&nbsp;&nbsp;   </p>
                 </div>
+
                 <div className='Merch_container'>
-                
-                <form className="merch_form" id="login_form" onSubmit={handleSubmit}>
-                <MerchDropdown
+                    <form className="merch_form" id="login_form" onSubmit={handleSubmit}>
+                        
 
-                    setShirt={setShirt}
-                />
-
-
-
-                    <label className='lables' htmlFor="username">Enter Name:</label>
-                    <input
-                            className="form-control"
-                            type="text"
-                            id="username"
-                            ref={userRef}
-                            autoComplete="off"
-                            onChange={(e) => setUser(e.target.value)}
-                            value={user}
-                            required
-                            />
-
-                    <label className='lables' htmlFor="email">Enter Email:</label>
-                    <input
-                            className="form-control"
-                            type="text"
-                            id="email"
-                            ref={userRef}
-                            autoComplete="off"
-                            onChange={(e) => setEmail(e.target.value)}
-                            value={email}
-                            required
-                            />
-                    <label className='lables' htmlFor="email">Enter Street:</label>
-                    <input
-                            className="form-control"
-                            type="text"
-                            id="email"
-                            ref={userRef}
-                            autoComplete="off"
-                            onChange={(e) => setStreet(e.target.value)}
-                            value={street}
-                            required
-                            />
-
-                    <label className='lables' htmlFor="email">Enter City:</label>
-                    <input
-                            className="form-control"
-                            type="text"
-                            id="city"
-                            ref={userRef}
-                            autoComplete="off"
-                            onChange={(e) => setCity(e.target.value)}
-                            value={city}
-                            required
-                            />
+                        <div className="form-grid">
+                            {/* Column 1 */}
+                            <div className="form-drop">
+                            <   MerchDropdown setShirt={setShirt} />
+                            </div>
                             
-                    {/* Country input field */}
-                    <label className='lables' htmlFor="country">Enter Country:</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        id="country"
-                        autoComplete="off"
-                        onChange={(e) => setCountry(e.target.value)}
-                        value={country}
-                        required
-                    />
-                <button type="submit" className="btn btn-md btn-outline btn-primary">Order</button>                    
-            </form>
-            
+                            {/* Column 2 */}
+                            <div>
+                                <label className='labels' htmlFor="username">Name:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    id="username"
+                                    autoComplete="off"
+                                    onChange={(e) => setUser(e.target.value)}
+                                    value={user}
+                                    required
+                                />
+                                <label className='labels' htmlFor="email">Email:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    id="email"
+                                    autoComplete="off"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    value={email}
+                                    required
+                                />
+
+                                <label className='labels' htmlFor="street">Street:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    id="street"
+                                    autoComplete="off"
+                                    onChange={(e) => setStreet(e.target.value)}
+                                    value={street}
+                                    required
+                                />
+
+                                <label className='labels' htmlFor="city">City:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    id="city"
+                                    autoComplete="off"
+                                    onChange={(e) => setCity(e.target.value)}
+                                    value={city}
+                                    required
+                                />
+
+                                <label className='labels' htmlFor="country">Country:</label>
+                                <input
+                                    className="form-control"
+                                    type="text"
+                                    id="country"
+                                    autoComplete="off"
+                                    onChange={(e) => setCountry(e.target.value)}
+                                    value={country}
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <button type="submit" className="btn btn-md btn-outline btn-primary">Order</button>
+                    </form>
                 </div>
-                </div>
-                </div>
-                <div>
-                    <p>  &nbsp;&nbsp;&nbsp;   </p>
+
             </div>
+            </div>
+
             </div>
 
         </section>
