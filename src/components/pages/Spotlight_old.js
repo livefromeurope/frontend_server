@@ -73,11 +73,13 @@ function Spotlight({type,category,selected_country}){
     }else if(type == 'user'){
 
         iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
-
+    
     }else{
-        category = 'urkaine'
+        category = 'RIOT ORBAN'
         
-        iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
+        //iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
+        iframe_url = "../merch/front_new.png"
+
     }
 
 //<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-4.174804687500001%2C38.25543637637949%2C3.7133789062500004%2C51.754240074033525&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=6/45.406/-0.231">View Larger Map</a></small>
@@ -97,7 +99,7 @@ function Spotlight({type,category,selected_country}){
                     "borderRightColor":"#0057B7",
                     }} 
                 src={iframe_url} />
-                <GraphWidget initialCountry={isoCode}/>
+                {/*<GraphWidget initialCountry={isoCode}/>*/}
 
             </div>
         </section>
