@@ -1,8 +1,9 @@
+import React from 'react';
 import GraphWidget from '../functions/GraphWidget';
 import european_countries from '../europe_countries.json';
 
-function Spotlight({type,category,selected_country}){
-    console.log(selected_country)
+function Spotlight({type, category, selected_country}) {
+    console.log(selected_country);
 
     const EARTH_CIR_METERS = 40075016.686;
     const degreesPerMeter = 360 / EARTH_CIR_METERS;
@@ -41,66 +42,94 @@ function Spotlight({type,category,selected_country}){
     }
     
     // Example usage:
-    let isoCode = getIsoCodeByCountryName(category);
 
-    let iframe_url = ''
-    let latitude = ''
-    let longitude = ''
-    let height = '450px'
+    let iframe_url = '';
+    let latitude = '';
+    let longitude = '';
+    let height = '450px';
 
-    if(type == 'category'){
-        try{
-            latitude = selected_country[0].coordinates.latitude
-            longitude = selected_country[0].coordinates.longitude
-            let bbox = latLngToBounds(latitude,longitude,7,400,400)
+    // Conditional logic to determine iframe_url and other variables based on type
+    if (type === 'category') {
+        try {
+            latitude = selected_country[0].coordinates.latitude;
+            longitude = selected_country[0].coordinates.longitude;
+            let bbox = latLngToBounds(latitude, longitude, 7, 400, 400);
 
             let south = Number(latitude) - 3;
             let north = Number(latitude) + 3;
             let west = Number(longitude) - 3;
             let east = Number(longitude) + 3;
-            
-            //console.log('lat:' + latitude + ' lng:' + longitude + ' south: ' + south + ' north : ' + north 
-            //   + ' west: ' + west + ' east: ' + east)
 
-            iframe_url = 'https://www.openstreetmap.org/export/embed.html?bbox=' +west+'%2C'+south+'%2C'+east+'%2C'+north+'&amp;layer=mapnik'
-            //iframe_url = "https://www.openstreetmap.org/export/embed.html?bbox=11.700439453125%2C42.13082130188811%2C19.489746093750004%2C48.857487002645485&amp;layer=mapnik"
-            //console.log(iframe_url)
-            height = '300px'
-        }catch{
-            iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
-
+            iframe_url = `https://www.openstreetmap.org/export/embed.html?bbox=${west}%2C${south}%2C${east}%2C${north}&amp;layer=mapnik`;
+            height = '300px';
+        } catch {
+            iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953';
         }
-    }else if(type == 'user'){
-
-        iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
-    
-    }else{
-        category = 'RIOT ORBAN'
-        
-        //iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953'
-        iframe_url = "../merch/front_new.png"
-
+    } else if (type === 'user') {
+        iframe_url = 'https://deepstatemap.live/en#6/48.129/36.953';
+    } else {
+        category = 'RIOT ORBAN';
+        iframe_url = "../merch/front_new.png";
     }
 
-//<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-4.174804687500001%2C38.25543637637949%2C3.7133789062500004%2C51.754240074033525&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=6/45.406/-0.231">View Larger Map</a></small>
+    let isoCode = getIsoCodeByCountryName(category);
 
-    return(
+    // Return different HTML based on the type
+    return (
         <section>
-            <div className= "container">
-                spotlight: {category}
+            <div className="container">
+                <div>Spotlight: {category}</div>
 
-                <iframe 
-                style={{
-                    width: '100%',height:height, "borderRadius":"20px", 
-                    border:"solid", 
-                    "borderBottomColor":"#ffd700",
-                    "borderLeftColor":"#ffd700",
-                    "borderTopColor":"#0057B7",
-                    "borderRightColor":"#0057B7",
-                    }} 
-                src={iframe_url} />
-                {/*<GraphWidget initialCountry={isoCode}/>*/}
+                {type === 'category' && (
+                    <iframe
+                        style={{
+                            width: '100%',
+                            height: height,
+                            borderRadius: "20px",
+                            border: "solid",
+                            borderBottomColor: "#ffd700",
+                            borderLeftColor: "#ffd700",
+                            borderTopColor: "#0057B7",
+                            borderRightColor: "#0057B7",
+                        }}
+                        src={iframe_url}
+                    />
+                )}
 
+                {type === 'user' && (
+                    <iframe
+                        style={{
+                            width: '100%',
+                            height: height,
+                            borderRadius: "20px",
+                            border: "solid",
+                            borderBottomColor: "#ffd700",
+                            borderLeftColor: "#ffd700",
+                            borderTopColor: "#0057B7",
+                            borderRightColor: "#0057B7",
+                        }}
+                        src={iframe_url}
+                    />
+                )}
+
+                {type !== 'category' && type !== 'user' && (
+                    <img 
+                        src="../merch/front_new.png"
+                        alt="Custom Image"
+                        style={{
+                            width: '100%',
+                            height: height,
+                            borderRadius: "20px",
+                            border: "solid",
+                            borderBottomColor: "#ffd700",
+                            borderLeftColor: "#ffd700",
+                            borderTopColor: "#0057B7",
+                            borderRightColor: "#0057B7",
+                        }}                    />
+                )}
+
+                {/* Uncomment to use the GraphWidget */}
+                {/*<GraphWidget initialCountry={isoCode} />*/}
             </div>
         </section>
     );
