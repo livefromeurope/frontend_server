@@ -113,20 +113,43 @@ function Spotlight({type, category, selected_country}) {
                 )}
 
                 {type !== 'category' && type !== 'user' && (
-                    <img 
-                        src="../merch/front_new.png"
-                        alt="Custom Image"
-                        style={{
-                            width: '100%',
-                            height: height,
-                            borderRadius: "20px",
-                            border: "solid",
-                            borderBottomColor: "#ffd700",
-                            borderLeftColor: "#ffd700",
-                            borderTopColor: "#0057B7",
-                            borderRightColor: "#0057B7",
-                        }}                    />
+                    <div >
+                        <video 
+                            src="../merch/vid_div.mov"
+                            alt="Video 1"
+                            style={{
+                                width: "400px",
+                                borderRadius: "20px",
+                                border: "solid",
+                                borderBottomColor: "#ffd700",
+                                borderLeftColor: "#ffd700",
+                                borderTopColor: "#0057B7",
+                                borderRightColor: "#0057B7",
+                            }}
+                            autoPlay
+                            loop
+                            muted
+                        />
+                        <video 
+                            src="../merch/vid_laza.mov"
+                            alt="Video 2"
+                            style={{
+                                width: "400px",
+                                borderRadius: "20px",
+                                border: "solid",
+                         
+                                borderBottomColor: "#ffd700",
+                                borderLeftColor: "#ffd700",
+                                borderTopColor: "#0057B7",
+                                borderRightColor: "#0057B7",
+                            }}
+                            autoPlay
+                            loop
+                            muted
+                        />
+                    </div>
                 )}
+
 
                 {/* Uncomment to use the GraphWidget */}
                 {/*<GraphWidget initialCountry={isoCode} />*/}
