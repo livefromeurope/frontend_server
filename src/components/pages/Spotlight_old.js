@@ -111,32 +111,47 @@ function Spotlight({type, category, selected_country}) {
                         src={iframe_url}
                     />
                 )}
-            {type !== 'category' && type !== 'user' && (
-                <div>
-                    <video 
-                        src="../merch/vid_div.mov"
-                        alt="Video 1"
-                        style={yourVideoStyle}
-                        loop
-                        muted
-                        playsInline // Added for inline playback on iOS
-                        controls // Added controls to start the video manually
-                    />
-                    <video 
-                        src="../merch/vid_laza.mov"
-                        alt="Video 2"
-                        style={yourVideoStyle}
-                        loop
-                        muted
-                        playsInline // Added for inline playback on iOS
-                        controls // Added controls to start the video manually
-                    />
+
+                {type !== 'category' && type !== 'user' && (
+                    <div >
+                        <video 
+                            src="../merch/vid_div.mov"
+                            alt="Video 1"
+                            style={{
+                                width: "400px",
+                                borderRadius: "20px",
+                                border: "solid",
+                                borderBottomColor: "#ffd700",
+                                borderLeftColor: "#ffd700",
+                                borderTopColor: "#0057B7",
+                                borderRightColor: "#0057B7",
+                            }}
+                            //autoPlay
+                            loop
+                            muted
+                        />
+                        <video 
+                            src="../merch/vid_laza.mov"
+                            alt="Video 2"
+                            style={{
+                                width: "400px",
+                                borderRadius: "20px",
+                                border: "solid",
+                         
+                                borderBottomColor: "#ffd700",
+                                borderLeftColor: "#ffd700",
+                                borderTopColor: "#0057B7",
+                                borderRightColor: "#0057B7",
+                            }}
+                            //autoPlay
+                            loop
+                            muted
+                        />
                     <a href="https://www.livefromeurope.com/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
                         Visit Our Merch Store
                     </a>
-                </div>
-            )}
-
+                    </div>
+                )}
 
 
                 {/* Uncomment to use the GraphWidget */}
