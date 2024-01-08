@@ -117,8 +117,10 @@ function Spotlight({type, category, selected_country}) {
                         <video 
                             src="../merch/vid_div.mov"
                             alt="Video 1"
+                            poster="../merch/diversity.jpg" // Poster image for the second video
+
                             style={{
-                                width: "400px",
+                                width: "350px",
                                 borderRadius: "20px",
                                 border: "solid",
                                 borderBottomColor: "#ffd700",
@@ -133,8 +135,9 @@ function Spotlight({type, category, selected_country}) {
                         <video 
                             src="../merch/vid_laza.mov"
                             alt="Video 2"
+                            poster="../merch/lazadas.jpg" // Poster image for the second video
                             style={{
-                                width: "400px",
+                                width: "350px",
                                 borderRadius: "20px",
                                 border: "solid",
                          
@@ -147,7 +150,7 @@ function Spotlight({type, category, selected_country}) {
                             loop
                             muted
                         />
-                    <a href="https://www.livefromeurope.com/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
+                    <a href="https://www.livefromeurope.eu/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
                         Visit Our Merch Store
                     </a>
                     </div>
