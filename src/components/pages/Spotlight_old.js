@@ -126,7 +126,7 @@ function Spotlight({type, category, selected_country}) {
                                 borderTopColor: "#0057B7",
                                 borderRightColor: "#0057B7",
                             }}
-                            //autoPlay
+                            autoPlay
                             loop
                             muted
                         />
@@ -143,7 +143,7 @@ function Spotlight({type, category, selected_country}) {
                                 borderTopColor: "#0057B7",
                                 borderRightColor: "#0057B7",
                             }}
-                            //autoPlay
+                            autoPlay
                             loop
                             muted
                         />
