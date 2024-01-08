@@ -147,6 +147,9 @@ function Spotlight({type, category, selected_country}) {
                             loop
                             muted
                         />
+                    <a href="https://www.livefromeurope.com/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
+                        Visit Our Merch Store
+                    </a>
                     </div>
                 )}
 
