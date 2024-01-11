@@ -114,13 +114,13 @@ function Spotlight({type, category, selected_country}) {
 
                 {type !== 'category' && type !== 'user' && (
                     <div >
-                        <video 
-                            src="../merch/vid_div.mov"
+                        <img 
+                            src="../merch/diversity.jpg"
                             alt="Video 1"
                             poster="../merch/diversity.jpg" // Poster image for the second video
 
                             style={{
-                                width: "350px",
+                                width: "100%",
                                 borderRadius: "20px",
                                 border: "solid",
                                 borderBottomColor: "#ffd700",
@@ -128,16 +128,15 @@ function Spotlight({type, category, selected_country}) {
                                 borderTopColor: "#0057B7",
                                 borderRightColor: "#0057B7",
                             }}
-                            autoPlay
-                            loop
-                            muted
+
                         />
-                        <video 
-                            src="../merch/vid_laza.mov"
+                        <img 
+                            src="../merch/lazadas.jpg"
                             alt="Video 2"
                             poster="../merch/lazadas.jpg" // Poster image for the second video
                             style={{
-                                width: "350px",
+                                width: "100%",
+                          
                                 borderRadius: "20px",
                                 border: "solid",
                          
@@ -146,9 +145,7 @@ function Spotlight({type, category, selected_country}) {
                                 borderTopColor: "#0057B7",
                                 borderRightColor: "#0057B7",
                             }}
-                            autoPlay
-                            loop
-                            muted
+
                         />
                     <a href="https://www.livefromeurope.eu/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
                         Visit Our Merch Store
