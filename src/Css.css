@@ -53,6 +53,7 @@
   max-width: 150px;        /* Adjust width as needed */
   max-height: 30px;        /* Adjust height as needed */
   border-radius: 15px; /* Adjust border-radius as needed */
+  font-family: 'VCR_OSD_MONO.ttf', sans-serif; /* Set the standard font family */
   /* Add other styling if necessary */
 }
 /* Media query for mobile screens */

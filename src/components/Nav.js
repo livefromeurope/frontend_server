@@ -57,12 +57,12 @@ export default function Nav() {
                 }
                 {!auth.username &&
                     <Link to='/about' className="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <img width="20px" src="../icons/gear.png" alt="gear-icon" />
+                        <img width="20px" src="../icons/about.png" alt="gear-icon" />
                     </Link>
                 }
                 {!auth.username &&
                     <Link to='/merch' className="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <img width="25px" src="../icons/shirt.png" alt="shirt-icon" />
+                        <img width="25px" src="../icons/shop.png" alt="shirt-icon" />
                     </Link>
                 } 
                 </>
