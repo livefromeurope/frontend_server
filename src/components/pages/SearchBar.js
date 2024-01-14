@@ -5,9 +5,29 @@ import europe_countries from '../europe_countries.json';
 export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_url}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "borderRadius":"20px",border:"none", padding:"0.5rem"};
     
-    const TagStyle = {"padding-left":"6px","whiteSpace": "nowrap","padding-right":"6px","color":"#FFFFFF","text-align":"center","border-radius":"10px","margin-left":"5%",margin:"3px",display: "inline-block"}
-    const Xstyle = {"background-color":"grey","borderRadius":"15px","margin-left":"3px","paddingLeft":"6px","paddingRight":"6px"}
-    const Ystyle = {"backgroundColor":"#004494","fontSize":"14px","borderRadius":"15px","margin-left":"3px","paddingLeft":"6px","paddingRight":"6px"}
+    const TagStyle = {
+        "padding-left":"6px",
+        "whiteSpace": "nowrap",
+        "padding-right":"6px",
+        "color":"#FFFFFF",
+        "text-align":"center",
+        "border-radius":"10px",
+        "margin-left":"2%",
+        margin:"3px",
+        display: "inline-block"}
+    const Xstyle = {
+        "background-color":"grey",
+        "borderRadius":"15px",
+        "margin-left":"3px",
+        "paddingLeft":"6px",
+        "paddingRight":"6px"}
+    const Ystyle = {
+        "backgroundColor":"#004494",
+        "fontSize":"12px",
+        "borderRadius":"15px",
+        "margin-left":"3px",
+        "paddingLeft":"6px",
+        "paddingRight":"6px"}
     const TextStyle = {"marginLeft":"25%"}
 
 
@@ -27,6 +47,8 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         {"value":"Green Deal"},
         {"value":"Kosovo"},
         {"value":"Technology"},
+        {"value":"AI"},
+        {"value":"Space"},
 
     
     ];
