@@ -50,23 +50,7 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         }
 
 
-        /*
-        if(search_token  && search_token.length > 3){
-            search_token = search_token.replace(" ",";")
 
-            searchUrl = fetchurl + 'posts?category=europe&limit=' + limit + '&search=' + search_token +'&date=' + now_date;
-            setFetchUrl(searchUrl);
-            getPosts(fetch_url,setData);
-            //console.log('tech');
-            //changed if logic
-        }else {
-            //console.log('nothing2');
-            searchUrl = fetchurl + 'posts?' + 'limit=' + limit+ '&date=' + now_date;
-
-            setFetchUrl(searchUrl);
-            getPosts(fetch_url,setData);
-        }
-        */
     },[search_token])
     
 

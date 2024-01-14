@@ -1,11 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link,useNavigate } from 'react-router-dom';
 import useAuth from './useAuth';
+import europeCountries from './europe_countries.json'; // assuming the file is in the same directory
 
 export default function Nav() {
+
     const { setAuth, auth } = useAuth();
+    const [selectedCountry, setSelectedCountry] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
     let profileurl = "/profile/" + auth.username;
-    console.log("show",auth)
+    
+    const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+
+    const handleCountrySelect = (country) => {
+        setSelectedCountry(country);
+        window.location.href = `/category/${country}`; // This will cause a page refresh
+        setDropdownVisible(false); // This might be redundant as the page will refresh
+    };
+    
+
     return (
         <nav className="navbar ">
             <div id='nav_img'>
@@ -39,8 +53,24 @@ export default function Nav() {
                     <Link to='/merch' className="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <img width="25px" src="../icons/shirt.png" alt="shirt-icon" />
                     </Link>
-                }
+                } 
+                <div className="navbar-toggler">
+                    {!dropdownVisible && <img width="25px" src="../icons/europe.png" alt="Toggle Dropdown" className="dropdown-icon" onClick={toggleDropdown} />
+                    }
+                    {dropdownVisible && (
+                    <select className="country-dropdown" onChange={(e) => handleCountrySelect(e.target.value)} onBlur={() => setDropdownVisible(false)}>
+                        <option value="">Select Country</option>
+                        {europeCountries.map((country) => (
+                            <option key={country.id} value={country.country}>
+                                {country.country}
+                            </option>
+                        ))}
+                    </select>
+                    )}
+                </div>
+
             </div>
+
         </nav>
     );
 }

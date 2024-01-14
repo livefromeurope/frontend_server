@@ -42,6 +42,28 @@
 
 }
 
+/* select countries dropdown */
+
+.dropdown-icon {
+  cursor: pointer;
+  /* additional styling for the icon */
+}
+
+.country-dropdown {
+  max-width: 150px;        /* Adjust width as needed */
+  max-height: 30px;        /* Adjust height as needed */
+  border-radius: 15px; /* Adjust border-radius as needed */
+  /* Add other styling if necessary */
+}
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  .country-dropdown {
+      max-width: 100%;    /* Smaller max-width for mobile screens */
+      display: block;     
+  }
+}
+
+
 #center-content{
   padding-right:0px;
 }
