@@ -19,6 +19,10 @@ function Urlify(text) {
     text = text.replace('<', '').replace('>', '');
     let imgurl = regex.exec(text);
 
+    // Function to handle image load error
+    const handleImageError = (e) => {
+        e.target.src = '../icons/lfe_small.jpg'; // Replace with your custom image URL
+    };
 
     const linkStyle = {
         color: '#FFCC00',  // European Union blue
@@ -57,7 +61,16 @@ function Urlify(text) {
         let new_text = text.replace(imgurl[0], "");
         let link = new_text.match(/(http:|https:)?\/\/(www\.)?(\?v=)?(\S+)?/);
         if (link == null) {
-            return <div className="singlepost_container"><div className="singlepost_text">{new_text}</div> <div className="singlepost_img"><img src={imgurl[0]} loading="lazy" /></div></div>;
+            return <div className="singlepost_container">
+                    <div className="singlepost_text">{new_text}</div> 
+                        <div className="singlepost_img">
+                            <img 
+                                src={imgurl[0]} 
+                                loading="lazy" 
+                                onError={handleImageError}
+                            />
+                        </div>
+                    </div>;
         } else {
             let domainName = extractDomain(link[0]);
             return (
@@ -67,7 +80,11 @@ function Urlify(text) {
                              {new_text.replace(link[0], '')} 
                         </div>
                         <div className="singlepost_img">
-                            <img src={imgurl[0]} loading="lazy" />
+                            <img 
+                                src={imgurl[0]} 
+                                loading="lazy" 
+                                onError={handleImageError}
+                            />
                         </div>
                         <p><a href={link[0]} target="_blank" style={linkStyle}>Link to {domainName}</a></p>
                     
