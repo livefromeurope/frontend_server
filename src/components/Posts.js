@@ -11,6 +11,8 @@ import urlify from './functions/urlify';
 import Spotlight from './pages/Spotlight_old';
 import imageExists from './functions/check_if_img_exists';
 import SearchBar from './pages/SearchBar';
+import ScrollToTop from './Scroll_To_Top';
+
 
 
 //https://www.pluralsight.com/guides/fetch-data-from-a-json-file-in-a-react-app
@@ -284,7 +286,6 @@ export default function Posts(props){
                 </div>
             }
 
-
             {
 
                 data && data.length>0 && data.map( (item) => 
@@ -329,7 +330,7 @@ export default function Posts(props){
             }
             </div>
         )}
-        
+        <ScrollToTop/>
         
     </div>
     );
