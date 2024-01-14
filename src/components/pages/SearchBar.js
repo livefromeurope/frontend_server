@@ -26,6 +26,8 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         {"value":"Ukraine"},
         {"value":"Green Deal"},
         {"value":"Kosovo"},
+        {"value":"Technology"},
+
     
     ];
 
@@ -48,7 +50,6 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
             setFetchUrl(searchUrl);
             getPosts(fetch_url,setData);
         }
-
 
 
     },[search_token])

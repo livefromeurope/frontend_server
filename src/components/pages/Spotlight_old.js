@@ -113,12 +113,13 @@ function Spotlight({type, category, selected_country}) {
                 )}
 
                 {type !== 'category' && type !== 'user' && (
-                    <div >
+                    <div>
+
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div>
                         <img 
                             src="../merch/diversity.jpg"
                             alt="Video 1"
-                            poster="../merch/diversity.jpg" // Poster image for the second video
-
                             style={{
                                 width: "100%",
                                 borderRadius: "20px",
@@ -128,29 +129,32 @@ function Spotlight({type, category, selected_country}) {
                                 borderTopColor: "#0057B7",
                                 borderRightColor: "#0057B7",
                             }}
-
                         />
+                        <div style={{ textAlign: 'center','font-size':'11px' }}>flowers</div>
+                    </div>
+                    <div>
                         <img 
                             src="../merch/lazadas.jpg"
                             alt="Video 2"
-                            poster="../merch/lazadas.jpg" // Poster image for the second video
                             style={{
-                                width: "100%",
-                          
+                                width: "98%",
                                 borderRadius: "20px",
                                 border: "solid",
-                         
                                 borderBottomColor: "#ffd700",
                                 borderLeftColor: "#ffd700",
                                 borderTopColor: "#0057B7",
                                 borderRightColor: "#0057B7",
                             }}
-
                         />
-                    <a href="https://www.livefromeurope.eu/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
-                        Visit Our Merch Store
-                    </a>
+                        <div style={{ textAlign: 'center', 'font-size':'11px' }}>riot</div>
                     </div>
+                </div>
+                    
+                        <a href="https://www.livefromeurope.eu/merch" target="_blank" style={{ display: 'block', marginTop: '10px', textAlign: 'center' }}>
+                        Visit Our Merch Store
+                        </a>
+                </div>
+                    
                 )}
 
 
