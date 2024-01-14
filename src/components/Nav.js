@@ -15,9 +15,19 @@ export default function Nav() {
 
     const handleCountrySelect = (country) => {
         setSelectedCountry(country);
-        window.location.href = `/category/${country}`; // This will cause a page refresh
+    
+        // Check if the selected country is 'Europe'
+        if (country.toLowerCase() === 'europe') {
+            // Navigate to the home page
+            window.location.href = '/';
+        } else {
+            // For other countries, navigate to the category page
+            window.location.href = `/category/${country}`;
+        }
+    
         setDropdownVisible(false); // This might be redundant as the page will refresh
     };
+    
     
 
     return (
@@ -28,7 +38,8 @@ export default function Nav() {
                 </Link>
             </div>
             <div className="navbar navbar-inverse " id="navbarNav">
-
+                {!dropdownVisible && (
+                <>
                 {auth.username &&
                     <Link to={profileurl} className="nav-item nav-link">
                         <img width="30px" className="profile_img" src={auth.image} alt="user-icon" />
@@ -54,6 +65,8 @@ export default function Nav() {
                         <img width="25px" src="../icons/shirt.png" alt="shirt-icon" />
                     </Link>
                 } 
+                </>
+                )}
                 <div className="navbar-toggler">
                     {!dropdownVisible && <img width="25px" src="../icons/europe.png" alt="Toggle Dropdown" className="dropdown-icon" onClick={toggleDropdown} />
                     }
