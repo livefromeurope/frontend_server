@@ -1,13 +1,11 @@
 // React and Hooks
 import React, { useState } from 'react';
-import { Link,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Components
 import Posts from './Posts';
 import Postform from './Postform';
-import ScrollToTop from './Scroll_To_Top';
 import useAuth from './useAuth';
-import europeCountries from './europe_countries.json'; // assuming the file is in the same
 
 function Home(props) {
     const [commentUpdate, setCommentUpdate] = useState('');
@@ -34,27 +32,6 @@ function Home(props) {
     const redirectToLogin = () => {
         navigate("/login");
     }
-
-
-    const [selectedCountry, setSelectedCountry] = useState('');
-
-    const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
-    const [dropdownVisible, setDropdownVisible] = useState(false);
-
-    const handleCountrySelect = (country) => {
-        setSelectedCountry(country);
-    
-        // Check if the selected country is 'Europe'
-        if (country.toLowerCase() === 'europe') {
-            // Navigate to the home page
-            window.location.href = '/';
-        } else {
-            // For other countries, navigate to the category page
-            window.location.href = `/category/${country}`;
-        }
-    
-        setDropdownVisible(false); // This might be redundant as the page will refresh
-    };
 
 
     return (
@@ -98,8 +75,6 @@ function Home(props) {
                     setSelectedValues={setSelectedValues}
                 />
                                
-
-            
 
             </div>
         </section>
