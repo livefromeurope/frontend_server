@@ -1,10 +1,11 @@
 import React, {useState,useEffect} from 'react'
 import getPosts from '../getPosts';
-import europe_countries from '../europe_countries.json';
+
 
 export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_url}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "borderRadius":"20px",border:"none", padding:"0.5rem"};
     
+
     const TagStyle = {
         "padding-left":"6px",
         "whiteSpace": "nowrap",
@@ -37,6 +38,8 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
     let [search_token,setSearchToken] = useState('');
     let [search_value,setSearchValue] = useState('');
     let [show_token,setShowToken] = useState(false);
+
+
 
     const tokens = [
         {"value":"European Union"},

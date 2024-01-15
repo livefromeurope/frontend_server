@@ -1,33 +1,11 @@
-import React, { useState } from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link, } from 'react-router-dom';
 import useAuth from './useAuth';
-import europeCountries from './europe_countries.json'; // assuming the file is in the same directory
 
 export default function Nav() {
 
     const { setAuth, auth } = useAuth();
-    const [selectedCountry, setSelectedCountry] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
     let profileurl = "/profile/" + auth.username;
-    
-    const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
-    const [dropdownVisible, setDropdownVisible] = useState(false);
 
-    const handleCountrySelect = (country) => {
-        setSelectedCountry(country);
-    
-        // Check if the selected country is 'Europe'
-        if (country.toLowerCase() === 'europe') {
-            // Navigate to the home page
-            window.location.href = '/';
-        } else {
-            // For other countries, navigate to the category page
-            window.location.href = `/category/${country}`;
-        }
-    
-        setDropdownVisible(false); // This might be redundant as the page will refresh
-    };
-    
     
 
     return (
@@ -38,8 +16,7 @@ export default function Nav() {
                 </Link>
             </div>
             <div className="navbar navbar-inverse " id="navbarNav">
-                {!dropdownVisible && (
-                <>
+
                 {auth.username &&
                     <Link to={profileurl} className="nav-item nav-link">
                         <img width="30px" className="profile_img" src={auth.image} alt="user-icon" />
@@ -65,22 +42,7 @@ export default function Nav() {
                         <img width="25px" src="../icons/shop.png" alt="shirt-icon" />
                     </Link>
                 } 
-                </>
-                )}
-                <div className="navbar-toggler">
-                    {!dropdownVisible && <img width="25px" src="../icons/europe.png" alt="Toggle Dropdown" className="dropdown-icon" onClick={toggleDropdown} />
-                    }
-                    {dropdownVisible && (
-                    <select className="country-dropdown" onChange={(e) => handleCountrySelect(e.target.value)} onBlur={() => setDropdownVisible(false)}>
-                        <option value="">Select Country</option>
-                        {europeCountries.map((country) => (
-                            <option key={country.id} value={country.country}>
-                                {country.country}
-                            </option>
-                        ))}
-                    </select>
-                    )}
-                </div>
+
 
             </div>
 
