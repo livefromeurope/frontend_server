@@ -50,26 +50,14 @@
 
 .country-dropdown {
   max-width: 190px;        /* Adjust width as needed */
-  border-radius: 10px; /* Adjust border-radius as needed */
-  font-size: 9px;
-  padding: 5.5px;
-  margin: 10px;
+  max-height: 10;        /* Adjust height as needed */
+  border-radius: 15px; /* Adjust border-radius as needed */
+  font-size: 10px;
+  padding: 4px;
   background-color:#1e1e22;
   color:#FFF;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  border: 1px;
-  border:solid;
-  border-width: 1px; 
-  /* Add other styling if necessary */
-}
 
-.country-dropdown:hover{
-  background-color: #004494;
-  border-color:white;
-  border-radius: 10px;
-  color: white;
+  /* Add other styling if necessary */
 }
 /* Media query for mobile screens */
 @media screen and (max-width: 768px) {

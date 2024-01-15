@@ -70,7 +70,7 @@ function Home(props) {
                     >
                         {postformButton}
                     </button>
-                    <select className="country-dropdown" onChange={(e) => handleCountrySelect(e.target.value)} onBlur={() => setDropdownVisible(false)}>
+                    <select id='small-button'  className="btn btn-primary btn-sm" onChange={(e) => handleCountrySelect(e.target.value)} onBlur={() => setDropdownVisible(false)}>
                         <option value="">Select Country</option>
                         {europeCountries.map((country) => (
                             <option key={country.id} value={country.country}>
