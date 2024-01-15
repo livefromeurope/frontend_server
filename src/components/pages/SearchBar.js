@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react'
 import getPosts from '../getPosts';
-
+import { Link,useNavigate } from 'react-router-dom';
+import europeCountries from '../europe_countries.json';
 
 export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_url}){
     const BarStyle = {width:"100%",background:"#F0F0F0", "borderRadius":"20px",border:"none", padding:"0.5rem"};
@@ -29,6 +30,15 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         "margin-left":"3px",
         "paddingLeft":"6px",
         "paddingRight":"6px"}
+
+    const Zstyle = {
+
+        "backgroundColor":"#ffd617",
+        "fontSize":"12px",
+        "borderRadius":"15px",
+        "margin-left":"3px",
+        "paddingLeft":"6px",
+        "paddingRight":"6px"}
     const TextStyle = {"marginLeft":"25%"}
 
 
@@ -39,7 +49,25 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
     let [search_value,setSearchValue] = useState('');
     let [show_token,setShowToken] = useState(false);
 
+    const [selectedCountry, setSelectedCountry] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate
 
+    const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
+    const [dropdownVisible, setDropdownVisible] = useState(false);
+    const handleCountrySelect = (country) => {
+        setSelectedCountry(country);
+    
+        // Check if the selected country is 'Europe'
+        if (country.toLowerCase() === 'europe') {
+            // Navigate to the home page
+            window.location.href = '/';
+        } else {
+            // For other countries, navigate to the category page
+            window.location.href = `/category/${country}`;
+        }
+
+        setDropdownVisible(false); // This might be redundant as the page will refresh
+    };
 
     const tokens = [
         {"value":"European Union"},
@@ -52,8 +80,6 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         {"value":"Technology"},
         {"value":"AI"},
         {"value":"Space"},
-
-    
     ];
 
     
@@ -136,18 +162,34 @@ export default function SearchBar({setData,setShow_spotlight,setFetchUrl,fetch_u
         }
         
         </form>
-        {!show_token &&
-            <div className='input_tag' style={{...TagStyle, display: "flex", flexWrap: "wrap"}}>
-                {tokens && tokens.length > 0 && tokens.map((token) => (
-                    <div key={token.value} style={{...Ystyle, marginRight: "10px", marginBottom: "10px"}} type="button" onClick={(e) => {
-                        setSearchValue("");
-                        setSearch(token.value);
-                        setShowToken(true);
-                    }}>
-                        {token.value}
+        {
+            !show_token && (
+                <div className='input_tag' style={{...TagStyle, display: "flex", flexWrap: "wrap"}}>
+
+
+                    {/* Mapped tokens */}
+                    {tokens && tokens.length > 0 && tokens.map((token) => (
+                        <div key={token.value} style={{...Ystyle, marginRight: "10px", marginBottom: "10px"}} type="button" onClick={(e) => {
+                            setSearchValue("");
+                            setSearch(token.value);
+                            setShowToken(true);
+                        }}>
+                            {token.value}
+                        </div>
+                    ))}
+                                        {/* Custom token */}
+                                        <div style={{...Zstyle, marginRight: "10px", marginBottom: "10px"}} type="button">
+                        <select  className='country-dropdown' onChange={(e) => handleCountrySelect(e.target.value)} onBlur={() => setDropdownVisible(false)}>
+                            <option value="">Select Country</option>
+                            {europeCountries.map((country) => (
+                                <option key={country.id} value={country.country}>
+                                    {country.country}
+                                </option>
+                            ))}
+                        </select>
                     </div>
-                ))}
-            </div>
+                </div>
+            )
         }
     </div>
     );

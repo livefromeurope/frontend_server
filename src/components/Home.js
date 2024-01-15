@@ -70,15 +70,8 @@ function Home(props) {
                     >
                         {postformButton}
                     </button>
-                    <select id='small-button'  className="btn btn-primary btn-sm" onChange={(e) => handleCountrySelect(e.target.value)} onBlur={() => setDropdownVisible(false)}>
-                        <option value="">Select Country</option>
-                        {europeCountries.map((country) => (
-                            <option key={country.id} value={country.country}>
-                                {country.country}
-                            </option>
-                        ))}
-                    </select>
-                        {/*
+
+                        
                     {!showPostform && 
                         <button 
                             type='button' 
@@ -88,7 +81,7 @@ function Home(props) {
                         >
                             {filterButton}
                         </button>
-                    }*/}
+                    }
                     {showPostform && <Postform UpdateTrigger={setCommentUpdate} />}
                     
                 </div>

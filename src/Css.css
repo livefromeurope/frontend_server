@@ -48,14 +48,20 @@
   /* additional styling for the icon */
 }
 
+
 .country-dropdown {
-  max-width: 190px;        /* Adjust width as needed */
-  max-height: 10;        /* Adjust height as needed */
-  border-radius: 15px; /* Adjust border-radius as needed */
-  font-size: 10px;
-  padding: 4px;
-  background-color:#1e1e22;
-  color:#FFF;
+  width: 120px;        /* Adjust width as needed */
+  background-color: #ffd617;
+  position: sticky;
+  
+  z-index: 10;
+  border: 0px;
+  border:solid;
+  border-top-color:  #ffd617;
+  border-left-color:  #ffd617 ;
+  border-right-color: #ffd617 ;
+  border-width: 1px; 
+  border-bottom-color: #ffd617;
 
   /* Add other styling if necessary */
 }
